@@ -10,6 +10,7 @@ namespace ContosoCrafts.WebSite.Pages
 {
     /// <summary>
     /// Kramer Johnson
+    /// Henry Song
     /// </summary>
     public class IndexModel : PageModel
     {
