@@ -12,7 +12,7 @@ namespace ContosoCrafts.WebSite.Pages
     /// Kramer Johnson
     /// Henry Song
     /// Zhicong Zeng
-    /// William Nwoke
+    /// Uchenna Nwoke
     /// </summary>
     public class IndexModel : PageModel
     {
