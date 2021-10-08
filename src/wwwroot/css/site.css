@@ -1,9 +1,17 @@
-﻿.checked {
+﻿.body {
+    background-color: #f8f8ff;
+}
+
+.checked {
   color: orange;
 }
 
 .fa-star {
   cursor: pointer;
+}
+
+.text-muted {
+    color: #E8F1F2 !important
 }
 
 /* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
@@ -44,6 +52,9 @@ for details on configuring this project to bundle and minify static web assets. 
     background: #fbfafd;
 }
 
+.navbar-light .navbar-brand {
+    color: #13293D;
+}
 
 a.navbar-brand {
     white-space: normal;
@@ -55,18 +66,23 @@ a.navbar-brand {
 
 /* Provide sufficient contrast against white background */
 a {
-   color: #0366d6;
+    color: #E8F1F2;
+}
+
+a:hover {
+    color: #1B98E0;
 }
 
 .btn-primary {
-    color: #fff;
-    background-color: #252152;
-    border-color: #252152;
+    color: #E8F1F2;
+    background-color: #006494;
+    border-color: #13293D;
 }
+
 .btn-primary:hover {
-    color: #fff;
-    background-color: #e9a8a6;
-    border-color: #e9a8a6;
+    color: #E8F1F2;
+    background-color: #247BA0;
+    border-color: #1B98E0;
 }
 
 .nav-pills .nav-link.active, .nav-pills .show > .nav-link {
@@ -135,11 +151,12 @@ ul {
     background: -webkit-linear-gradient(110deg, #e9a8a6 60%, #252152 60%);
     background: -o-linear-gradient(110deg, #e9a8a6 60%, #252152 60%);
     background: -moz-linear-gradient(110deg, #e9a8a6 60%, #252152 60%);
-    background: linear-gradient(110deg, #e9a8a6 60%, #252152 60%);
+    /*    background: linear-gradient(110deg, #20A39E 60%, #EF5B5B 60%);*/
+    background: linear-gradient(110deg, #E8F1F2 60%, #247BA0 60%);
 }
 .bg-footer {
     background: -webkit-linear-gradient(110deg, #252152 60%, #e9a8a6 60%);
     background: -o-linear-gradient(110deg, #252152 60%, #e9a8a6 60%);
     background: -moz-linear-gradient(110deg, #252152 60%, #e9a8a6 60%);
-    background: linear-gradient(110deg, #252152 60%, #e9a8a6 60%);
+    background: linear-gradient(110deg, #247BA0 60%, #E8F1F2 60%);
 }
