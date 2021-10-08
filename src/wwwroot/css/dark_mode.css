@@ -1,0 +1,21 @@
+﻿body {
+    background-color: #2d383c;
+}
+
+.bg-navbar {
+    background: linear-gradient( 110deg, #247BA0 60%, #006494 60%);
+}
+
+.navbar-light .navbar-brand {
+    color: #192428;
+}
+
+.text-dark {
+    color: #192428 !important;
+}
+
+
+.toggle-switch {
+    background-color: #006494;
+    color: #E8F1F2;
+}
