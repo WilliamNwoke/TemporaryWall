@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"] - Temporary Wall</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
-    <link rel="stylesheet" href="~/css/site.css" />
+    <link rel="stylesheet" href="~/css/light_mode.css" id="theme-link"/>
 
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
@@ -27,8 +27,12 @@
                         </li>
                     </ul>
                 </div>
-                <input type="checkbox" checked data-toggle="toggle" data-on="Dark Mode" data-off="Light Mode"
-                       data-onstyle="primary" data-offstyle="secondary" class="toggle-switch">
+                @*<input type="checkbox" checked data-toggle="toggle" data-on="Dark Mode" data-off="Light Mode"
+        data-onstyle="primary" data-offstyle="secondary" class="toggle-switch" id="dark-mode-switch">*@
+                <div class="custom-control custom-switch toggle-switch">
+                    <input type="checkbox" class="custom-control-input dark-mode-switch" id="customSwitch1">
+                    <label class="custom-control-label" for="customSwitch1">Toggle this switch element</label>
+                </div>
             </div>
         </nav>
     </header>
@@ -46,8 +50,8 @@
 
     <script src="~/lib/jquery/dist/jquery.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.js"></script>
-    <script src="~/js/site.js" asp-append-version="true"></script>
     <script src="https://cdn.jsdelivr.net/gh/gitbrent/bootstrap4-toggle@3.6.1/js/bootstrap4-toggle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
     @RenderSection("Scripts", required: false)
 </body>
 </html>
