@@ -15,16 +15,8 @@
 }
 
 .toggle-switch {
-    background-color: #13293D;
     color: #E8F1F2;
 }
-
-    .div.toggle.btn.btn-primary:hover,
-    .toggle-switch:hover {
-        color: #E8F1F2;
-        background-color: #13293D;
-        border-color: #13293D;
-    }
 
 .btn-primary:hover {
 

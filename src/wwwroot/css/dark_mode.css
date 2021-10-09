@@ -13,13 +13,21 @@
     color: #192428;
 }
 
+.navbar.navbar-default {
+    border: none;
+}
+
+.navbar.navbar-default .navbar-collapse {
+    border: none;
+    box-shadow: none;
+}
+
 .text-dark {
     color: #192428 !important;
 }
 
 
 .toggle-switch {
-    background-color: #006494;
     color: #E8F1F2;
 }
 
@@ -35,18 +43,6 @@
 .text-muted {
     color: #E8F1F2 !important
 }
-
-/*.toggle-switch {
-    background-color: #13293D;
-    color: #E8F1F2;
-}*/
-
-    .div.toggle.btn.btn-primary:hover,
-    .toggle-switch:hover {
-        color: #E8F1F2;
-        background-color: #13293D;
-        border-color: #13293D;
-    }
 
 .btn-primary:hover {
 }
@@ -70,7 +66,8 @@ for details on configuring this project to bundle and minify static web assets. 
 .card-columns .card-body {
     height: 100px;
     font-family: 'Poppins', sans-serif;
-    background: #fbfafd;
+    color: #E8F1F2;
+    background: #414c50;
 }
 
 .card-columns .card-img {
@@ -90,13 +87,36 @@ for details on configuring this project to bundle and minify static web assets. 
     background-size: cover; /* Resize the background image to cover the entire container */
 }
 
+.modal-body {
+    background-color: #414c50;
+    color: #E8F1F2;
+    border: none;
+}
+
+.modal-footer {
+    background-color: #414c50;
+    color: #E8F1F2;
+    border: none;
+}
+
+.modal-header {
+    background-color: #414c50;
+    color: #E8F1F2;
+    border: none;
+}
+
 .card-columns .card:hover {
     transform: scale(1.05);
     box-shadow: 0 10px 20px rgba(37,33,82,.12), 0 4px 8px rgba(37,33,82,.06);
 }
 
+.card {
+    background-color: #414c50;
+    border: none;
+}
+
 .card-footer {
-    background: #fbfafd;
+    background: #414c50;
 }
 
 /*.navbar-light .navbar-brand {
@@ -150,13 +170,13 @@ html {
     }
 }
 
-.border-top {
+/*.border-top {
     border-top: 1px solid #e5e5e5;
 }
 
 .border-bottom {
     border-bottom: 1px solid #e5e5e5;
-}
+}*/
 
 .box-shadow {
     box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05);
