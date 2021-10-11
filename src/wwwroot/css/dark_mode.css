@@ -31,6 +31,10 @@
     color: #192428 !important;
 }
 
+.about-title, .about-content {
+    color: #E8F1F2;
+}
+
 
 .toggle-switch {
     color: #E8F1F2;
