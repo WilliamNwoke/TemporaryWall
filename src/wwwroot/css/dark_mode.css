@@ -22,6 +22,11 @@
     box-shadow: none;
 }
 
+.footer.bg-footer {
+    border: none;
+    box-shadow: none;
+}
+
 .text-dark {
     color: #192428 !important;
 }
@@ -29,6 +34,12 @@
 
 .toggle-switch {
     color: #E8F1F2;
+}
+
+.custom-control-input:checked ~ .custom-control-label::before {
+    color: #13293D;
+    border-color: #247BA0;
+    background-color: #247BA0;
 }
 
 
@@ -229,8 +240,8 @@ ul {
 }*/
 
 .bg-footer {
-    background: -webkit-linear-gradient(110deg, #252152 60%, #e9a8a6 60%);
-    background: -o-linear-gradient(110deg, #252152 60%, #e9a8a6 60%);
-    background: -moz-linear-gradient(110deg, #252152 60%, #e9a8a6 60%);
-    background: linear-gradient(110deg, #247BA0 60%, #E8F1F2 60%);
+    background: -webkit-linear-gradient(110deg, #247BA0 60%, #006494 60%);
+    background: -o-linear-gradient(110deg, #247BA0 60%, #006494 60%);
+    background: -moz-linear-gradient(110deg, #247BA0 60%, #006494 60%);
+    background: linear-gradient( 110deg, #006494 60%, #247BA0 60%);
 }
