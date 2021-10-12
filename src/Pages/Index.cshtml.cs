@@ -9,7 +9,7 @@ using ContosoCrafts.WebSite.Services;
 namespace ContosoCrafts.WebSite.Pages
 {
     /// <summary>
-    /// Kramer Johnson
+    /// Kramer Johnson made a change
     /// Henry Song
     /// Zhicong Zeng
     /// Uchenna Nwoke
