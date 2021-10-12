@@ -10,7 +10,7 @@ namespace ContosoCrafts.WebSite.Pages
 {
     /// <summary>
     /// Kramer Johnson
-    /// Henry Song
+    /// Henry Song - for GitHub lab excercise #3
     /// Zhicong Zeng
     /// Uchenna Nwoke
     /// </summary>
