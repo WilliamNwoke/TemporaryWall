@@ -20,10 +20,11 @@
                         aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
+                @*The head of page change the link*@
                 <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
                     <ul class="navbar-nav flex-grow-1">
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-page="/Privacy">About Us</a>
+                            <a class="nav-link text-dark" asp-area="" asp-page="/Aboutus">About Us</a>
                         </li>
                     </ul>
                 </div>
@@ -41,10 +42,10 @@
             @RenderBody()
         </main>
     </div>
-
+    @*The bottom of page change the link*@
     <footer class="border-top footer text-muted bg-footer">
         <div class="container">
-            &copy; 2019 - ContosoCrafts.WebSite - <a asp-area="" asp-page="/Privacy">About Us</a>
+            &copy; 2019 - ContosoCrafts.WebSite - <a asp-area="" asp-page="/Aboutus">About Us</a>
         </div>
     </footer>
 
