@@ -51,17 +51,6 @@ namespace ContosoCrafts.WebSite.Services
             }
 
             SaveData(products);
-            //using(var outputStream = File.OpenWrite(JsonFileName))
-            //{
-            //    JsonSerializer.Serialize<IEnumerable<ProductModel>>(
-            //        new Utf8JsonWriter(outputStream, new JsonWriterOptions
-            //        {
-            //            SkipValidation = true,
-            //            Indented = true
-            //        }), 
-            //        products
-            //    );
-            //}
         }
 
         /// <summary>
@@ -81,6 +70,31 @@ namespace ContosoCrafts.WebSite.Services
                     products
                 );
             }
+        }
+
+        /// <summary>
+        /// Find the data record
+        /// Update the fields
+        /// Save to the data store
+        /// </summary>
+        /// <param name="data"></param>
+        public ProductModel UpdateData(ProductModel data)
+        {
+            var products = GetProducts();
+            var productData = products.FirstOrDefault(x => x.Id.Equals(data.Id));
+            if (productData == null)
+            {
+                return null;
+            }
+
+            productData.Title = data.Title;
+            productData.Description = data.Description;
+            productData.Url = data.Url;
+            productData.Image = data.Image;
+
+            SaveData(products);
+
+            return productData;
         }
     }
 }
