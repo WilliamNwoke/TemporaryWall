@@ -12,6 +12,7 @@
       3,
       2,
       1,
+      5,
       5
     ]
   },
@@ -48,7 +49,7 @@
     "img": "https://www.worldatlas.com/r/w960-q80/upload/9d/d2/c4/meisje-met-de-parel.jpg",
     "Url": "https://www.worldatlas.com/articles/where-to-see-the-10-most-famous-painting-of-the-world.html",
     "Title": "The Girl With A Pearl Earring x Johannes Vermeer",
-    "Description": "It was painted around 1665 and portrays a turbaned girl with a pearl earring. The painting has been called the \"Dutch Mona Lisa\", mostly due to the ambiguous expression of the subject.",
+    "Description": "It was painted around 1665 and portrays a turbaned girl with a pearl earring. The painting has been called the \u0022Dutch Mona Lisa\u0022, mostly due to the ambiguous expression of the subject.",
     "Ratings": null
   },
   {
@@ -90,21 +91,21 @@
     "Ratings": null
   },
   {
-    "Id": "Whistler's Mother'",
+    "Id": "Whistler\u0027s Mother\u0027",
     "Maker": "james-mcneill-whistler",
     "img": "https://www.worldatlas.com/r/w960-q80/upload/ca/13/25/whistlers-mother-high-res.jpg",
     "Url": "https://www.worldatlas.com/articles/where-to-see-the-10-most-famous-painting-of-the-world.html",
-    "Title": "Whistler's Mother x James McNeill Whistler",
-    "Description": "Whistler’s Mother, or the Arrangement in Grey and Black, was painted in 1871 by James McNeill Whistler showing his mother seated on a chair against a gray wall.",
+    "Title": "Whistler\u0027s Mother x James McNeill Whistler",
+    "Description": "Whistler\uFFFDs Mother, or the Arrangement in Grey and Black, was painted in 1871 by James McNeill Whistler showing his mother seated on a chair against a gray wall.",
     "Ratings": null
   },
   {
     "Id": "st-george-and-the-dragon",
     "Maker": "raphael",
-    "img": "https://www.artandobject.com/sites/default/files/styles/gallery_item/public/raphael-saint-george-and-dragon-1506-oil-panel-1122-x-846-285-x-215-cm-national-gallery-art.jpg?h=9b09a626&itok=VY-RvbZw",
+    "img": "https://www.artandobject.com/sites/default/files/styles/gallery_item/public/raphael-saint-george-and-dragon-1506-oil-panel-1122-x-846-285-x-215-cm-national-gallery-art.jpg?h=9b09a626\u0026itok=VY-RvbZw",
     "Url": "https://www.artandobject.com/news/history-and-iconography-st-george-and-dragon",
     "Title": "St. George and the Dragon x Raphael",
-    "Description": "A symbol of Christian chivalry and selflessness, the saint’s influence has left a lasting impression on Western culture. Responsible for the common fantasy trope of the knight slaying the dragon, his legend inspired more modern stories like Lord of the Rings, Shrek, and countless other creations from Shakespeare monologues to arcade games.",
+    "Description": "A symbol of Christian chivalry and selflessness, the saint\uFFFDs influence has left a lasting impression on Western culture. Responsible for the common fantasy trope of the knight slaying the dragon, his legend inspired more modern stories like Lord of the Rings, Shrek, and countless other creations from Shakespeare monologues to arcade games.",
     "Ratings": null
   },
   {
@@ -113,7 +114,7 @@
     "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cc/Grant_Wood_-_American_Gothic_-_Google_Art_Project.jpg/240px-Grant_Wood_-_American_Gothic_-_Google_Art_Project.jpg",
     "Url": "https://en.wikipedia.org/wiki/American_Gothic",
     "Title": "American Gothic x Grant Wood",
-    "Description": "Wood was inspired to paint what is now known as the American Gothic House in Eldon, Iowa, along with \"the kind of people [he] fancied should live in that house\". It depicts a farmer standing beside his daughter – often mistakenly assumed to be his wife.",
+    "Description": "Wood was inspired to paint what is now known as the American Gothic House in Eldon, Iowa, along with \u0022the kind of people [he] fancied should live in that house\u0022. It depicts a farmer standing beside his daughter \uFFFD often mistakenly assumed to be his wife.",
     "Ratings": null
   },
   {
@@ -128,7 +129,7 @@
   {
     "Id": "composition-abstraite",
     "Maker": "serge-poliakoff",
-    "img": "https://sothebys-com.brightspotcdn.com/dims4/default/a473902/2147483647/strip/true/crop/4830x3559+0+0/resize/1303x960!/quality/90/?url=http%3A%2F%2Fsothebys-brightspot.s3.amazonaws.com%2Fdotcom%2F8c%2F4e%2Ff4fe0a95487d80de0854f2264296%2Fmodernites-highlights-2019-paris-crop-216pf1916-bcbjc-1.jpg",
+    "img": "https://sothebys-com.brightspotcdn.com/dims4/default/a473902/2147483647/strip/true/crop/4830x3559\u002B0\u002B0/resize/1303x960!/quality/90/?url=http%3A%2F%2Fsothebys-brightspot.s3.amazonaws.com%2Fdotcom%2F8c%2F4e%2Ff4fe0a95487d80de0854f2264296%2Fmodernites-highlights-2019-paris-crop-216pf1916-bcbjc-1.jpg",
     "Url": "https://www.sothebys.com/en/auctions/ecatalogue/2019/modernites-pf1916/lot.36.html?locale=en",
     "Title": "Composition Abstraite x Serge Poliakoff",
     "Description": "",
@@ -137,8 +138,8 @@
   {
     "Id": "self-portrait",
     "Maker": "vincent-van-gogh",
-    "img": "https://static01.nyt.com/images/2007/03/23/arts/25gogh450.1.jpg?quality=75&auto=webp&disable=upscale",
-    "Url": "https://artsandculture.google.com/asset/self-portrait/9gFw_1Vou2CkwQ?hl=en&ms=%7B%22x%22%3A0.5%2C%22y%22%3A0.5%2C%22z%22%3A9.595224520291282%2C%22size%22%3A%7B%22width%22%3A0.8982178622136271%2C%22height%22%3A1.2374999999999992%7D%7D",
+    "img": "https://static01.nyt.com/images/2007/03/23/arts/25gogh450.1.jpg?quality=75\u0026auto=webp\u0026disable=upscale",
+    "Url": "https://artsandculture.google.com/asset/self-portrait/9gFw_1Vou2CkwQ?hl=en\u0026ms=%7B%22x%22%3A0.5%2C%22y%22%3A0.5%2C%22z%22%3A9.595224520291282%2C%22size%22%3A%7B%22width%22%3A0.8982178622136271%2C%22height%22%3A1.2374999999999992%7D%7D",
     "Title": "Self-Portrait x Vincent Van Gogh",
     "Description": "The artist is wearing a suit and not the pea jacket he usually worked in. Attention is focused on the face. His features are hard and emaciated, his green-rimmed eyes seem intransigent and anxious.",
     "Ratings": null
