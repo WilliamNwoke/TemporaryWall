@@ -129,10 +129,10 @@ namespace ContosoCrafts.WebSite.Services
         public ProductModel DeleteData(string id)
         {
             // Get the current set, and append the new record to it
-            var dataSet = GetAllData();
+            var dataSet = GetProducts();
             var data = dataSet.FirstOrDefault(m => m.Id.Equals(id));
 
-            var newDataSet = GetAllData().Where(m => m.Id.Equals(id) == false);
+            var newDataSet = GetProducts().Where(m => m.Id.Equals(id) == false);
 
             SaveData(newDataSet);
 
