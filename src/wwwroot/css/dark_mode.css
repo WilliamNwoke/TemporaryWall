@@ -52,6 +52,10 @@
     color: #E8F1F2;
 }
 
+.control-label {
+    color: #E8F1F2;
+}
+
 .custom-control-input:checked ~ .custom-control-label::before {
     color: #13293D;
     border-color: #247BA0;
