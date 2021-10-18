@@ -11,6 +11,10 @@ namespace ContosoCrafts.WebSite.Services
 {
    public class JsonFileProductService
     {
+        /// <summary>
+        /// Initiated JsonFileProductService
+        /// </summary>
+        /// <param name="webHostEnvironment">environment</param>
         public JsonFileProductService(IWebHostEnvironment webHostEnvironment)
         {
             WebHostEnvironment = webHostEnvironment;
@@ -18,11 +22,18 @@ namespace ContosoCrafts.WebSite.Services
 
         public IWebHostEnvironment WebHostEnvironment { get; }
 
+        /// <summary>
+        /// Returns file path of product json database
+        /// </summary>
         private string JsonFileName
         {
             get { return Path.Combine(WebHostEnvironment.WebRootPath, "data", "products.json"); }
         }
 
+        /// <summary>
+        /// Retrieves products
+        /// </summary>
+        /// <returns>iterable list of products</returns>
         public IEnumerable<ProductModel> GetProducts()
         {
             using(var jsonFileReader = File.OpenText(JsonFileName))
@@ -35,16 +46,23 @@ namespace ContosoCrafts.WebSite.Services
             }
         }
 
+        /// <summary>
+        /// Adds a rating to the specified product ID
+        /// </summary>
+        /// <param name="productId">ID of specific product</param>
+        /// <param name="rating">Rating to be added</param>
         public void AddRating(string productId, int rating)
         {
             var products = GetProducts();
 
             if(products.First(x => x.Id == productId).Ratings == null)
             {
+                //creates new list of ratings
                 products.First(x => x.Id == productId).Ratings = new int[] { rating };
             }
             else
             {
+                //adds rating to existing ratings list
                 var ratings = products.First(x => x.Id == productId).Ratings.ToList();
                 ratings.Add(rating);
                 products.First(x => x.Id == productId).Ratings = ratings.ToArray();
