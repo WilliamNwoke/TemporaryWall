@@ -38,6 +38,20 @@
         </fieldset>
     </form>
 
+    <!--Display all comments-->
+    <table class="table table-bordered table-striped">
+        <thead>
+            <tr>All Comments</tr>
+        </thead>
+        <tbody>
+            @*
+            @foreach (var product in Model.Product)
+            {
+                <tr>@product.Comments</tr>
+            }
+            *@
+        </tbody>
+    </table>
 
 </div>
 
