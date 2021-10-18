@@ -4,10 +4,14 @@
     ViewData["Title"] = "Index page";
 }
 
+<!--Index.cshtml
+    Desc: Displays a list of all products(arts).
+    -->
 <div class="container">
-
+    <!--Create new product button-->
     <a asp-page="Create" class="btn btn-link">+ Create</a>
 
+    <!--Table of Products-->
     <table class="table table-bordered table-striped">
         <thead>
             <tr>
@@ -16,10 +20,15 @@
             </tr>
         </thead>
         <tbody>
+            <!--Loop to display each product;
+                each iteration makes new row-->
             @foreach (var product in Model.Products)
             {
                 <tr>
+                    <!--Tile for product name-->
                     <td>@product.Title</td>
+
+                    <!--Link to product Read page-->
                     <td><a class="read-link" asp-page="Read" asp-route-id="@product.Id">Read</a></td>
                 </tr>
             }
