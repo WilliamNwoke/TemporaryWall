@@ -28,9 +28,11 @@
         <fieldset>
             <legend>Comment</legend>
             <div>
-                <input type="text" name="comment" value="" />
+                <input type="text" 
+                       name="comment"
+                       placeholder="Enter Comment Here" 
+                       value="" />
             </div>
-            <br />
             <div>
                 <label>&nbsp;</label>
                 <input type="submit" value="Submit" class="submit" />
@@ -43,6 +45,7 @@
         <thead>
             <tr>All Comments</tr>
         </thead>
+        <!--Need to implement backend first for this to work-->
         <tbody>
             @*
             @foreach (var product in Model.Product)
