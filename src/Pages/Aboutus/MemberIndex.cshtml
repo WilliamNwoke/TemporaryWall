@@ -1,0 +1,37 @@
+﻿@page
+@model ContosoCrafts.WebSite.Pages.Aboutus.IndexModel
+@{
+    ViewData["Title"] = "Index page";
+}
+
+<!--Index.cshtml
+    Desc: Displays a list of all products(arts).
+    -->
+<div class="container">
+    <!--Create new product button-->
+    <a asp-page="Create" class="btn btn-link">+ Create</a>
+
+    <!--Table of Products-->
+    <table class="table table-bordered table-striped">
+        <thead>
+            <tr>
+                <th>Title</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!--Loop to display each product;
+                each iteration makes new row-->
+            @foreach (var member in Model.Members)
+            {
+                <tr>
+                    <!--Tile for product name-->
+                    <td>@member.Title</td>
+
+                    <!--Link to product Read page-->
+                    <td><a class="read-link" asp-page="Read" asp-route-id="@member.Id">Read</a></td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

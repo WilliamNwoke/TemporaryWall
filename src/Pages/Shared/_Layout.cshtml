@@ -25,16 +25,16 @@
                 <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
                     <ul class="navbar-nav flex-grow-1">
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-page="/Aboutus">About Us</a>
+                            <a class="nav-link text-dark" asp-area="" asp-page="/Aboutus/MemberIndex">About Us</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-page="./Product/Index">Artworks</a>
+                            <a class="nav-link text-dark" asp-area="" asp-page="/Product/Index">Artworks</a>
                         </li>
                     </ul>
                 </div>
                 @*<input type="checkbox" checked data-toggle="toggle" data-on="Dark Mode" data-off="Light Mode"
-        data-onstyle="primary" data-offstyle="secondary" class="toggle-switch" id="dark-mode-switch">*@
-                
+                    data-onstyle="primary" data-offstyle="secondary" class="toggle-switch" id="dark-mode-switch">*@
+
                 <!--Dark mode toggle button-->
                 <div class="custom-control custom-switch toggle-switch">
                     <input type="checkbox" class="custom-control-input dark-mode-switch" id="customSwitch1">
@@ -52,12 +52,12 @@
     </div>
 
     <!--Footer-->
-    @*The bottom of page change the link*@
-    <footer class="border-top footer text-muted bg-footer">
-        <div class="container">
-            &copy; 2021 - TemporaryWall.Website - <a asp-area="" asp-page="/Aboutus">About Us</a>
-        </div>
-    </footer>
+    @*The bottom of page change the link
+        <footer class="border-top footer text-muted bg-footer">
+            <div class="container">
+                &copy; 2021 - TemporaryWall.Website - <a asp-area="" asp-page="./Aboutus/MemberIndex">About Us</a>
+            </div>
+        </footer>*@
 
     <!--Scripts-->
     <script src="~/lib/jquery/dist/jquery.js"></script>
