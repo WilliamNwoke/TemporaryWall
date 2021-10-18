@@ -3,10 +3,11 @@
 @inject JsonFileProductService ProductService
 @model ContosoCrafts.WebSite.Pages.Product.DeleteModel
 
-@{
-    ViewData["Title"] = "Delete page";
-}
+@{ ViewData["Title"] = "Delete page"; }
 
+<!--Delete.cshtml
+    Desc: Deletes product from database
+    -->
 <h1>Delete</h1>
 
 <div class="container">
@@ -23,24 +24,24 @@
         <!--Product Description-->
         <div class="form-group">
             <label asp-for="Product.Description" class="control-label"></label>
-            <input asp-for="Product.Description" class="form-control" disabled/>
+            <input asp-for="Product.Description" class="form-control" disabled />
         </div>
 
         <!--Product URL-->
         <div class="form-group">
             <label asp-for="Product.Url" class="control-label"></label>
-            <input asp-for="Product.Url" class="form-control" disabled/>
+            <input asp-for="Product.Url" class="form-control" disabled />
         </div>
 
         <!--Product Image-->
         <div class="form-group">
             <label asp-for="Product.Image" class="control-label"></label>
-            <input asp-for="Product.Image" class="form-control" disabled/>
+            <input asp-for="Product.Image" class="form-control" disabled />
         </div>
 
         <h1>Confirm Delete of this item</h1>
 
-        <!--Delete-->
+        <!--Delete button-->
         <div class="form-group">
             <input type="submit" value="Delete" class="btn btn-primary" />
         </div>
