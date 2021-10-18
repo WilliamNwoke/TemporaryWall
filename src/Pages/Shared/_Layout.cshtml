@@ -13,6 +13,7 @@
 </head>
 <body>
     <header>
+        <!--Nav Bad-->
         <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-navbar box-shadow mb-3">
             <div class="container">
                 <a class="navbar-brand" asp-area="" asp-page="/Index">Temporary Wall</a>
@@ -33,6 +34,8 @@
                 </div>
                 @*<input type="checkbox" checked data-toggle="toggle" data-on="Dark Mode" data-off="Light Mode"
         data-onstyle="primary" data-offstyle="secondary" class="toggle-switch" id="dark-mode-switch">*@
+                
+                <!--Dark mode toggle button-->
                 <div class="custom-control custom-switch toggle-switch">
                     <input type="checkbox" class="custom-control-input dark-mode-switch" id="customSwitch1">
                     <label class="custom-control-label" for="customSwitch1">Toggle Dark Mode</label>
@@ -40,11 +43,15 @@
             </div>
         </nav>
     </header>
+
+    <!--Main Body-->
     <div class="container">
         <main role="main" class="pb-3">
             @RenderBody()
         </main>
     </div>
+
+    <!--Footer-->
     @*The bottom of page change the link*@
     <footer class="border-top footer text-muted bg-footer">
         <div class="container">
@@ -52,6 +59,7 @@
         </div>
     </footer>
 
+    <!--Scripts-->
     <script src="~/lib/jquery/dist/jquery.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.js"></script>
     <script src="https://cdn.jsdelivr.net/gh/gitbrent/bootstrap4-toggle@3.6.1/js/bootstrap4-toggle.min.js"></script>
