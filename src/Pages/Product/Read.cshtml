@@ -24,18 +24,14 @@
     <p class="card-text">@Model.Product.Description</p>
 
     <!--Add Comment Form-->
-    <form>
+    <form method="post">
         <fieldset>
-            <legend class="title">Comments</legend>
-            <div class="container">
-                @*<input id="input-box"
-                       type="text" 
+            <legend>Comment</legend>
+            <div>
+                <input type="text" 
                        name="comment"
                        placeholder="Enter Comment Here" 
-                       value="" />*@
-                <textarea id="comment" 
-                          name="comment" 
-                          placeholder="Enter Comment Here"></textarea>
+                       value="" />
             </div>
             <div>
                 <label>&nbsp;</label>
@@ -44,11 +40,10 @@
         </fieldset>
     </form>
 
-    <br />
     <!--Display all comments-->
     <table class="table table-bordered table-striped">
         <thead>
-            <tr class="title">All Comments</tr>
+            <tr>All Comments</tr>
         </thead>
         <!--Need to implement backend first for this to work-->
         <tbody>
