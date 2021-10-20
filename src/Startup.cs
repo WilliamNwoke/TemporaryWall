@@ -50,6 +50,8 @@ namespace ContosoCrafts.WebSite
 
             app.UseAuthentication();
 
+            app.UseAuthentication();
+
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapRazorPages();
