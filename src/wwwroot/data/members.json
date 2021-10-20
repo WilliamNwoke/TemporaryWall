@@ -1,7 +1,7 @@
 [
   {
     "Id": "Member1",
-    "Maker": "vincent-van-gogh",
+    "Maker": "Kramer Johnson",
     "img": "https://www.worldatlas.com/r/w960-q80/upload/1f/e7/fd/1280px-van-gogh-starry-night-google-art-project.jpg",
     "Url": "https://www.worldatlas.com/articles/where-to-see-the-10-most-famous-painting-of-the-world.html",
     "Title": "The Starry Night x Vincent van Gogh",
@@ -9,7 +9,7 @@
   },
   {
     "Id": "Member2",
-    "Maker": "leonardo-da-vinci",
+    "Maker": "Henry Song",
     "img": "https://www.worldatlas.com/r/w960-q80/upload/5c/4a/1e/800px-mona-lisa-by-leonardo-da-vinci-from-c2rmf-retouched.jpg",
     "Url": "https://www.worldatlas.com/articles/where-to-see-the-10-most-famous-painting-of-the-world.html",
     "Title": "Mona Lisa x Leonardo Da Vinci",
@@ -17,7 +17,7 @@
   },
   {
     "Id": "Member3",
-    "Maker": "leonardo-da-vinci",
+    "Maker": "Uchenna Nwoke",
     "img": "https://www.worldatlas.com/r/w960-q80/upload/f2/91/94/1600px-u-ltima-cena-da-vinci-5.jpg",
     "Url": "https://www.worldatlas.com/articles/where-to-see-the-10-most-famous-painting-of-the-world.html",
     "Title": "The Last Supper x Leonardo Da Vinci",
@@ -25,7 +25,7 @@
   },
   {
     "Id": "Member4",
-    "Maker": "vincent-van-gogh",
+    "Maker": "Zhicong Zeng",
     "img": "https://www.worldatlas.com/r/w960-q80/upload/5f/96/29/edvard-munch-1893-the-scream-oil-tempera-and-pastel-on-cardboard-91-x-73-cm-national-gallery-of-norway.jpg",
     "Url": "https://www.worldatlas.com/articles/where-to-see-the-10-most-famous-painting-of-the-world.html",
     "Title": "The Scream x Edvard Munch",
