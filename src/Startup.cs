@@ -25,6 +25,11 @@ namespace ContosoCrafts.WebSite
             services.AddControllers();
             services.AddTransient<JsonFileProductService>();
             services.AddTransient<JsonFileMemberService>();
+<<<<<<< HEAD
+=======
+
+;
+>>>>>>> b8caa06a36a9061b6c23be85bb031c20aadcd2d7
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -47,6 +52,8 @@ namespace ContosoCrafts.WebSite
             app.UseRouting();
 
             app.UseAuthorization();
+
+            app.UseAuthentication();
 
             app.UseEndpoints(endpoints =>
             {
