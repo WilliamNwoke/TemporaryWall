@@ -15,8 +15,8 @@
     <table class="table table-bordered table-striped">
         <thead>
             <tr>
-                <th>Title</th>
-                <th>Action</th>
+                <th>Our Team members</th>
+                <th>Please Donate</th>
             </tr>
         </thead>
         <tbody>
@@ -25,11 +25,14 @@
             @foreach (var member in Model.Members)
             {
                 <tr>
-                    <!--Tile for product name-->
-                    <td>@member.Title</td>
+                    <!--Show id for member name-->
+                    <td>@member.Maker</td>
+
+                    <!--Show url for donate-->>
+                    <td>@member.Url</td>
 
                     <!--Link to product Read page-->
-                    <td><a class="read-link" asp-page="Read" asp-route-id="@member.Id">Read</a></td>
+                    <!--<td><a class="read-link" asp-page="Read" asp-route-id="@member.Id">Read</a></td>--->
                 </tr>
             }
         </tbody>
