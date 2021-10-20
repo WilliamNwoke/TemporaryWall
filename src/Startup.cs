@@ -4,8 +4,6 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Microsoft.AspNetCore.Authentication.Cookies;
-using Microsoft.AspNetCore.Authentication.Google;
 
 namespace ContosoCrafts.WebSite
 {
@@ -27,18 +25,8 @@ namespace ContosoCrafts.WebSite
             services.AddControllers();
             services.AddTransient<JsonFileProductService>();
             services.AddTransient<JsonFileMemberService>();
-            services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
-            .AddCookie();
 
-
-            services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
-            .AddCookie()
-            .AddGoogle(googleOptions =>
-            {
-                googleOptions.ClientId = Configuration["Authentication:Google:ClientId"];
-                googleOptions.ClientSecret = Configuration["Authentication:Google:ClientSecret"];
-            }
-            );
+;
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -61,6 +49,8 @@ namespace ContosoCrafts.WebSite
             app.UseStaticFiles();
 
             app.UseRouting();
+            app.UseAuthentication();
+
             app.UseAuthentication();
 
             app.UseEndpoints(endpoints =>

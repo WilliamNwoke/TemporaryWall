@@ -14,8 +14,7 @@ namespace ContosoCrafts.WebSite.Pages.Account
         public Credential Credential { get; set; }
 
         public void OnGet()
-        {
-            =
+        {   
         }
 
         public void OnPost()
