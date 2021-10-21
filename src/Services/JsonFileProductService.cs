@@ -72,6 +72,31 @@ namespace ContosoCrafts.WebSite.Services
         }
 
         /// <summary>
+        /// Adds a comment to the specified product ID
+        /// </summary>
+        /// <param name="productId">ID of specific product</param>
+        /// <param name="comment">Comment to be added</param>
+        public void AddComment(string productId, string comment)
+        {
+            var products = GetProducts();
+
+            if (products.First(x => x.Id == productId).Comments == null)
+            {
+                //creates new list of comments
+                products.First(x => x.Id == productId).Comments = new string[] { comment };
+            }
+            else
+            {
+                //adds comment to existing comments list
+                var comments = products.First(x => x.Id == productId).Comments.ToList();
+                comments.Add(comment);
+                products.First(x => x.Id == productId).Comments = comments.ToArray();
+            }
+
+            SaveData(products);
+        }
+
+        /// <summary>
         /// Save All products data to storage
         /// </summary>
         private void SaveData(IEnumerable<ProductModel> products)
