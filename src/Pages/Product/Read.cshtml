@@ -46,20 +46,17 @@
     <br />
 
     <!--Display all comments-->
-    <table class="table table-bordered table-striped">
-        <thead>
-            <tr>All Comments</tr>
-        </thead>
-        <!--Need to implement backend first for this to work-->
-        <tbody>
-            @*
-            @foreach (var product in Model.Product)
-            {
-                <tr>@product.Comments</tr>
-            }
-            *@
-        </tbody>
-    </table>
+    <h4>All Comments</h4>
+    @if (Model.Product.Comments != null)
+    {
+
+        @foreach (var comment in Model.Product.Comments)
+        {
+            <h5>Comment by Anon:</h5>
+            <p>@comment</p>
+        }
+
+    }
 
 </div>
 
