@@ -37,5 +37,19 @@ namespace ContosoCrafts.WebSite.Controllers
             public string ProductId { get; set; }
             public int Rating { get; set; }
         }
+
+        [HttpPatch]
+        public ActionResult Patch([FromBody] CommentRequest request)
+        {
+            ProductService.AddComment(request.ProductId, request.Comment);
+
+            return Ok();
+        }
+
+        public class CommentRequest
+        {
+            public string ProductId { get; set; }
+            public string Comment { get; set; }
+        }
     }
 }
