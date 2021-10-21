@@ -46,14 +46,14 @@
     <br />
 
     <!--Display all comments-->
-    <h4>All Comments</h4>
+    <h4 class="drk-md-light-text">All Comments</h4>
     @if (Model.Product.Comments != null)
     {
 
         @foreach (var comment in Model.Product.Comments)
         {
-            <h5>Comment by Anon:</h5>
-            <p>@comment</p>
+            <h5 class="drk-md-light-text">Comment by Anon:</h5>
+            <p class="drk-md-light-text">@comment</p>
         }
 
     }
