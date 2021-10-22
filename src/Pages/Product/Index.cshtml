@@ -26,10 +26,10 @@
             {
                 <tr>
                     <!--Tile for product name-->
-                    <td>@product.Title</td>
+                    <td><a class="read-link" asp-page="Read" asp-route-id="@product.Id">@product.Title</a></td>
 
                     <!--Link to product Read page-->
-                    <td><a class="read-link" asp-page="Read" asp-route-id="@product.Id">Read</a></td>
+                    @*<td><a class="read-link" asp-page="Read" asp-route-id="@product.Id">Read</a></td>*@
                 </tr>
             }
         </tbody>
