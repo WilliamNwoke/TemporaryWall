@@ -16,7 +16,6 @@
         <thead>
             <tr>
                 <th>Title</th>
-                <th>Action</th>
             </tr>
         </thead>
         <tbody>
@@ -28,8 +27,6 @@
                     <!--Tile for product name-->
                     <td><a class="read-link" asp-page="Read" asp-route-id="@product.Id">@product.Title</a></td>
 
-                    <!--Link to product Read page-->
-                    @*<td><a class="read-link" asp-page="Read" asp-route-id="@product.Id">Read</a></td>*@
                 </tr>
             }
         </tbody>
