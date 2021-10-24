@@ -15,6 +15,7 @@
 <h1 class="title">Read</h1>
 
 <div class="container">
+    @Html.HiddenFor(x => x.Product.Id)
     <!--Product Title-->
     <h5 class="title" id="productTitle">@Model.Product.Title</h5>
 
@@ -24,7 +25,9 @@
     <!--Product Description-->
     <p class="card-text">@Model.Product.Description</p>
 
+    <h4>Add a Comment</h4>
     <!--Add Comment Form-->
+<<<<<<< Updated upstream
     <!--<form>
         <fieldset>
             <legend class="title">Comments</legend>
@@ -43,12 +46,20 @@
             </div>
         </fieldset>
     </form>-->
+=======
+    <form method="post">
+            <textarea id="comment" name="comment" class="form-control"></textarea>
+            <br />
+            <input type="submit" value="Submit" class="btn btn-primary" />
+        </form>
+>>>>>>> Stashed changes
 
     <br />
 
     <!--Display all comments-->
-    <!--<h4 class="drk-md-light-text">All Comments</h4>-->
-    @*@if (Model.Product.Comments != null)
+    <h4 class="drk-md-light-text">All Comments</h4>
+        <br />
+        @if (Model.Product.Comments != null)
         {
 
             @foreach (var comment in Model.Product.Comments)
@@ -57,11 +68,7 @@
                 <p class="drk-md-light-text">@comment</p>
             }
 
-        }*@
-
-    @*<CommentForm Id="@Model.Product.Id" />*@
-
-    @(await Html.RenderComponentAsync<CommentForm>(RenderMode.ServerPrerendered, new { Id = Model.Product.Id }))
+        }
 
 </div>
 
