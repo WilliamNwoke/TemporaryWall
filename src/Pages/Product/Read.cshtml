@@ -26,34 +26,11 @@
     <p class="card-text">@Model.Product.Description</p>
 
     <h4>Add a Comment</h4>
-    <!--Add Comment Form-->
-<<<<<<< Updated upstream
-    <!--<form>
-        <fieldset>
-            <legend class="title">Comments</legend>
-            <div class="container">-->
-    @*<input type="text"
-        name="comment"
-        placeholder="Enter Comment Here"
-        value="" />*@
-    <!--<textarea id="comment"
-                          name="comment"
-                          placeholder="Enter Comment Here"></textarea>
-            </div>
-            <div>
-                <label>&nbsp;</label> 
-                <a asp-page="Comment" asp-route-id="" class="btn btn-primary">Submit Comment</a>
-            </div>
-        </fieldset>
-    </form>-->
-=======
     <form method="post">
             <textarea id="comment" name="comment" class="form-control"></textarea>
             <br />
             <input type="submit" value="Submit" class="btn btn-primary" />
         </form>
->>>>>>> Stashed changes
-
     <br />
 
     <!--Display all comments-->
