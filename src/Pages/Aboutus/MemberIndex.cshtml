@@ -8,33 +8,38 @@
     Desc: Displays a list of all products(arts).
     -->
 <div class="container">
-    <!--Create new product button-->
-    <a asp-page="Create" class="btn btn-link">+ Create</a>
 
     <!--Table of Products-->
     <table class="table table-bordered table-striped">
         <thead>
             <tr>
                 <th>Our Team members</th>
-                <th>Please Donate</th>
+                <th>Please Cantact</th>
             </tr>
         </thead>
         <tbody>
-            <!--Loop to display each product;
-                each iteration makes new row-->
-            @foreach (var member in Model.Members)
-            {
-                <tr>
-                    <!--Show id for member name-->
-                    <td>@member.Maker</td>
-
-                    <!--Show url for donate-->>
-                    <td>@member.Url</td>
-
-                    <!--Link to product Read page-->
-                    <!--<td><a class="read-link" asp-page="Read" asp-route-id="@member.Id">Read</a></td>--->
-                </tr>
-            }
+            <tr>
+                <th>Kramer Johnson</th>
+                <th>https://github.com/HaakenJ</th>
+            </tr>
+        </tbody>
+        <tbody>
+            <tr>
+                <th>Henry Song</th>
+                <th>https://github.com/henryxsong</th>
+            </tr>
+        </tbody>
+        <tbody>
+            <tr>
+                <th>Uchenna Nwoke</th>
+                <th>https://williamnwoke.github.io/</th>
+            </tr>
+        </tbody>
+        <tbody>
+            <tr>
+                <th>Zhicong Zeng</th>
+                <th>https://github.com/Zhicong-Zeng</th>
+            </tr>
         </tbody>
     </table>
 </div>
