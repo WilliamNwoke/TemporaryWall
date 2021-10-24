@@ -36,7 +36,7 @@ namespace ContosoCrafts.WebSite.Services
         /// <returns>iterable list of products</returns>
         public IEnumerable<ProductModel> GetProducts()
         {
-            using(var jsonFileReader = File.OpenText(JsonFileName))
+            using var jsonFileReader = File.OpenText(JsonFileName);//Use simple 'using' statement (IDE0063)
             {
                 return JsonSerializer.Deserialize<ProductModel[]>(jsonFileReader.ReadToEnd(),
                     new JsonSerializerOptions
@@ -102,7 +102,7 @@ namespace ContosoCrafts.WebSite.Services
         private void SaveData(IEnumerable<ProductModel> products)
         {
 
-            using (var outputStream = File.Create(JsonFileName))
+            using var outputStream = File.Create(JsonFileName);//Use simple 'using' statement (IDE0063)
             {
                 JsonSerializer.Serialize<IEnumerable<ProductModel>>(
                     new Utf8JsonWriter(outputStream, new JsonWriterOptions
