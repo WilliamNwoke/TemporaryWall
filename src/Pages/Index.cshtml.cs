@@ -7,10 +7,7 @@ using ContosoCrafts.WebSite.Services;
 namespace ContosoCrafts.WebSite.Pages
 {
     /// <summary>
-    /// Kramer Johnson made a change
-    /// Henry Song
-    /// Zhicong Zeng
-    /// Uchenna Nwoke
+    /// Model for the Index Page
     /// </summary>
     public class IndexModel : PageModel
     {
