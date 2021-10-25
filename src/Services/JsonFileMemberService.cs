@@ -12,7 +12,7 @@ namespace ContosoCrafts.WebSite.Services
    public class JsonFileMemberService
     {
         /// <summary>
-        /// Initiated JsonFileProductService
+        /// Initiated JsonFileMemberService
         /// </summary>
         /// <param name="webHostEnvironment">environment</param>
         public JsonFileMemberService(IWebHostEnvironment webHostEnvironment)
@@ -23,7 +23,7 @@ namespace ContosoCrafts.WebSite.Services
         public IWebHostEnvironment WebHostEnvironment { get; }
 
         /// <summary>
-        /// Returns file path of product json database
+        /// Returns file path of member json database
         /// </summary>
         private string JsonFileName
         {
@@ -31,9 +31,9 @@ namespace ContosoCrafts.WebSite.Services
         }
 
         /// <summary>
-        /// Retrieves products
+        /// Retrieves members
         /// </summary>
-        /// <returns>iterable list of products</returns>
+        /// <returns>iterable list of members</returns>
         public IEnumerable<MemberModel> GetMembers()
         {
             using var jsonFileReader = File.OpenText(JsonFileName); //Use simple 'using' statement (IDE0063)
