@@ -150,7 +150,7 @@ namespace ContosoCrafts.WebSite.Services
             var data = new ProductModel()
             {
                 Id = System.Guid.NewGuid().ToString(),
-                Title = "Enter Title",
+                Title = "i.e. \"Mona Lisa x Leonardo Da Vinci\"",
                 Description = "Enter Description",
                 Url = "Enter URL",
                 Image = "",
