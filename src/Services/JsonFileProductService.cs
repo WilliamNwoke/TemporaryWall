@@ -150,15 +150,20 @@ namespace ContosoCrafts.WebSite.Services
             var data = new ProductModel()
             {
                 Id = System.Guid.NewGuid().ToString(),
-                Title = "Enter Title",
-                Description = "Enter Description",
-                Url = "Enter URL",
+                Title = "",
+                Description = "",
+                Url = "",
                 Image = "",
             };
 
             // Get the current set, and append the new record to it becuase IEnumerable does not have Add
             var dataSet = GetProducts();
-            dataSet = dataSet.Append(data);
+            
+            // Only appends new product to JSON database if all fields have input
+            if (data.Title != "" && data.Description != "" && data.Url != "" && data.Image != "")
+            {
+                dataSet = dataSet.Append(data);
+            }
 
             SaveData(dataSet);
 
