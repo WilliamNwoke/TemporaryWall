@@ -3,6 +3,9 @@ using Microsoft.Extensions.Logging;
 
 namespace ContosoCrafts.WebSite.Pages
 {
+    /// <summary>
+    /// Model for the About Us Page
+    /// </summary>
     public class AboutUsModel : PageModel
     {
         private readonly ILogger<AboutUsModel> _logger;
