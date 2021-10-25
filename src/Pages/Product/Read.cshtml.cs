@@ -9,6 +9,9 @@ using System.ComponentModel.DataAnnotations;
 
 namespace ContosoCrafts.WebSite.Pages.Product
 {
+    /// <summary>
+    /// Model for Read Page
+    /// </summary>
     public class ReadModel : PageModel
     {
         // Comment variable required and max length
