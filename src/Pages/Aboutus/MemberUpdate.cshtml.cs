@@ -37,7 +37,7 @@ namespace ContosoCrafts.WebSite.Pages.Aboutus
         /// <param name="id"></param>
         public void OnGet(string id)
         {
-            Product  = ProductService.GetProducts().FirstOrDefault(m => m.Id.Equals(id));
+            Product  = ProductService.GetAllData().FirstOrDefault(m => m.Id.Equals(id));
         }
 
         /// <summary>

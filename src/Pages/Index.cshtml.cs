@@ -27,7 +27,7 @@ namespace ContosoCrafts.WebSite.Pages
         // Retrieves Products using razor component
         public void OnGet()
         {
-            Products = ProductService.GetProducts();
+            Products = ProductService.GetAllData();
         }
     }
     public class MemberIndexModel : PageModel
