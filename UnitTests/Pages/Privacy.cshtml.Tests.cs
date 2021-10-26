@@ -32,7 +32,7 @@ namespace UnitTests.Pages.Privacy
         public static TempDataDictionary tempData;
         public static PageContext pageContext;
 
-        public static PrivacyModel pageModel;
+        public static AboutUsModel pageModel;
 
         [SetUp]
         public void TestInitialize()
@@ -63,12 +63,12 @@ namespace UnitTests.Pages.Privacy
             mockWebHostEnvironment.Setup(m => m.WebRootPath).Returns("../../../../src/bin/Debug/netcoreapp3.0/wwwroot");
             mockWebHostEnvironment.Setup(m => m.ContentRootPath).Returns("./data/");
 
-            var MockLoggerDirect = Mock.Of<ILogger<PrivacyModel>>();
+            var MockLoggerDirect = Mock.Of<ILogger<AboutUsModel>>();
             JsonFileProductService productService;
 
             productService = new JsonFileProductService(mockWebHostEnvironment.Object);
 
-            pageModel = new PrivacyModel(MockLoggerDirect)
+            pageModel = new AboutUsModel(MockLoggerDirect)
             {
                 PageContext = pageContext,
                 TempData = tempData,
