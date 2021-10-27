@@ -42,5 +42,7 @@ namespace UnitTests.Pages.Index
             Assert.AreEqual(true, pageModel.Products.ToList().Any());
         }
         #endregion OnGet
+
+
     }
 }

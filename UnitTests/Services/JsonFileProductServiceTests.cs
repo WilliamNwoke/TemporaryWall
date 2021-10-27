@@ -113,17 +113,45 @@ namespace UnitTests.Pages.Product.AddComment
 
         #region AddComment
         [Test]
-        public void AddComment_Valid_Should_GetAllData()
+        public void AddComment_Valid_Data_Valid_Comment_Valid_AddComment_Should_Pass()
         {
             // Arrange
             var data = TestHelper.ProductService.GetAllData().First();
-            var data2 = TestHelper.ProductService.GetAllData().Last();
             // Act
-
-            // Assert
             TestHelper.ProductService.AddComment(data.Id, data.Title);
-            TestHelper.ProductService.AddComment(data2.Id, null);
+            // Assert
+
         }
         #endregion AddComment
+
+        #region AddComment
+        [Test]
+        public void AddComment_Valid__Data_Valid_Comment_Invalid_AddComment_Should_Pass()
+        {
+            // Arrange
+            var data = TestHelper.ProductService.GetAllData().Last();
+            // Act
+            TestHelper.ProductService.AddComment(data.Id, null);
+
+            // Assert
+
+        }
+        #endregion AddComment
+
+
+        #region ProductModeltoString
+        [Test]
+        public void ProductModeltoString_Valid_Should_Pass()
+        {
+            // Arrange
+
+            // Act
+            var data = TestHelper.ProductService.GetAllData().First();
+            var result = data.ToString();
+
+            // Assert
+            Assert.AreEqual(null, result);
+        }
+        #endregion ProductModeltoString
     }
 }
