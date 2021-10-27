@@ -20,14 +20,21 @@
         </thead>
         <tbody>
             <!--Loop to display each product;
-                each iteration makes new row-->
+        each iteration makes new row-->
             @foreach (var product in Model.Products)
             {
-                <tr>
-                    <!--Tile for product name-->
-                    <td><a class="read-link" asp-page="Read" asp-route-id="@product.Id">@product.Title</a></td>
+                @if (product.Title == null  || product.Title == "Enter Title")
+                {
+                    continue;
+                }
+                else
+                {
+                    <tr>
+                        <!--Tile for product name-->
+                        <td><a class="read-link" asp-page="Read" asp-route-id="@product.Id">@product.Title</a></td>
 
-                </tr>
+                    </tr>
+                }            
             }
         </tbody>
     </table>
