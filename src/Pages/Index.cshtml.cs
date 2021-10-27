@@ -30,21 +30,4 @@ namespace ContosoCrafts.WebSite.Pages
             Products = ProductService.GetAllData();
         }
     }
-    public class MemberIndexModel : PageModel
-    {
-        private readonly ILogger<IndexModel> _logger;
-
-        public MemberIndexModel(ILogger<IndexModel> logger,
-            JsonFileMemberService memberService)
-        {
-            _logger = logger;
-            MemberService = memberService;
-        }
-
-        // Retrieves Product Service
-        public JsonFileMemberService MemberService { get; }
-
-        // Retrieves Products using razor component
-
-    }
 }
