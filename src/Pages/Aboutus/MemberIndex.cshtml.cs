@@ -16,13 +16,9 @@ namespace ContosoCrafts.WebSite.Pages.Aboutus
         /// Default Constructor
         /// </summary>
         /// <param name="memberService"></param>
-        public IndexModel(JsonFileMemberService memberService)
-        {
-            MemberService = memberService;
-        }
+  
 
         // Data Service
-        public JsonFileMemberService MemberService { get; }
         
         // Collection of the Data
         public IEnumerable<MemberModel> Members { get; private set; }
@@ -30,9 +26,6 @@ namespace ContosoCrafts.WebSite.Pages.Aboutus
         /// <summary>
         /// REST OnGet, return all data
         /// </summary>
-        public void OnGet()
-        {
-            Members = MemberService.GetMembers();
-        }
+
     }
 }

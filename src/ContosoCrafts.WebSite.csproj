@@ -10,9 +10,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Content Update="wwwroot\data\members.json">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
     <Content Update="wwwroot\data\products.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
