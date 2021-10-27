@@ -22,16 +22,5 @@ namespace ContosoCrafts.WebSite.Pages.Aboutus
             MemberService = memberService;
         }
 
-        // The data to show
-        public MemberModel Member;
-
-        /// <summary>
-        /// REST Get request
-        /// </summary>
-        /// <param name="id"></param>
-        public void OnGet(string id)
-        {
-            Member  = MemberService.GetMembers().FirstOrDefault(m => m.Id.Equals(id));
-        }
     }
 }

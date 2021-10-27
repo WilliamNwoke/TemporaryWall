@@ -43,12 +43,8 @@ namespace ContosoCrafts.WebSite.Pages
 
         // Retrieves Product Service
         public JsonFileMemberService MemberService { get; }
-        public IEnumerable<MemberModel> Members { get; private set; }
 
         // Retrieves Products using razor component
-        public void OnGet()
-        {
-            Members = MemberService.GetMembers();
-        }
+
     }
 }

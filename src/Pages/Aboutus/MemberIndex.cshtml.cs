@@ -12,20 +12,7 @@ namespace ContosoCrafts.WebSite.Pages.Aboutus
     /// </summary>
     public class IndexModel : PageModel
     {
-        /// <summary>
-        /// Default Constructor
-        /// </summary>
-        /// <param name="memberService"></param>
-  
 
-        // Data Service
-        
-        // Collection of the Data
-        public IEnumerable<MemberModel> Members { get; private set; }
-
-        /// <summary>
-        /// REST OnGet, return all data
-        /// </summary>
 
     }
 }
