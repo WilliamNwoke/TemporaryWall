@@ -21,14 +21,14 @@ namespace ContosoCrafts.WebSite.Controllers
         [HttpGet]
         public IEnumerable<ProductModel> Get()
         {
-            return ProductService.GetAllData();
+            return ProductService.GetProducts();
         }
 
         [HttpPatch]
         public ActionResult Patch([FromBody] RatingRequest request)
         {
             ProductService.AddRating(request.ProductId, request.Rating);
-            
+
             return Ok();
         }
 
