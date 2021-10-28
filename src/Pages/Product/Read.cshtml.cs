@@ -16,9 +16,6 @@ namespace ContosoCrafts.WebSite.Pages.Product
     {
         // Comment variable required and max length
         [BindProperty]
-        [Required]
-        [MaxLength(250)]
-        [MinLength(1)]
         public string Comment { get; set; }
 
         // The data to show, bind to it for the post
@@ -55,7 +52,17 @@ namespace ContosoCrafts.WebSite.Pages.Product
         {
             //var comment = Request.Form["comment"];
 
-            if (!ModelState.IsValid)
+            if (Comment == null)
+            {
+                return RedirectToPage("./Read");
+            }
+
+            if (Comment.Length <= 0)
+            {
+                return RedirectToPage("./Read");
+            }
+
+            if (Comment.Length > 250)
             {
                 return RedirectToPage("./Read");
             }
