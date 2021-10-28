@@ -1,11 +1,9 @@
 [
   {
     "Id": "the-starry-night",
-    "Maker": "vincent-van-gogh",
+    "Artist": "vincent-van-gogh",
     "img": "https://www.worldatlas.com/r/w960-q80/upload/1f/e7/fd/1280px-van-gogh-starry-night-google-art-project.jpg",
-    "Url": "https://www.worldatlas.com/articles/where-to-see-the-10-most-famous-painting-of-the-world.html",
     "Title": "The Starry Night x Vincent van Gogh",
-    "Description": "The painting was made in 1889 and depicts the city of Saint-Remy under the swirling sun.",
     "Ratings": [
       5,
       5,
@@ -24,7 +22,7 @@
   },
   {
     "Id": "mona-lisa",
-    "Maker": "leonardo-da-vinci",
+    "Artist": "leonardo-da-vinci",
     "img": "https://www.worldatlas.com/r/w960-q80/upload/5c/4a/1e/800px-mona-lisa-by-leonardo-da-vinci-from-c2rmf-retouched.jpg",
     "Url": "https://www.worldatlas.com/articles/where-to-see-the-10-most-famous-painting-of-the-world.html",
     "Title": "Mona Lisa x Leonardo Da Vinci",
@@ -34,7 +32,7 @@
   },
   {
     "Id": "the-last-supper",
-    "Maker": "leonardo-da-vinci",
+    "Artist": "leonardo-da-vinci",
     "img": "https://www.worldatlas.com/r/w960-q80/upload/f2/91/94/1600px-u-ltima-cena-da-vinci-5.jpg",
     "Url": "https://www.worldatlas.com/articles/where-to-see-the-10-most-famous-painting-of-the-world.html",
     "Title": "The Last Supper x Leonardo Da Vinci",
@@ -44,7 +42,7 @@
   },
   {
     "Id": "the-scream",
-    "Maker": "vincent-van-gogh",
+    "Artist": "vincent-van-gogh",
     "img": "https://www.worldatlas.com/r/w960-q80/upload/5f/96/29/edvard-munch-1893-the-scream-oil-tempera-and-pastel-on-cardboard-91-x-73-cm-national-gallery-of-norway.jpg",
     "Url": "https://www.worldatlas.com/articles/where-to-see-the-10-most-famous-painting-of-the-world.html",
     "Title": "The Scream x Edvard Munch",
@@ -54,7 +52,7 @@
   },
   {
     "Id": "the-girl-with-a-pearl-earing",
-    "Maker": "johannes-vermeer",
+    "Artist": "johannes-vermeer",
     "img": "https://www.worldatlas.com/r/w960-q80/upload/9d/d2/c4/meisje-met-de-parel.jpg",
     "Url": "https://www.worldatlas.com/articles/where-to-see-the-10-most-famous-painting-of-the-world.html",
     "Title": "The Girl With A Pearl Earring x Johannes Vermeer",
@@ -64,7 +62,7 @@
   },
   {
     "Id": "guernica",
-    "Maker": "pablo-picasso",
+    "Artist": "pablo-picasso",
     "img": "https://www.worldatlas.com/r/w960-q80/upload/ca/27/70/shutterstock-337184468.jpg",
     "Url": "https://www.worldatlas.com/articles/where-to-see-the-10-most-famous-painting-of-the-world.html",
     "Title": "Guernica x Pablo Picasso",
@@ -76,7 +74,7 @@
   },
   {
     "Id": "the-birth-of-venus",
-    "Maker": "sandro-botticelli",
+    "Artist": "sandro-botticelli",
     "img": "https://www.worldatlas.com/r/w960-q80/upload/d3/75/8b/1599px-sandro-botticelli-la-nascita-di-venere-google-art-project-edited.jpg",
     "Url": "https://www.worldatlas.com/articles/where-to-see-the-10-most-famous-painting-of-the-world.html",
     "Title": "The Birth of Venus x Sandro Botticelli",
@@ -86,7 +84,7 @@
   },
   {
     "Id": "the-night-watch",
-    "Maker": "rembrandt",
+    "Artist": "rembrandt",
     "img": "https://www.worldatlas.com/r/w960-q80/upload/45/77/b8/shutterstock-377749780.jpg",
     "Url": "https://www.worldatlas.com/articles/where-to-see-the-10-most-famous-painting-of-the-world.html",
     "Title": "The Night Watch x Rembrandt",
@@ -96,7 +94,7 @@
   },
   {
     "Id": "the-persistance-of-memory",
-    "Maker": "salvador-dali",
+    "Artist": "salvador-dali",
     "img": "https://www.worldatlas.com/r/w960-q80/upload/af/d1/ed/persistenceofmemory.jpg",
     "Url": "https://www.worldatlas.com/articles/where-to-see-the-10-most-famous-painting-of-the-world.html",
     "Title": "The Persistence Of Memory x Salvador Dali",
@@ -106,7 +104,7 @@
   },
   {
     "Id": "Whistler\u0027s Mother\u0027",
-    "Maker": "james-mcneill-whistler",
+    "Artist": "james-mcneill-whistler",
     "img": "https://www.worldatlas.com/r/w960-q80/upload/ca/13/25/whistlers-mother-high-res.jpg",
     "Url": "https://www.worldatlas.com/articles/where-to-see-the-10-most-famous-painting-of-the-world.html",
     "Title": "Whistler\u0027s Mother x James McNeill Whistler",
@@ -116,7 +114,7 @@
   },
   {
     "Id": "st-george-and-the-dragon",
-    "Maker": "raphael",
+    "Artist": "raphael",
     "img": "https://www.artandobject.com/sites/default/files/styles/gallery_item/public/raphael-saint-george-and-dragon-1506-oil-panel-1122-x-846-285-x-215-cm-national-gallery-art.jpg?h=9b09a626\u0026itok=VY-RvbZw",
     "Url": "https://www.artandobject.com/news/history-and-iconography-st-george-and-dragon",
     "Title": "St. George and the Dragon x Raphael",
@@ -126,7 +124,7 @@
   },
   {
     "Id": "american-gothic",
-    "Maker": "grant-wood",
+    "Artist": "grant-wood",
     "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cc/Grant_Wood_-_American_Gothic_-_Google_Art_Project.jpg/240px-Grant_Wood_-_American_Gothic_-_Google_Art_Project.jpg",
     "Url": "https://en.wikipedia.org/wiki/American_Gothic",
     "Title": "American Gothic x Grant Wood",
@@ -136,7 +134,7 @@
   },
   {
     "Id": "the-great-wave-off-kanagawa",
-    "Maker": "hokusai",
+    "Artist": "hokusai",
     "img": "https://www.touropia.com/gfx/b/2010/10/the_great_wave_off_kanagawa.jpg",
     "Url": "https://www.touropia.com/most-famous-paintings/",
     "Title": "The Great Wave off Kanagawa x Hokusai",
@@ -146,7 +144,7 @@
   },
   {
     "Id": "composition-abstraite",
-    "Maker": "serge-poliakoff",
+    "Artist": "serge-poliakoff",
     "img": "https://sothebys-com.brightspotcdn.com/dims4/default/a473902/2147483647/strip/true/crop/4830x3559\u002B0\u002B0/resize/1303x960!/quality/90/?url=http%3A%2F%2Fsothebys-brightspot.s3.amazonaws.com%2Fdotcom%2F8c%2F4e%2Ff4fe0a95487d80de0854f2264296%2Fmodernites-highlights-2019-paris-crop-216pf1916-bcbjc-1.jpg",
     "Url": "https://www.sothebys.com/en/auctions/ecatalogue/2019/modernites-pf1916/lot.36.html?locale=en",
     "Title": "Composition Abstraite x Serge Poliakoff",
@@ -156,41 +154,11 @@
   },
   {
     "Id": "self-portrait",
-    "Maker": "vincent-van-gogh",
+    "Artist": "vincent-van-gogh",
     "img": "https://static01.nyt.com/images/2007/03/23/arts/25gogh450.1.jpg?quality=75\u0026auto=webp\u0026disable=upscale",
     "Url": "https://artsandculture.google.com/asset/self-portrait/9gFw_1Vou2CkwQ?hl=en\u0026ms=%7B%22x%22%3A0.5%2C%22y%22%3A0.5%2C%22z%22%3A9.595224520291282%2C%22size%22%3A%7B%22width%22%3A0.8982178622136271%2C%22height%22%3A1.2374999999999992%7D%7D",
     "Title": "Self-Portrait x Vincent Van Gogh",
     "Description": "The artist is wearing a suit and not the pea jacket he usually worked in. Attention is focused on the face. His features are hard and emaciated, his green-rimmed eyes seem intransigent and anxious.",
-    "Ratings": null,
-    "Comments": null
-  },
-  {
-    "Id": "f2dbd881-f763-4700-bb3f-83ce3e3cd124",
-    "Maker": null,
-    "img": "",
-    "Url": "",
-    "Title": "",
-    "Description": "",
-    "Ratings": null,
-    "Comments": null
-  },
-  {
-    "Id": "272a736c-9bf3-4de6-91a8-3e386e6eef7c",
-    "Maker": null,
-    "img": "",
-    "Url": "",
-    "Title": "",
-    "Description": "",
-    "Ratings": null,
-    "Comments": null
-  },
-  {
-    "Id": "255508b2-24de-4fb3-b1ed-1c2826fed3dd",
-    "Maker": null,
-    "img": "",
-    "Url": "",
-    "Title": "",
-    "Description": "",
     "Ratings": null,
     "Comments": null
   }
