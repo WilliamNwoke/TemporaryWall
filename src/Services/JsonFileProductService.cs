@@ -130,9 +130,9 @@ namespace ContosoCrafts.WebSite.Services
                 return null;
             }
 
-            productData.Title = data.Title;
+            productData.Artist = data.Artist;
+            productData.Title = data.Title;            
             productData.Description = data.Description;
-            productData.Url = data.Url;
             productData.Image = data.Image;
 
             SaveData(products);
@@ -150,9 +150,9 @@ namespace ContosoCrafts.WebSite.Services
             var data = new ProductModel()
             {
                 Id = System.Guid.NewGuid().ToString(),
+                Artist = "",
                 Title = "",
                 Description = "",
-                Url = "",
                 Image = "",
             };
 
