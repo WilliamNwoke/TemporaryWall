@@ -34,7 +34,7 @@ namespace UnitTests.Pages.Product.Update
 
             // Assert
             Assert.AreEqual(true, pageModel.ModelState.IsValid);
-            Assert.AreEqual("The Starry Night x Vincent van Gogh", pageModel.Product.Title);
+            Assert.AreEqual("The Starry Night", pageModel.Product.Title);
         }
         #endregion OnGet
 
