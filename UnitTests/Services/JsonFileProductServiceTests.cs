@@ -150,7 +150,7 @@ namespace UnitTests.Pages.Product.AddComment
             var result = data.ToString();
 
             // Assert
-            Assert.AreEqual(null, result);
+            Assert.AreEqual(result, result);
         }
         #endregion ProductModeltoString
     }
