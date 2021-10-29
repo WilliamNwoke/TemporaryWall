@@ -77,7 +77,8 @@ namespace UnitTests
 
             productService = new JsonFileProductService(TestHelper.MockWebHostEnvironment.Object);
 
-
+            // Creates ProductsController for use in TestHelper
+            // Also serves as test for ProductsController(ContosoCrafts.WebSite.Services.JsonFileProductService)
             ProductsController productController = new ProductsController(TestHelper.ProductService);
         }
     }
