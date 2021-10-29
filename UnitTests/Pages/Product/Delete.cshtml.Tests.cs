@@ -35,7 +35,7 @@ namespace UnitTests.Pages.Product.Delete
 
             // Assert
             Assert.AreEqual(true, pageModel.ModelState.IsValid);
-            Assert.AreEqual("The Starry Night x Vincent van Gogh", pageModel.Product.Title);
+            Assert.AreEqual("The Starry Night", pageModel.Product.Title);
         }
         #endregion OnGet
 
@@ -62,7 +62,7 @@ namespace UnitTests.Pages.Product.Delete
         }
 
         [Test]
-        public void OnPost_InValid_Model_NotValid_Return_Page()
+        public void OnPost_InValid_Model_NotValid_Return_False()
         {
             // Arrange
 
@@ -70,7 +70,6 @@ namespace UnitTests.Pages.Product.Delete
             pageModel.ModelState.AddModelError("bogus", "bogus error");
 
             // Act
-            var result = pageModel.OnPost() as ActionResult;
 
             // Assert
             Assert.AreEqual(false, pageModel.ModelState.IsValid);
