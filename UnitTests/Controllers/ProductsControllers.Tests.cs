@@ -14,8 +14,6 @@ namespace UnitTests.Controllers
     public class ProductsControllers
     {
         #region TestSetup
-        //Variable for product controller
-        public static JsonFileProductService productService;
 
         /// <summary>
         /// Initialize Test
@@ -23,26 +21,24 @@ namespace UnitTests.Controllers
         [SetUp]
         public void TestInitialize()
         {
-            controller = new ProductsControllers(productService)
-            {
-            };
         }
 
         #endregion TestSetup
 
 
-        #region Get
-        public void Get_Valid_Should_Return_Products()
+        #region ProductService
+        public static void Get_ProductService_Valid_Should_Return_JsonFileProductService()
         {
             // Arrange
 
             // Act
-            var products = controller.Get();
+            var products = TestHelper.ProductService.GetProducts();
+            var results = TestHelper.ProductController.Get();
 
             // Assert
-
+            Assert.AreEqual(products, results);
         }
 
-        #endregion Get
+        #endregion ProductService
     }
 }
