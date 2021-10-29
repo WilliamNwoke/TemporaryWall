@@ -1,8 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Linq;
+
+using Microsoft.AspNetCore.Mvc;
+
+using NUnit.Framework;
+
+using ContosoCrafts.WebSite.Pages.Product;
+using ContosoCrafts.WebSite.Models;
+using ContosoCrafts.WebSite.Controllers;
 
 namespace UnitTests.Controllers
 {
