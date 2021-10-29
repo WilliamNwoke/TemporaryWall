@@ -48,7 +48,6 @@ namespace UnitTests.Pages.Product.Update
                 Id = "selinazawacki-moon",
                 Title = "title",
                 Description = "description",
-                Url = "url",
                 Image = "image"
             };
 
