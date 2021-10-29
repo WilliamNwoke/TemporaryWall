@@ -11,6 +11,7 @@ using Microsoft.AspNetCore.Routing;
 using Moq;
 
 using ContosoCrafts.WebSite.Services;
+using ContosoCrafts.WebSite.Controllers;
 
 namespace UnitTests
 {
@@ -38,6 +39,7 @@ namespace UnitTests
         public static TempDataDictionary TempData;
         public static PageContext PageContext;
         public static JsonFileProductService ProductService;
+        public static ProductsController ProductController;
 
         /// <summary>
         /// Default Constructor
@@ -74,6 +76,9 @@ namespace UnitTests
             JsonFileProductService productService;
 
             productService = new JsonFileProductService(TestHelper.MockWebHostEnvironment.Object);
+
+
+            ProductsController productController = new ProductsController(TestHelper.ProductService);
         }
     }
 }
