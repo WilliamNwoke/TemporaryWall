@@ -42,7 +42,7 @@ namespace UnitTests.Pages.Product.AddRating
         public void AddRating_Valid_Product_Valid_AddRating_SmallThanZero_Should_Return_False_()
         {
             // Arrange
-            var data = TestHelper.ProductService.GetAllData().First();
+            var data = TestHelper.ProductService.GetProducts().First();
 
             // Act
             var result = TestHelper.ProductService.AddRating(data.Id, -1);
@@ -55,7 +55,7 @@ namespace UnitTests.Pages.Product.AddRating
         public void AddRating_Valid_Product_Valid_AddRating_BiggerThanFive_Should_Return_False()
         {
             // Arrange
-            var data = TestHelper.ProductService.GetAllData().First();
+            var data = TestHelper.ProductService.GetProducts().First();
 
             // Act
             var result = TestHelper.ProductService.AddRating(data.Id, 6);
@@ -68,7 +68,7 @@ namespace UnitTests.Pages.Product.AddRating
         public void AddRating_Valid_Product_Valid_AddRating_Valid_Result_ValveIsNull_Should_Return_True()
         {
             // Arrange
-            var data = TestHelper.ProductService.GetAllData().Last();
+            var data = TestHelper.ProductService.GetProducts().Last();
 
             // Act
             var result = TestHelper.ProductService.AddRating(data.Id, 4);
@@ -83,12 +83,12 @@ namespace UnitTests.Pages.Product.AddRating
             // Arrange
 
             // Get the First data item
-            var data = TestHelper.ProductService.GetAllData().First();
+            var data = TestHelper.ProductService.GetProducts().First();
             var countOriginal = data.Ratings.Length;
 
             // Act
             var result = TestHelper.ProductService.AddRating(data.Id, 5);
-            var dataNewList = TestHelper.ProductService.GetAllData().First();
+            var dataNewList = TestHelper.ProductService.GetProducts().First();
 
             // Assert
             Assert.AreEqual(true, result);
@@ -116,7 +116,7 @@ namespace UnitTests.Pages.Product.AddComment
         public void AddComment_Valid_Data_Valid_Comment_Valid_AddComment_Should_Pass()
         {
             // Arrange
-            var data = TestHelper.ProductService.GetAllData().First();
+            var data = TestHelper.ProductService.GetProducts().First();
             // Act
             TestHelper.ProductService.AddComment(data.Id, data.Title);
             // Assert
@@ -129,7 +129,7 @@ namespace UnitTests.Pages.Product.AddComment
         public void AddComment_Valid__Data_Valid_Comment_Invalid_AddComment_Should_Pass()
         {
             // Arrange
-            var data = TestHelper.ProductService.GetAllData().Last();
+            var data = TestHelper.ProductService.GetProducts().Last();
             // Act
             TestHelper.ProductService.AddComment(data.Id, null);
 
@@ -146,7 +146,7 @@ namespace UnitTests.Pages.Product.AddComment
             // Arrange
 
             // Act
-            var data = TestHelper.ProductService.GetAllData().First();
+            var data = TestHelper.ProductService.GetProducts().First();
             var result = data.ToString();
 
             // Assert
