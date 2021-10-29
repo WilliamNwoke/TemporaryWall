@@ -20,21 +20,28 @@
         <!--Title-->
         <div class="form-group">
             <label asp-for="Product.Title" class="control-label"></label>
-            <input asp-for="Product.Title" class="form-control" placeholder="e.g. 'Mona Lisa x Leonardo Da Vinci'"/>
+            <input asp-for="Product.Title" class="form-control" placeholder="e.g. 'Mona Lisa'" />
             <span asp-validation-for="Product.Title" class="text-danger"></span>
+        </div>
+
+        <!--Artist-->
+        <div class="form-group">
+            <label asp-for="Product.Artist" class="control-label"></label>
+            <input asp-for="Product.Artist" class="form-control" placeholder="e.g. 'Leonardo Da Vinci'" />
+            <span asp-validation-for="Product.Artist" class="text-danger"></span>
         </div>
 
         <!--Description-->
         <div class="form-group">
             <label asp-for="Product.Description" class="control-label"></label>
-            <input asp-for="Product.Description" class="form-control" placeholder="Description of Artpiece"/>
+            <input asp-for="Product.Description" class="form-control" placeholder="Description of Artpiece" />
             <span asp-validation-for="Product.Description" class="text-danger"></span>
         </div>
 
         <!--Image-->
         <div class="form-group">
             <label asp-for="Product.Image" class="control-label"></label>
-            <input asp-for="Product.Image" class="form-control" placeholder="URL to image"/>
+            <input asp-for="Product.Image" class="form-control" placeholder="URL to image" />
             <span asp-validation-for="Product.Image" class="text-danger"></span>
         </div>
 
