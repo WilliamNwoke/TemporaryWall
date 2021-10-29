@@ -6,7 +6,19 @@ using System.Threading.Tasks;
 
 namespace UnitTests.Controllers
 {
-    class ProductControllers
+    public class ProductControllers
     {
+        #region TestSetup
+        public static ProductControllers controller;
+
+        [SetUp]
+        public void TestInitialize()
+        {
+            controller = new ProductControllers()
+            {
+            };
+        }
+
+        #endregion TestSetup
     }
 }
