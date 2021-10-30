@@ -13,6 +13,7 @@ namespace UnitTests.Controllers
 {
     public class ProductsControllers
     {
+        //--------------------------------------------------------------------------------
         #region TestSetup
 
         /// <summary>
@@ -24,21 +25,35 @@ namespace UnitTests.Controllers
         }
 
         #endregion TestSetup
+        //--------------------------------------------------------------------------------
 
-
-        #region ProductService
-        public static void Get_ProductService_Valid_Should_Return_JsonFileProductService()
+        //--------------------------------------------------------------------------------
+        #region CommentRequest
+        [Test]
+        public void Get_Comment_ProductID_Valid_Should_Return_True()
         {
             // Arrange
 
             // Act
-            var products = TestHelper.ProductService.GetProducts();
-            var results = TestHelper.ProductController.Get();
+            var results = TestHelper.CommentRequest.ProductId;
 
             // Assert
-            Assert.AreEqual(products, results);
+            Assert.AreEqual(null, results);
         }
 
-        #endregion ProductService
+        [Test]
+        public void Get_Comment_Valid_Should_Return_True()
+        {
+            // Arrange
+
+            // Act
+            var results = TestHelper.CommentRequest.Comment;
+
+            // Assert
+            Assert.AreEqual(null, results);
+        }
+
+        #endregion CommentRequest
+        //--------------------------------------------------------------------------------
     }
 }
