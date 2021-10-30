@@ -40,6 +40,8 @@ namespace UnitTests
         public static PageContext PageContext;
         public static JsonFileProductService ProductService;
         public static ProductsController ProductController;
+        public static ProductsController.CommentRequest CommentRequest;
+        public static ProductsController.RatingRequest RatingRequest;
 
         /// <summary>
         /// Default Constructor
@@ -80,6 +82,8 @@ namespace UnitTests
             // Creates ProductsController for use in TestHelper
             // Also serves as test for ProductsController(ContosoCrafts.WebSite.Services.JsonFileProductService)
             ProductsController productController = new ProductsController(TestHelper.ProductService);
+            CommentRequest = new ProductsController.CommentRequest();
+            RatingRequest = new ProductsController.RatingRequest();
         }
     }
 }
