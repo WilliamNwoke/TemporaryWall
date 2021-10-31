@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Mvc;
 
 using NUnit.Framework;
 
+
 using ContosoCrafts.WebSite.Pages.Product;
 using ContosoCrafts.WebSite.Models;
 using ContosoCrafts.WebSite.Controllers;
@@ -109,5 +110,23 @@ namespace UnitTests.Controllers
 
         #endregion CommentRequest
         //--------------------------------------------------------------------------------
+
+
+        //No Assert Because this Unit test is to test the menthod set function work
+        #region SetCommentSetProductId
+        [Test]
+        public void Set_Comment_Set_ProductId_Should_Pass()
+        {
+            // Arrange
+
+            // Act
+            var comment = new ProductsController.CommentRequest { Comment = "fgdf", ProductId = "sdfs" };
+
+            // Assert
+
+        }
+        #endregion SetComment
+        //--------------------------------------------------------------------------------
+
     }
 }
