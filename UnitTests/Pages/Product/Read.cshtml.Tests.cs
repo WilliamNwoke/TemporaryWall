@@ -1,4 +1,3 @@
-
 using NUnit.Framework;
 
 using ContosoCrafts.WebSite.Pages.Product;
@@ -35,46 +34,57 @@ namespace UnitTests.Pages.Product.Read
         }
         #endregion OnGet
 
-        /*
- #region GetComment
- [Test]
- public void GetComment_Valid_Should_Pass()
- {
- // Arrange
+        
+        #region GetComment
+        [Test]
+        public void GetComment_Valid_Should_Pass()
+        {
+            // Arrange
 
- // Act
+            // Act
 
- // Assert
-     Assert.AreEqual(null, pageModel.Comment);
- }
- #endregion GetComment
+            // Assert
+            Assert.AreEqual(null, pageModel.Comment);
+        }
+        #endregion GetComment
 
- #region SetComment
- [Test]
- public void SetComment_Valid_Should_Add()
- {
-     // Arrange
+        #region SetComment
+        [Test]
+        public void SetComment_Valid_Should_Add()
+        {
+        // Arrange
 
-     // Act
+        // Act
 
-     // Assert
-     Assert.AreEqual(null, pageModel.Comment('dfds');
- }
- #endregion GetComment
+        // Assert
+            
+        }
+        #endregion GetComment
 
 
- #region OnPost
- [Test]
- public void OnPost_Valid_Should_Pass()
- {
-     // Arrange
+        #region OnPost
+        [Test]
+        public void OnPost_Comment_Null_Should_Pass()
+        {
+            // Arrange
 
-     // Act
-     pageModel.OnPost();
+            // Act
+            pageModel.OnPost();
+            // Assert
+        }
+        #endregion OnPost*/
 
-     // Assert
-     Assert.AreEqual(true, result);
- }
- #endregion OnPost*/
+        #region ReadModelSetComment
+        [Test]
+        public void ReadModel_Set_Comment_Should_Pass()
+        {
+            // Arrange
+            var comment = new ReadModel(TestHelper.ProductService){ Comment = ""};
+
+            // Act
+
+            // Assert
+        }
+        #endregion ReadModelSetComment
     }
 }
