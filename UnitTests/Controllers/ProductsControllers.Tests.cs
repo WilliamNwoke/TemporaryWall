@@ -29,6 +29,71 @@ namespace UnitTests.Controllers
         //--------------------------------------------------------------------------------
 
         //--------------------------------------------------------------------------------
+        #region ProductController
+        [Test]
+        public void Get_ProductService_Valid_Should_Return_True()
+        {
+            // Arrange
+            var controller = TestHelper.ProductController;
+
+
+            // Act
+            //var products = TestHelper.ProductService;
+            var results = controller.ProductService;
+
+            // Assert
+            Assert.AreEqual(TestHelper.ProductService, results);
+        }
+
+        [Test]
+        public void Get_Valid_Should_Return_True()
+        {
+            // Arrange
+            var data = TestHelper.ProductService.GetProducts();
+            // Act
+
+            var results = TestHelper.ProductController.Get();
+
+            // Assert
+            Assert.AreEqual(data, results);
+        }
+
+        [Test]
+        public void Patch_RatingRequest_Valid_Should_Return_Ok()
+        {
+            // Arrange
+
+            // Act
+            var ok = new ProductsController.RatingRequest();
+            var product = TestHelper.RatingRequest;
+            product.ProductId = "the-last-supper";
+            product.Rating = 0;
+            var results = TestHelper.ProductController.Patch(product);
+
+            // Assert
+            Assert.AreEqual(null, results);
+        }
+
+        [Test]
+        [HttpPatch]
+        public void Patch_CommentRequest_Valid_Should_Return_Ok()
+        {
+            // Arrange
+
+            // Act
+            var request = TestHelper.CommentRequest;
+            request.ProductId = "the-starry-night";
+            request.Comment = "O hi there";
+            ActionResult ok = TestHelper.ProductController.Patch(request);
+
+            // Assert
+            Assert.AreEqual(ok, ok);
+        }
+
+        #endregion ProductController
+        //--------------------------------------------------------------------------------
+
+        //--------------------------------------------------------------------------------
         #region RatingRequest
         [Test]
         public void Get_Rating_ProductID_Valid_Should_Return_True()
