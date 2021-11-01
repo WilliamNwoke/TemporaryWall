@@ -1,6 +1,8 @@
 using NUnit.Framework;
 
 using ContosoCrafts.WebSite.Pages.Product;
+using Microsoft.AspNetCore.Mvc;
+using ContosoCrafts.WebSite.Models;
 
 namespace UnitTests.Pages.Product.Read
 {
@@ -67,11 +69,21 @@ namespace UnitTests.Pages.Product.Read
         public void OnPost_Comment_Null_Should_Pass()
         {
             // Arrange
-
+            pageModel.Comment = null;
+            pageModel.Product = new ProductModel
+            {
+                Id = "selinazawacki-moon",
+                Title = "title",
+                Description = "description",
+                Image = "image"
+            };
             // Act
-            pageModel.OnPost();
+            var result = pageModel.OnPost() as RedirectToPageResult;
             // Assert
-        }
+            Assert.AreEqual(null, pageModel.Product.Comments);
+            Assert.AreEqual(true, pageModel.ModelState.IsValid);
+            Assert.AreEqual(true, result.PageName.Contains("Read"));
+        }        
         #endregion OnPost*/
 
         #region ReadModelSetComment
