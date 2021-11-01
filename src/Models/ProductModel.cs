@@ -4,6 +4,10 @@ using System.ComponentModel.DataAnnotations;
 
 namespace ContosoCrafts.WebSite.Models
 {
+
+    /// <summary>
+    /// Products model will perform get, set on the products from /data/products.json
+    /// </summary>
     public class ProductModel
     {
         public string Id { get; set; }
