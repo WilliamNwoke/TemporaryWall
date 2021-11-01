@@ -19,17 +19,23 @@ namespace ContosoCrafts.WebSite.Models
         [Required]
         [Url]
         [JsonPropertyName("img")]
+        // get set method for JSON attribute Image
         public string Image { get; set; }
 
         [Required]
         [StringLength(maximumLength: 33, MinimumLength = 1, ErrorMessage = "The Title should have a length of more than {2} and less than {1}")]
+        // get set method for JSON attribute Title
         public string Title { get; set; }
 
         [Required]
+        // get set method for JSON attribute Description
         public string Description { get; set; }
+        // get set method for JSON attribute Ratings
         public int[] Ratings { get; set; }
+        // get set method for JSON attribute Comments
         public string[] Comments { get; set; }
 
+        // JSON Serializar that overrides the ToString function
         public override string ToString() => JsonSerializer.Serialize<ProductModel>(this);
 
  
