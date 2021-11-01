@@ -30,6 +30,9 @@ namespace UnitTests.Controllers
 
         //--------------------------------------------------------------------------------
         #region ProductController
+        /// <summary>
+        /// Tests "public JsonFileProductService ProductService" in ProductsController.cs
+        /// </summary>
         [Test]
         public void Get_ProductService_Valid_Should_Return_True()
         {
@@ -45,6 +48,9 @@ namespace UnitTests.Controllers
             //Assert.IsNotNull(results);
         }
 
+        /// <summary>
+        /// Tests "public IEnumerable<ProductModel> Get()" in ProductsController.cs
+        /// </summary>
         [Test]
         public void GetProducts_Default_Should_Return_Data()
         {
@@ -58,6 +64,10 @@ namespace UnitTests.Controllers
             Assert.IsNotNull(results);
         }
 
+        /// <summary>
+        /// Tests "public ActionResult Patch([FromBody] RatingRequest request)"
+        /// in ProductsController.cs
+        /// </summary>
         [Test]
         public void Patch_RatingRequest_Valid_Should_Return_Ok()
         {
@@ -74,8 +84,11 @@ namespace UnitTests.Controllers
             //Assert.AreEqual(null, results);
         }
 
+        /// <summary>
+        /// Tests "public ActionResult Patch([FromBody] CommentRequest request)"
+        /// in ProductsController.cs
+        /// </summary>
         [Test]
-        [HttpPatch]
         public void Patch_CommentRequest_Valid_Should_Return_Ok()
         {
             // Arrange
@@ -96,6 +109,9 @@ namespace UnitTests.Controllers
 
         //--------------------------------------------------------------------------------
         #region RatingRequest
+        /// <summary>
+        /// Tests RatingRequest "public string ProductId { get; set; }" in ProductsController.cs
+        /// </summary>
         [Test]
         public void Get_Rating_ProductID_Valid_Should_Return_True()
         {
@@ -108,6 +124,9 @@ namespace UnitTests.Controllers
             Assert.AreEqual(null, results);
         }
 
+        /// <summary>
+        /// Tests RatingRequest "public string Rating { get; set; }" in ProductsController.cs
+        /// </summary>
         [Test]
         public void Get_Rating_Valid_Should_Return_True()
         {
@@ -120,6 +139,9 @@ namespace UnitTests.Controllers
             Assert.AreEqual(0, results);
         }
 
+        /// <summary>
+        /// Tests RatingRequest "public string ProductId { get; set; }" in ProductsController.cs
+        /// </summary>
         [Test]
         public void Set_Rating_ProductID_Valid_Should_Return_True()
         {
@@ -133,6 +155,9 @@ namespace UnitTests.Controllers
             Assert.AreEqual(null, results.ProductId);
         }
 
+        /// <summary>
+        /// Tests RatingRequest "public string Ratings { get; set; }" in ProductsController.cs
+        /// </summary>
         [Test]
         public void Set_Rating_Valid_Should_Return_True()
         {
@@ -150,6 +175,9 @@ namespace UnitTests.Controllers
 
         //--------------------------------------------------------------------------------
         #region CommentRequest
+        /// <summary>
+        /// Test CommentRequest "public string ProductId { get; set; }" in ProductsController.cs
+        /// </summary>
         [Test]
         public void Get_Comment_ProductID_Valid_Should_Return_True()
         {
@@ -162,6 +190,9 @@ namespace UnitTests.Controllers
             Assert.AreEqual(null, results);
         }
 
+        /// <summary>
+        /// Test CommentRequest "public string Comment { get; set; }" in ProductsController.cs
+        /// </summary>
         [Test]
         public void Get_Comment_Valid_Should_Return_True()
         {
@@ -174,12 +205,14 @@ namespace UnitTests.Controllers
             Assert.AreEqual(null, results);
         }
 
-        #endregion CommentRequest
-        //--------------------------------------------------------------------------------
-
-
-        //No Assert Because this Unit test is to test the menthod set function work
-        #region SetCommentSetProductId
+        /// <summary>
+        /// Test CommentRequest 
+        /// "public string ProductId { get; set; }" 
+        /// &
+        /// "public string Comment { get; set; }" in ProductsController.cs
+        /// 
+        /// No Assert Because this Unit test is to test the menthod set function work
+        /// </summary>
         [Test]
         public void Set_Comment_Set_ProductId_Should_Pass()
         {
@@ -191,7 +224,7 @@ namespace UnitTests.Controllers
             // Assert
 
         }
-        #endregion SetComment
+        #endregion CommentRequest
         //--------------------------------------------------------------------------------
 
     }
