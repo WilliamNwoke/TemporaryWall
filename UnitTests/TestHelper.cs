@@ -81,7 +81,7 @@ namespace UnitTests
 
             // Creates ProductsController for use in TestHelper
             // Also serves as test for ProductsController(ContosoCrafts.WebSite.Services.JsonFileProductService)
-            ProductsController productController = new ProductsController(TestHelper.ProductService);
+            ProductController = new ProductsController(TestHelper.ProductService);
             CommentRequest = new ProductsController.CommentRequest();
             RatingRequest = new ProductsController.RatingRequest();
         }
