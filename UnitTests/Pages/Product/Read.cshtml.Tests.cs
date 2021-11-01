@@ -3,6 +3,7 @@ using NUnit.Framework;
 using ContosoCrafts.WebSite.Pages.Product;
 using Microsoft.AspNetCore.Mvc;
 using ContosoCrafts.WebSite.Models;
+using System.Linq;
 
 namespace UnitTests.Pages.Product.Read
 {
@@ -131,6 +132,25 @@ namespace UnitTests.Pages.Product.Read
 
             // Assert
             Assert.AreEqual(null, pageModel.Product.Comments); // nothing should be inserted
+            Assert.AreEqual(true, pageModel.ModelState.IsValid);
+            Assert.AreEqual(true, result.PageName.Contains("Read"));
+        }
+
+        [Test]
+        public void OnPost_Comment_Valid_Should_Pass()
+        {
+            // Arrange
+            // 251 character length comment
+            pageModel.Comment = "What a great comment this is";            
+            pageModel.Product = TestHelper.ProductService.GetProducts().Last();
+
+            // Act
+            var result = pageModel.OnPost() as RedirectToPageResult;
+            // Retreive the updated comment
+            var data = TestHelper.ProductService.GetProducts().First(x => x.Id == pageModel.Product.Id);
+
+            // Assert
+            Assert.AreEqual(1, data.Comments.Length); // 1 comment should be added
             Assert.AreEqual(true, pageModel.ModelState.IsValid);
             Assert.AreEqual(true, result.PageName.Contains("Read"));
         }
