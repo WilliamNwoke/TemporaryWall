@@ -6,14 +6,22 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 
 namespace ContosoCrafts.WebSite
-{
+{   
+    /// <summary>
+    /// Entry point for our application
+    /// </summary>
     public class Startup
     {
+
+        /// <summary>
+        /// Defautl constructor
+        /// </summary>
+        /// <param name="configuration"></param>
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
         }
-
+        // get method for the congiguration
         public IConfiguration Configuration { get; }
 
         // This method gets called by the runtime. Use this method to add services to the container.
