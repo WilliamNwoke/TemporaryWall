@@ -10,6 +10,7 @@ namespace ContosoCrafts.WebSite.Models
     /// </summary>
     public class ProductModel
     {
+        // get set method for JSON attribute ID
         public string Id { get; set; }
         public string Artist { get; set; }
         
