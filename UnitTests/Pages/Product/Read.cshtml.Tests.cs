@@ -80,10 +80,32 @@ namespace UnitTests.Pages.Product.Read
             // Act
             var result = pageModel.OnPost() as RedirectToPageResult;
             // Assert
-            Assert.AreEqual(null, pageModel.Product.Comments);
+            Assert.AreEqual(null, pageModel.Product.Comments); // nothing should be inserted
             Assert.AreEqual(true, pageModel.ModelState.IsValid);
             Assert.AreEqual(true, result.PageName.Contains("Read"));
-        }        
+        }
+
+        [Test]
+        public void OnPost_Comment_Blank_Should_Pass()
+        {
+            // Arrange
+            pageModel.Comment = ""; // empty comment
+            pageModel.Product = new ProductModel
+            {
+                Id = "selinazawacki-moon",
+                Title = "title",
+                Description = "description",
+                Image = "image"
+            };
+
+            // Act
+            var result = pageModel.OnPost() as RedirectToPageResult;
+
+            // Assert
+            Assert.AreEqual(null, pageModel.Product.Comments); // nothing should be inserted
+            Assert.AreEqual(true, pageModel.ModelState.IsValid);
+            Assert.AreEqual(true, result.PageName.Contains("Read"));
+        }
         #endregion OnPost*/
 
         #region ReadModelSetComment
