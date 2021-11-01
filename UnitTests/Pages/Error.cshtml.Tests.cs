@@ -10,8 +10,12 @@ using ContosoCrafts.WebSite.Pages;
 
 namespace UnitTests.Pages.Error
 {
+    /// <summary>
+    /// Error test class
+    /// </summary>
     public class ErrorTests
     {
+        // Pagemodel
         #region TestSetup
         public static ErrorModel pageModel;
 
@@ -31,6 +35,7 @@ namespace UnitTests.Pages.Error
 
         #region OnGet
         [Test]
+        // onget method to return request id
         public void OnGet_Valid_Activity_Set_Should_Return_RequestId()
         {
             // Arrange
@@ -49,6 +54,7 @@ namespace UnitTests.Pages.Error
             Assert.AreEqual(activity.Id, pageModel.RequestId);
         }
 
+        // Onget test function for null values
         [Test]
         public void OnGet_InValid_Activity_Null_Should_Return_TraceIdentifier()
         {
