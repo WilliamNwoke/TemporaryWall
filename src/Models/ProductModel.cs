@@ -12,6 +12,8 @@ namespace ContosoCrafts.WebSite.Models
     {
         // get set method for JSON attribute ID
         public string Id { get; set; }
+
+        // get set method for JSON attribute Artist
         public string Artist { get; set; }
         
         [Required]
