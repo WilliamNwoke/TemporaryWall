@@ -8,12 +8,18 @@ using ContosoCrafts.WebSite.Pages.Product;
 using ContosoCrafts.WebSite.Models;
 
 namespace UnitTests.Pages.Product.Delete
-{
+{   
+    /// <summary>
+    /// Unit test for the delete functionality
+    /// </summary>
     public class DeleteTests
     {
+
+        // Manages tthe delete of a single record
         #region TestSetup
         public static DeleteModel pageModel;
 
+        // delete method test initializaton
         [SetUp]
         public void TestInitialize()
         {
@@ -23,7 +29,9 @@ namespace UnitTests.Pages.Product.Delete
         }
 
         #endregion TestSetup
-
+        
+        
+        // Test to check that onGet method is valid and returns the product 
         #region OnGet
         [Test]
         public void OnGet_Valid_Should_Return_Products()
