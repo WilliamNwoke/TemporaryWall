@@ -8,16 +8,20 @@ using Moq;
 
 namespace UnitTests.Program
 {
-
+    /// <summary>
+    /// program test class
+    /// </summary>
     public class ProgramTests
     {
-
+        // test initialize
         #region TestSetup
         [SetUp]
         public void TestInitialize()
         {
         }
         #endregion TestSetup
+        
+        //  Program. cs test function
 
         #region CreateHostBuilder
         [Test,Timeout(1000)]
