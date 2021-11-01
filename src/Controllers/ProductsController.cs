@@ -13,8 +13,10 @@ namespace ContosoCrafts.WebSite.Controllers
     /// Controller class for the products.json
     /// </summmary>
     public class ProductsController : ControllerBase
-    {   
-        // Product service method
+    {
+        /// <summary>
+        /// Default Constructor
+        /// </summary>
         public ProductsController(JsonFileProductService productService)
         {
             ProductService = productService;
