@@ -8,21 +8,25 @@ using System;
 
 namespace UnitTests.Startup
 {
+    /// <summary>
+    /// Startup test file
+    /// </summary>
     public class StartupTests
     {
         #region TestSetup
-
+        // Test initialize
         [SetUp]
         public void TestInitialize()
         {
         }
-
+        // Test for entry point of the application
         public class Startup : ContosoCrafts.WebSite.Startup
         {
             public Startup(IConfiguration config) : base(config) { }
         }
         #endregion TestSetup
 
+        // test function for application configure services
         #region ConfigureServices
         [Test]
         public void Startup_ConfigureServices_Valid_Defaut_Should_Pass()
@@ -32,6 +36,7 @@ namespace UnitTests.Startup
         }
         #endregion ConfigureServices
 
+        // test function for application entry point configuration
         #region GetConfiguration
         [Test]
         public void Startup_Get_Configuration_Should_Pass()
@@ -42,6 +47,7 @@ namespace UnitTests.Startup
 
         #endregion GetConfiguration
 
+        // test function for application entry point
         #region Configure
         [Test]
         public void Startup_Configure_Should_Pass()
