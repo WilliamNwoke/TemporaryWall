@@ -6,12 +6,17 @@ using ContosoCrafts.WebSite.Models;
 using System.Linq;
 
 namespace UnitTests.Pages.Product.Read
-{
+{   
+    /// <summary>
+    /// Test for the read functionality of the products page
+    /// </summary>
     public class ReadTests
     {
+        // Read Model Page Model function
         #region TestSetup
         public static ReadModel pageModel;
 
+        // Test Initializer function
         [SetUp]
         public void TestInitialize()
         {
@@ -22,6 +27,7 @@ namespace UnitTests.Pages.Product.Read
 
         #endregion TestSetup
 
+        // onGet test method to read and return the product argument passed.
         #region OnGet
         [Test]
         public void OnGet_Valid_Should_Return_Products()
@@ -37,7 +43,7 @@ namespace UnitTests.Pages.Product.Read
         }
         #endregion OnGet
 
-        
+        // get method which returns the comments
         #region GetComment
         [Test]
         public void GetComment_Valid_Should_Pass()
@@ -51,6 +57,7 @@ namespace UnitTests.Pages.Product.Read
         }
         #endregion GetComment
 
+        // Set comment function Test
         #region SetComment
         [Test]
         public void SetComment_Valid_Should_Add()
@@ -64,7 +71,7 @@ namespace UnitTests.Pages.Product.Read
         }
         #endregion GetComment
 
-
+        // Test OnPost method to pass, when comments is NULL
         #region OnPost
         [Test]
         public void OnPost_Comment_Null_Should_Pass()
@@ -85,7 +92,8 @@ namespace UnitTests.Pages.Product.Read
             Assert.AreEqual(true, pageModel.ModelState.IsValid);
             Assert.AreEqual(true, result.PageName.Contains("Read"));
         }
-
+        
+        // onPost Method to Pass when comment is blank
         [Test]
         public void OnPost_Comment_Blank_Should_Pass()
         {
@@ -107,6 +115,28 @@ namespace UnitTests.Pages.Product.Read
             Assert.AreEqual(true, pageModel.ModelState.IsValid);
             Assert.AreEqual(true, result.PageName.Contains("Read"));
         }
+
+        // OnPost  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
         [Test]
         public void OnPost_Comment_Too_Long_Should_Pass()
