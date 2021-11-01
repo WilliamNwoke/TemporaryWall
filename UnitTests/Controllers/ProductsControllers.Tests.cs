@@ -11,7 +11,10 @@ using ContosoCrafts.WebSite.Controllers;
 using ContosoCrafts.WebSite.Services;
 
 namespace UnitTests.Controllers
-{
+{   
+    /// <summary>
+    /// Products Controller class
+    /// </summary>
     public class ProductsControllers
     {
         //--------------------------------------------------------------------------------

@@ -19,7 +19,7 @@ namespace ContosoCrafts.WebSite.Services
         {
             WebHostEnvironment = webHostEnvironment;
         }
-
+        // Retrieves web host environment
         public IWebHostEnvironment WebHostEnvironment { get; }
 
         /// <summary>

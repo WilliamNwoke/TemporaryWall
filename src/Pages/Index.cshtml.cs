@@ -13,6 +13,10 @@ namespace ContosoCrafts.WebSite.Pages
     {
         private readonly ILogger<IndexModel> _logger;
 
+
+        /// <summary>
+        /// Default Constructor
+        /// </summary>
         public IndexModel(ILogger<IndexModel> logger,
             JsonFileProductService productService)
         {
@@ -22,6 +26,7 @@ namespace ContosoCrafts.WebSite.Pages
 
         // Retrieves Product Service
         public JsonFileProductService ProductService { get; }
+        // Retreive Products and privately sets 
         public IEnumerable<ProductModel> Products { get; private set; }
 
         // Retrieves Products using razor component
