@@ -7,12 +7,18 @@ using ContosoCrafts.WebSite.Pages.Product;
 
 namespace UnitTests.Pages.Product.Create
 {
+    /// <summary>
+    /// Create test for class for the product/create
+    /// </summary>
     public class CreateTests
     {
+
+        // Test method for the pageModel
         #region TestSetup
         public static CreateModel pageModel;
 
         [SetUp]
+        // method to initialite the test
         public void TestInitialize()
         {
             pageModel = new CreateModel(TestHelper.ProductService)
@@ -22,6 +28,8 @@ namespace UnitTests.Pages.Product.Create
 
         #endregion TestSetup
 
+
+        // method to check that the onGet method returns Products from the Products.json
         #region OnGet
         [Test]
         public void OnGet_Valid_Should_Return_Products()
