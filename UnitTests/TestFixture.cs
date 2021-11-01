@@ -4,6 +4,9 @@ using NUnit.Framework;
 
 namespace UnitTests
 {
+    /// <summary>
+    /// TestFixture tests
+    /// </summary>
     [SetUpFixture]
     public class TestFixture
     {
@@ -51,6 +54,7 @@ namespace UnitTests
             }
         }
 
+        // function
         [OneTimeTearDown]
         public void RunAfterAnyTests()
         {
