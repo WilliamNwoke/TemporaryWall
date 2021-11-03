@@ -21,18 +21,24 @@ namespace ContosoCrafts.WebSite.Controllers
         {
             ProductService = productService;
         }
-        // Product service get function
+        /// <summary>
+        /// Product service get function
+        /// </summary>
         public JsonFileProductService ProductService { get; }
 
         [HttpGet]
-        //Product service http get function
+        /// <summary>
+        ///Product service http get function
+        /// </summary>
         public IEnumerable<ProductModel> Get()
         {
             return ProductService.GetProducts();
         }
 
         [HttpPatch]
-        // product service rating method
+        /// <summary>
+        /// product service rating method
+        /// </summary>
         public ActionResult Patch([FromBody] RatingRequest request)
         {
             ProductService.AddRating(request.ProductId, request.Rating);
@@ -41,7 +47,9 @@ namespace ContosoCrafts.WebSite.Controllers
         }
 
 
-        // get set method for rating
+        /// <summary>
+        ///  get set method for rating
+        /// </summary>
         public class RatingRequest
         {
             public string ProductId { get; set; }
@@ -49,7 +57,9 @@ namespace ContosoCrafts.WebSite.Controllers
         }
 
         [HttpPatch]
-        // Product Add comment method
+        ///<summary>
+        /// Product Add comment method
+        /// </summary>
         public ActionResult Patch([FromBody] CommentRequest request)
         {
             ProductService.AddComment(request.ProductId, request.Comment);
@@ -62,10 +72,10 @@ namespace ContosoCrafts.WebSite.Controllers
         /// </summary>
         public class CommentRequest
         {
-            // get set method for the product ID
+            /// get set method for the product ID
             public string ProductId { get; set; }
 
-            // get set method for the comment
+            /// get set method for the comment
             public string Comment { get; set; }
         }
     }
