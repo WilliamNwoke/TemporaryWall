@@ -13,17 +13,16 @@
         }
         else
         {
-            <div class="card">
-                <!--Display product image-->
-                <div class="card-img" style="background-image: url('@product.Image');" 
-                     @onclick="(e => SelectProduct(product.Id))"
+            <div class="card" @onclick="(e => SelectProduct(product.Id))"
                      data-toggle="modal" data-target="#productModal">
+                <!--Display product image-->
+                <div class="card-img" style="background-image: url('@product.Image');">
 
                 </div>
 
                 <!--displays product title on card-->
                 <div class="card-body">
-                    <h5 class="card-title">@product.Title</h5>
+                    <h5 class="card-title"><b>@product.Title</b></h5>
                     <h5 class="card-title">@product.Artist</h5>
                 </div>
             </div>
