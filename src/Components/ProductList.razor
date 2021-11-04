@@ -3,6 +3,14 @@
 @using Microsoft.AspNetCore.Components.Web
 @inject JsonFileProductService ProductService
 
+<div class="search-container input-group">
+    <div class="form-outline">
+
+        <input type="search" id="form1" class="form-control" placeholder="Search..." @bind="@SearchTerm" />
+        <button type="button" class="btn btn-primary mb-3" @onclick="StateHasChanged">Search</button>
+    </div>
+</div>
+
 <div class="card-columns">
     <!--Generates individual cards for each product-->
     @foreach (var product in ProductService.GetProducts())
