@@ -3,15 +3,18 @@
 @model IndexModel
 @{ ViewData["Title"] = "Home page"; }
 
-@{
-    <div class="search-container">
-        <form>
-            <p>
-                <input type="text" placeholder="Search..">
-                <button type="submit"><i class="fa fa-search"></i></button>
-            </p>
-        </form>
-    </div>
+
+@using (Html.BeginForm())
+{
+<div class="search-container">
+    <form>
+        
+        <input type="text" placeholder="Search.." />
+        <button type="submit">Search</button>
+    </form>
+
+</div>
+    
 }
 
 @(await Html.RenderComponentAsync<ProductList>(RenderMode.ServerPrerendered))
