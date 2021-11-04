@@ -34,24 +34,6 @@ namespace UnitTests.Controllers
         //--------------------------------------------------------------------------------
         #region ProductController
         /// <summary>
-        /// Tests "public JsonFileProductService ProductService" in ProductsController.cs
-        /// </summary>
-        [Test]
-        public void Get_ProductService_Valid_Should_Return_True()
-        {
-            // Arrange
-            //var controller = TestHelper.ProductController.ProductService;
-
-
-            // Act
-            //var products = TestHelper.ProductService;
-            //var results = controller.ProductService;
-
-            // Assert
-            //Assert.IsNotNull(results);
-        }
-
-        /// <summary>
         /// Tests "public IEnumerable<ProductModel> Get()" in ProductsController.cs
         /// </summary>
         [Test]
@@ -225,7 +207,8 @@ namespace UnitTests.Controllers
             var comment = new ProductsController.CommentRequest { Comment = "fgdf", ProductId = "sdfs" };
 
             // Assert
-
+            //Assert.AreEqual(comment, "fgdf");
+            Assert.IsNotNull(comment);
         }
         #endregion CommentRequest
         //--------------------------------------------------------------------------------
