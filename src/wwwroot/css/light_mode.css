@@ -18,6 +18,43 @@
     color: #E8F1F2;
 }
 
+.search-container {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    padding: 0px;
+    position: relative;
+    width: 93%;
+    height: auto;
+    margin-bottom: 10px;
+}
+.search-container input[type=text] {
+    padding: 6px;
+    margin-top: 8px;
+    font-size: 17px;
+    height: auto;
+    flex: none;
+    order:0;
+    flex-grow: 0;
+    margin: 0px 0px;
+ 
+}
+.search-container button {
+    padding: 6px 10px;
+    background: #ddd;
+    cursor: pointer;
+    flex: none;
+    order: 1;
+    flex-grow: 0;
+    margin: 0px 0px;
+}
+
+
+.search-container button:hover {
+    background: #ccc
+}
+
+
 .btn-primary:hover {
 
 }
