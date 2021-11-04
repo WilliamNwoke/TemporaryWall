@@ -24,7 +24,7 @@
         each iteration makes new row-->
             @foreach (var product in Model.Products)
             {
-                @if (product.Title == null  || product.Title == "Enter Title")
+                @if (product.Artist == "" || product.Title == "" || product.Description == "" || product.Image == "")
                 {
                     continue;
                 }
