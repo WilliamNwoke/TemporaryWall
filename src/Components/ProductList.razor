@@ -7,26 +7,33 @@
     <!--Generates individual cards for each product-->
     @foreach (var product in ProductService.GetProducts())
     {
-        <div class="card">
-            <!--Display product image-->
-            <div class="card-img" style="background-image: url('@product.Image');"></div>
+        @if (product.Artist == "" || product.Title == "" || product.Description == "" || product.Image == "")
+        {
+            continue;
+        }
+        else
+        {
+            <div class="card">
+                <!--Display product image-->
+                <div class="card-img" style="background-image: url('@product.Image');"></div>
 
-            <!--displays product title on card-->
-            <div class="card-body">
-                <h5 class="card-title">@product.Title</h5>
-                <h5 class="card-title">@product.Artist</h5>
-            </div>
+                <!--displays product title on card-->
+                <div class="card-body">
+                    <h5 class="card-title">@product.Title</h5>
+                    <h5 class="card-title">@product.Artist</h5>
+                </div>
 
-            <div class="card-footer">
-                <!--More Info button-->
-                <small class="text-muted">
-                    <button @onclick="(e => SelectProduct(product.Id))"
-                            data-toggle="modal" data-target="#productModal" class="btn btn-primary">
-                        More Info
-                    </button>
-                </small>
+                <div class="card-footer">
+                    <!--More Info button-->
+                    <small class="text-muted">
+                        <button @onclick="(e => SelectProduct(product.Id))"
+                                data-toggle="modal" data-target="#productModal" class="btn btn-primary">
+                            More Info
+                        </button>
+                    </small>
+                </div>
             </div>
-        </div>
+        }
     }
 </div>
 
