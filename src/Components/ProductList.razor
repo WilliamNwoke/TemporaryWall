@@ -1,40 +1,45 @@
 @using ContosoCrafts.WebSite.Models
 @using ContosoCrafts.WebSite.Services
 @using Microsoft.AspNetCore.Components.Web
+@using System.Collections.Generic;
+@using Microsoft.AspNetCore.Mvc;
 @inject JsonFileProductService ProductService
 
-<div class="search-container input-group">
+<div class="input-group">
     <div class="form-outline">
-
-        <input type="search" id="form1" class="form-control" placeholder="Search..." @bind="@SearchTerm" />
-        <button type="button" class="btn btn-primary mb-3" @onclick="StateHasChanged">Search</button>
+        <input type="search" id="form1" class="form-control" @bind="@SearchTerm" />
     </div>
+    <button type="button" class="btn btn-primary mb-3" @onclick="StateHasChanged">Search</button>
 </div>
 
 <div class="card-columns">
     <!--Generates individual cards for each product-->
-    @foreach (var product in ProductService.GetProducts())
+    @foreach (var product in GetProducts())
     {
-        @if (product.Artist == "" || product.Title == "" || product.Description == "" || product.Image == "")
+        if (ProductIsBlankOrNull(product))
         {
             continue;
         }
-        else
-        {
-            <div class="card" @onclick="(e => SelectProduct(product.Id))"
-                     data-toggle="modal" data-target="#productModal">
-                <!--Display product image-->
-                <div class="card-img" style="background-image: url('@product.Image');">
+        <div class="card">
+            <!--Display product image-->
+            <div class="card-img" style="background-image: url('@product.Image');"></div>
 
-                </div>
-
-                <!--displays product title on card-->
-                <div class="card-body">
-                    <h5 class="card-title"><b>@product.Title</b></h5>
-                    <h5 class="card-title">@product.Artist</h5>
-                </div>
+            <!--displays product title on card-->
+            <div class="card-body">
+                <h5 class="card-title">@product.Title</h5>
+                <h5 class="card-title">@product.Artist</h5>
             </div>
-        }
+
+            <div class="card-footer">
+                <!--More Info button-->
+                <small class="text-muted">
+                    <button @onclick="(e => SelectProduct(product.Id))"
+                            data-toggle="modal" data-target="#productModal" class="btn btn-primary">
+                        More Info
+                    </button>
+                </small>
+            </div>
+        </div>
     }
 </div>
 
@@ -93,6 +98,10 @@
     ProductModel selectedProduct;
     string selectedProductId;
 
+    string SearchTerm { get; set; }
+
+    IEnumerable<ProductModel> Products;
+
     // Retrieves specific product information
     void SelectProduct(string productId)
     {
@@ -130,5 +139,92 @@
         System.Console.WriteLine($"Rating received for {selectedProduct.Id}: {rating}");
         ProductService.AddRating(selectedProductId, rating); // Adds rating to JSON database
         SelectProduct(selectedProductId);
+    }
+
+    /// <summary>
+    /// Search all the products to find matches from a given string
+    /// </summary>
+    IEnumerable<ProductModel> GetSearchProducts()
+    {
+        // create enumerable of products to search through
+        IEnumerable<ProductModel> ProductList = ProductService.GetProducts();
+
+        // create list of ProductModel to store results
+        List<ProductModel> Results = new List<ProductModel>();
+
+        // loop through products and add matches to the results list
+        foreach (var product in ProductList)
+        {
+            if (product.Title.ToLower().Contains(SearchTerm.ToLower()))
+            {
+                Results.Add(product);
+            }
+        }
+
+        // return result of search
+        return Results;
+    }
+
+    IEnumerable<ProductModel> GetProducts()
+    {
+        if (string.IsNullOrEmpty(SearchTerm))
+        {
+            return ProductService.GetProducts();
+        }
+        return GetSearchProducts();
+
+    }
+
+    /// <summary>
+    /// Utility method to check if a product contains blank or null values
+    /// </summary>
+    /// <param name="product"></param>
+    /// <returns></returns>
+    Boolean ProductIsBlankOrNull(ProductModel product)
+    {
+        // null checks
+        if (product.Artist == null)
+        {
+            return true;
+        }
+
+        if (product.Title == null)
+        {
+            return true;
+        }
+
+        if (product.Id == null)
+        {
+            return true;
+        }
+
+        if (product.Description == null)
+        {
+            return true;
+        }
+
+        // blank checks
+        if (product.Artist == "")
+        {
+            return true;
+        }
+
+        if (product.Title == "")
+        {
+            return true;
+        }
+
+        if (product.Id == "")
+        {
+            return true;
+        }
+
+        if (product.Description == "")
+        {
+            return true;
+        }
+
+        // all checks passed, return false
+        return false;
     }
 }
