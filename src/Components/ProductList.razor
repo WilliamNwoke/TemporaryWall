@@ -153,7 +153,9 @@
         // loop through products and add matches to the results list
         foreach (var product in ProductList)
         {
-            if (product.Title.ToLower().Contains(SearchTerm.ToLower()))
+            if (product.Title.ToLower().Contains(SearchTerm.ToLower()) ||
+                product.Artist.ToLower().Contains(SearchTerm.ToLower()) ||
+                product.Description.ToLower().Contains(SearchTerm.ToLower()))
             {
                 Results.Add(product);
             }
