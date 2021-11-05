@@ -217,8 +217,12 @@ a {
     color: #E8F1F2;
 }
 
+    a.navbar-brand:hover {
+        color: #006494;
+    }
+
     a:hover {
-        color: #1B98E0;
+        color: #006494;
     }
 
 .btn-primary {
