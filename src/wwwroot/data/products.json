@@ -60,7 +60,15 @@
     "img": "https://www.worldatlas.com/r/w960-q80/upload/9d/d2/c4/meisje-met-de-parel.jpg",
     "Title": "The Girl With A Pearl Earring",
     "Description": "It was painted around 1665 and portrays a turbaned girl with a pearl earring. The painting has been called the \u0022Dutch Mona Lisa\u0022, mostly due to the ambiguous expression of the subject.",
-    "Ratings": null,
+    "Ratings": [
+      3,
+      3,
+      4,
+      5,
+      2,
+      1,
+      5
+    ],
     "Comments": null
   },
   {
