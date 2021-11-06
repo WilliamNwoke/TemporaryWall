@@ -21,8 +21,7 @@
             </tr>
         </thead>
         <tbody>
-            <!--Loop to display each product;
-    each iteration makes new row-->
+            <!--Loop to display each product;each iteration makes new row-->
             @foreach (var product in Model.Products)
             {
                 @if (product.Artist == "" || product.Title == "" || product.Description == "" || product.Image == "")
@@ -31,18 +30,24 @@
                 }
                 else
                 {
-            <tr>
-                <!--Tile for product name-->
-                <td><a class="read-link" asp-page="Read" asp-route-id="@product.Id">@product.Title</a></td>
+                    <tr>
+                        <!--Tile for product name-->
+                        <td><a class="read-link" asp-page="Read" asp-route-id="@product.Id">@product.Title</a></td>
 
-                <!--Tile for product's artist'-->
-                <td>@product.Artist</td>
+                         <!--Tile for product's artist'-->
+                         <td>@product.Artist</td>
 
-                <!--Tile for product's artist'-->
-                <td>@product.Ratings</td>
-            </tr>
+                         <!--Tile for product's ratings'-->
+                         @if (product.Ratings != null)
+                          {
+                                var sum = product.Ratings.Sum();
+                                var num = product.Ratings.Length;
+                                var AverageRate = sum / num;
+                                <td>@AverageRate</td>
+                          }
+                    </tr>
                 }
-            }
+             }
         </tbody>
     </table>
 </div>
