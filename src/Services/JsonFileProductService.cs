@@ -257,14 +257,14 @@ namespace ContosoCrafts.WebSite.Services
             //so that the highest rated will be at beginnning of list
             listOfID = listOfID.OrderByDescending(x => x.Item2).ToList();
 
-            List<ProductModel> topFive = new List<ProductModel>();
+            List<ProductModel> topThree = new List<ProductModel>();
             foreach (var item in listOfID.GetRange(0, 3))
             {
                 foreach (var art in dataset)
                 {
                     if (item.Item1 == art.Id)
                     {
-                        topFive.Add(art);
+                        topThree.Add(art);
                     }
                 }
             }
@@ -272,7 +272,7 @@ namespace ContosoCrafts.WebSite.Services
 
 
             //return first 5 entries of list (top 3 highest rated products)
-            return topFive;
+            return topThree;
         }
     }
 }
