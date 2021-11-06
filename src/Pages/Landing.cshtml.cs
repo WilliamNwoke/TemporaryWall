@@ -31,6 +31,7 @@ namespace ContosoCrafts.WebSite.Pages
 
         public void OnGet()
         {
+            TopFiveArtwork = ProductService.GetHighestRatedArtwork();
         }
     }
 }
