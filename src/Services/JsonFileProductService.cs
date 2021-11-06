@@ -233,5 +233,46 @@ namespace ContosoCrafts.WebSite.Services
 
             return currentRating;
         }
+
+
+        /// <summary>
+        /// Finds the 5 highest rated artworks of all the artworks
+        /// </summary>
+        /// <returns>Tuple of (productID, rating) top 3 highest rated artworks</returns>
+        public List<ProductModel> GetHighestRatedArtwork()
+        {
+            //Initiate List
+            var listOfID = new List<(string, int)>();
+
+            //Gets Product List
+            var dataset = GetProducts();
+
+            //finds the average rating of each artwork and adds it and product ID to list
+            foreach (var product in dataset)
+            {
+                listOfID.Add((product.Id, GetAverageRating(product)));
+            }
+
+            //sort list in decending order by item2 of tuple (the rating)
+            //so that the highest rated will be at beginnning of list
+            listOfID = listOfID.OrderByDescending(x => x.Item2).ToList();
+
+            List<ProductModel> topFive = new List<ProductModel>();
+            foreach (var item in listOfID.GetRange(0, 3))
+            {
+                foreach (var art in dataset)
+                {
+                    if (item.Item1 == art.Id)
+                    {
+                        topFive.Add(art);
+                    }
+                }
+            }
+
+
+
+            //return first 5 entries of list (top 3 highest rated products)
+            return topFive;
+        }
     }
 }
