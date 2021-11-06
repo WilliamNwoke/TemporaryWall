@@ -5,8 +5,19 @@
 }
 
 <div class="header-container">
+
     <h1 class="landing-header title focus-in-expand-fwd">TEMPORARY WALL</h1>
     <a class="navbar-brand title focus-in-expand-fwd" asp-area="" asp-page="/Home">ENTER</a>
+
+    <div class="card-columns">
+    @foreach (var product in Model.TopFiveArtwork) 
+    { 
+        <div class="card">
+            <!--Display product image-->
+            <div class="card-img" style="background-image: url('@product.Image');"></div>
+        </div>
+    }
+    </div>
 </div>
 
 
