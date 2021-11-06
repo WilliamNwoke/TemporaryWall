@@ -120,3 +120,35 @@
         opacity: 1
     }
 }
+
+
+.card-columns .card:hover .card-img {
+    opacity: 1;
+    -webkit-transform-style: preserve-3d;
+}
+
+.card-columns .card-body {
+    height: 50px;
+    font-family: 'Poppins', sans-serif;
+    color: #E8F1F2;
+    background: #414c50;
+}
+
+.card-columns .card-img {
+    height: 200px;
+    vertical-align: bottom;
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Do not repeat the image */
+    background-size: cover; /* Resize the background image to cover the entire container */
+    opacity: .8;
+}
+
+.card-columns .card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 20px rgba(37,33,82,.12), 0 4px 8px rgba(37,33,82,.06);
+}
+
+.card {
+    background-color: #414c50;
+    border: none;
+}
