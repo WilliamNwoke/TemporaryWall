@@ -258,6 +258,8 @@ namespace ContosoCrafts.WebSite.Services
             listOfID = listOfID.OrderByDescending(x => x.Item2).ToList();
 
             List<ProductModel> topThree = new List<ProductModel>();
+
+            //Add product with corresponding ID of top three products to topThree
             foreach (var item in listOfID.GetRange(0, 3))
             {
                 foreach (var art in dataset)
