@@ -27,11 +27,11 @@ namespace ContosoCrafts.WebSite.Pages
         public IEnumerable<ProductModel> Products { get; private set; }
 
 
-        public List<ProductModel> TopFiveArtwork { get; private set; }
+        public List<ProductModel> TopThreeArtwork { get; private set; }
 
         public void OnGet()
         {
-            TopFiveArtwork = ProductService.GetHighestRatedArtwork();
+            TopThreeArtwork = ProductService.GetHighestRatedArtwork();
         }
     }
 }
