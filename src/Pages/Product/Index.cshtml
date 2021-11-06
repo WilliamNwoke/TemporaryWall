@@ -17,11 +17,12 @@
             <tr>
                 <th>Title</th>
                 <th>Artist</th>
+                <th>Ratings</th>
             </tr>
         </thead>
         <tbody>
             <!--Loop to display each product;
-        each iteration makes new row-->
+    each iteration makes new row-->
             @foreach (var product in Model.Products)
             {
                 @if (product.Artist == "" || product.Title == "" || product.Description == "" || product.Image == "")
@@ -36,8 +37,21 @@
 
                         <!--Tile for product's artist'-->
                         <td>@product.Artist</td>
+
+                        <!--Tile for product's ratings'-->
+
+                        @if(product.Ratings != null)
+                        {
+                            var sum = 0;
+                            var num = 0;
+                            sum = product.Ratings.Sum();
+                            num = product.Ratings.Length;
+                            var AverageRate = sum / num;
+                            <td>@AverageRate</td>
+                        }
+
                     </tr>
-                }            
+                }
             }
         </tbody>
     </table>
