@@ -217,17 +217,14 @@ namespace ContosoCrafts.WebSite.Services
         {
             int currentRating = 0;
             int voteCount = 0;
-            string voteLabel;
             //Checks if there are ratings
             if (product.Ratings == null) // product with no ratings
             {
                 currentRating = 0;
-                voteCount = 0;
             }
             else // product with ratings
             {
                 voteCount = product.Ratings.Count(); //retrieves number of votes
-                voteLabel = voteCount > 1 ? "Votes" : "Vote";
                 currentRating = product.Ratings.Sum() / voteCount; //calculates average of all votes
             }
 
