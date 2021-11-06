@@ -31,26 +31,16 @@
                 }
                 else
                 {
-                    <tr>
-                        <!--Tile for product name-->
-                        <td><a class="read-link" asp-page="Read" asp-route-id="@product.Id">@product.Title</a></td>
+            <tr>
+                <!--Tile for product name-->
+                <td><a class="read-link" asp-page="Read" asp-route-id="@product.Id">@product.Title</a></td>
 
-                        <!--Tile for product's artist'-->
-                        <td>@product.Artist</td>
+                <!--Tile for product's artist'-->
+                <td>@product.Artist</td>
 
-                        <!--Tile for product's ratings'-->
-
-                        @if(product.Ratings != null)
-                        {
-                            var sum = 0;
-                            var num = 0;
-                            sum = product.Ratings.Sum();
-                            num = product.Ratings.Length;
-                            var AverageRate = sum / num;
-                            <td>@AverageRate</td>
-                        }
-
-                    </tr>
+                <!--Tile for product's artist'-->
+                <td>@product.Ratings</td>
+            </tr>
                 }
             }
         </tbody>
