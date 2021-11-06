@@ -11,6 +11,18 @@ namespace ContosoCrafts.WebSite.Pages
 {
     public class LandingModel : PageModel
     {
+        /// <summary>
+        /// Default Constructor
+        /// </summary>
+        /// <param name="productService"></param>
+        public LandingModel(JsonFileProductService productService)
+        {
+            ProductService = productService;
+        }
+
+        // Data Service
+        public JsonFileProductService ProductService { get; }
+
         public void OnGet()
         {
         }
