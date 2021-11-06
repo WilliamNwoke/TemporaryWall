@@ -23,6 +23,12 @@ namespace ContosoCrafts.WebSite.Pages
         // Data Service
         public JsonFileProductService ProductService { get; }
 
+        // Collection of the Data
+        public IEnumerable<ProductModel> Products { get; private set; }
+
+
+        public List<ProductModel> TopFiveArtwork { get; private set; }
+
         public void OnGet()
         {
         }
