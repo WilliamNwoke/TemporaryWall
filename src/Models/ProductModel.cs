@@ -13,6 +13,8 @@ namespace ContosoCrafts.WebSite.Models
         // get set method for JSON attribute ID
         public string Id { get; set; }
 
+        [Required]
+        [StringLength(maximumLength: 15, MinimumLength = 1, ErrorMessage = "Artist name should have a length of more than {2} and less than {1}")]
         // get set method for JSON attribute Artist
         public string Artist { get; set; }
         
