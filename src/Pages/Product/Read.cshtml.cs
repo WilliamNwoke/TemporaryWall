@@ -1,8 +1,6 @@
 using System.Linq;
-
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.Mvc;
-
 using ContosoCrafts.WebSite.Models;
 using ContosoCrafts.WebSite.Services;
 using System.ComponentModel.DataAnnotations;
@@ -28,8 +26,8 @@ namespace ContosoCrafts.WebSite.Pages.Product
         /// <summary>
         /// Defualt Construtor
         /// </summary>
-        /// <param name="logger"></param>
-        /// <param name="productService"></param>
+        /// <param name = "logger"></param>
+        /// <param name = "productService"></param>
         public ReadModel(JsonFileProductService productService)
         {
             ProductService = productService;
@@ -38,7 +36,7 @@ namespace ContosoCrafts.WebSite.Pages.Product
         /// <summary>
         /// REST Get request
         /// </summary>
-        /// <param name="id"></param>
+        /// <param name = "id"></param>
         public void OnGet(string id)
         {
             Product = ProductService.GetProducts().FirstOrDefault(m => m.Id.Equals(id));
@@ -71,5 +69,7 @@ namespace ContosoCrafts.WebSite.Pages.Product
 
             return RedirectToPage("./Read");
         }
+
     }
+
 }
