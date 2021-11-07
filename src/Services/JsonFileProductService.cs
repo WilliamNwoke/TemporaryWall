@@ -80,12 +80,6 @@ namespace ContosoCrafts.WebSite.Services
                 return false;
             }
 
-            // Check to see if the rating exist, if there are none, then create the array
-            if (data.Ratings == null)
-            {
-                data.Ratings = new int[] { };
-            }
-
             // Add the Rating to the Array
             var ratings = data.Ratings.ToList();
             ratings.Add(rating);
