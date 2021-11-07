@@ -71,16 +71,16 @@ namespace UnitTests.Pages.Product.AddRating
 
         // function to test the rating when it is null
         [Test]
-        public void AddRating_Valid_Product_Valid_AddRating_Valid_Result_ValveIsNull_Should_Return_True()
+        public void AddRating_Valid_Product_Valid_AddRating_Valid_Result_IsNull_Should_Return_True()
         {
             // Arrange
-            var data = TestHelper.ProductService.GetProducts().First();
+            var data = TestHelper.ProductService.GetProducts().Last();
 
             // Act
             var result = TestHelper.ProductService.AddRating(data.Id, 4);
 
             // Assert
-            Assert.AreEqual(true, result);
+            Assert.AreEqual(true , result);
         }
 
         // Function to test the add rating functionality
