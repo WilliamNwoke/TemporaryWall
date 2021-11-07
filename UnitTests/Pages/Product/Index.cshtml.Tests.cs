@@ -26,21 +26,21 @@ namespace UnitTests.Pages.Product.Index
             {
             };
         }
-
         #endregion TestSetup
+
         // onGet test to return a list of products
         #region OnGet
         [Test]
-        public void OnGet_Valid_Should_Return_Products()
+        public void OnGet_Valid_Should_Pass()
         {
             // Arrange
-
-            // Act
             pageModel.OnGet();
 
+            // Act
+            var data = pageModel.Products.FirstOrDefault();
+
             // Assert
-            Assert.AreEqual(true, pageModel.ModelState.IsValid);
-            Assert.AreEqual(true, pageModel.Products.ToList().Any());
+            Assert.IsNotNull(data);
         }
         #endregion OnGet
     }
