@@ -12,7 +12,6 @@ namespace ContosoCrafts.WebSite
     /// </summary>
     public class Startup
     {
-
         /// <summary>
         /// Defautl constructor
         /// </summary>
@@ -21,6 +20,7 @@ namespace ContosoCrafts.WebSite
         {
             Configuration = configuration;
         }
+
         // get method for the congiguration
         public IConfiguration Configuration { get; }
 
