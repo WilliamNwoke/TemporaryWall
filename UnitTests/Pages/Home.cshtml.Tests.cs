@@ -8,7 +8,7 @@ using NUnit.Framework;
 
 using ContosoCrafts.WebSite.Pages;
 
-namespace UnitTests.Pages.Index
+namespace UnitTests.Pages.Home
 {
     /// <summary>
     /// Index test unit test
@@ -43,6 +43,18 @@ namespace UnitTests.Pages.Index
             pageModel.OnGet();
 
             // Assert
+        }
+
+        [Test]
+        public void GetProduct_Valid_Should_Pass()
+        {
+            // Arrange
+
+            // Act
+            var data = pageModel.Products;
+
+            // Assert
+            Assert.IsNull(data);
         }
         #endregion OnGet
 
