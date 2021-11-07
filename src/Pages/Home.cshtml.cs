@@ -7,17 +7,17 @@ using ContosoCrafts.WebSite.Services;
 namespace ContosoCrafts.WebSite.Pages
 {
     /// <summary>
-    /// Model for the Index Page
+    /// Model for the Home Page
     /// </summary>
-    public class IndexModel : PageModel
+    public class HomeModel : PageModel
     {
-        private readonly ILogger<IndexModel> _logger;
+        private readonly ILogger<HomeModel> _logger;
 
 
         /// <summary>
         /// Default Constructor
         /// </summary>
-        public IndexModel(ILogger<IndexModel> logger,
+        public HomeModel(ILogger<HomeModel> logger,
             JsonFileProductService productService)
         {
             _logger = logger;
