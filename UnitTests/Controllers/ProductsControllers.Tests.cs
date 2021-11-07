@@ -88,12 +88,13 @@ namespace UnitTests.Controllers
             // Assert
             //Assert.AreEqual(ok, ok);
         }
-
         #endregion ProductController
+        
         //--------------------------------------------------------------------------------
 
         //--------------------------------------------------------------------------------
         #region RatingRequest
+
         /// <summary>
         /// Tests RatingRequest "public string ProductId { get; set; }" in ProductsController.cs
         /// </summary>
@@ -156,10 +157,12 @@ namespace UnitTests.Controllers
             Assert.AreEqual(5, results.Rating);
         }
         #endregion RatingRequest
+        
         //--------------------------------------------------------------------------------
 
         //--------------------------------------------------------------------------------
         #region CommentRequest
+
         /// <summary>
         /// Test CommentRequest "public string ProductId { get; set; }" in ProductsController.cs
         /// </summary>
@@ -211,6 +214,7 @@ namespace UnitTests.Controllers
             Assert.IsNotNull(comment);
         }
         #endregion CommentRequest
+        
         //--------------------------------------------------------------------------------
 
     }
