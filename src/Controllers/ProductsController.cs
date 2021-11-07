@@ -1,19 +1,20 @@
 using System.Collections.Generic;
-
 using Microsoft.AspNetCore.Mvc;
-
 using ContosoCrafts.WebSite.Models;
 using ContosoCrafts.WebSite.Services;
 
 namespace ContosoCrafts.WebSite.Controllers
 {
     [ApiController]
+
     [Route("[controller]")]
+    
     /// <summmary>
     /// Controller class for the products.json
-    /// </summmary>
+    /// </summmary>   
     public class ProductsController : ControllerBase
     {
+    
         /// <summary>
         /// Default Constructor
         /// </summary>
@@ -21,12 +22,14 @@ namespace ContosoCrafts.WebSite.Controllers
         {
             ProductService = productService;
         }
+
         /// <summary>
         /// Product service get function
         /// </summary>
         public JsonFileProductService ProductService { get; }
 
         [HttpGet]
+
         /// <summary>
         ///Product service http get function
         /// </summary>
@@ -36,16 +39,16 @@ namespace ContosoCrafts.WebSite.Controllers
         }
 
         [HttpPatch]
+        
         /// <summary>
         /// product service rating method
-        /// </summary>
+        /// </summary>        
         public ActionResult Patch([FromBody] RatingRequest request)
         {
             ProductService.AddRating(request.ProductId, request.Rating);
 
             return Ok();
         }
-
 
         /// <summary>
         ///  get set method for rating
@@ -57,6 +60,7 @@ namespace ContosoCrafts.WebSite.Controllers
         }
 
         [HttpPatch]
+        
         ///<summary>
         /// Product Add comment method
         /// </summary>
