@@ -2,9 +2,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Text.Json;
-
 using ContosoCrafts.WebSite.Models;
-
 using Microsoft.AspNetCore.Hosting;
 
 namespace ContosoCrafts.WebSite.Services
@@ -19,6 +17,7 @@ namespace ContosoCrafts.WebSite.Services
         {
             WebHostEnvironment = webHostEnvironment;
         }
+
         // Retrieves web host environment
         public IWebHostEnvironment WebHostEnvironment { get; }
 
@@ -49,8 +48,8 @@ namespace ContosoCrafts.WebSite.Services
         /// <summary>
         /// Adds a rating to the specified product ID
         /// </summary>
-        /// <param name="productId">ID of specific product</param>
-        /// <param name="rating">Rating to be added</param>
+        /// <param name = "productId">ID of specific product</param>
+        /// <param name = "rating">Rating to be added</param>
         public bool AddRating(string productId, int rating)
         {
             // If the ProductID is invalid, return
@@ -88,7 +87,7 @@ namespace ContosoCrafts.WebSite.Services
 
             // Add the Rating to the Array
             var ratings = data.Ratings.ToList();
-            ratings.Add(rating);
+            ratings.Add( rating );
             data.Ratings = ratings.ToArray();
 
             // Save the data back to the data store
@@ -100,8 +99,8 @@ namespace ContosoCrafts.WebSite.Services
         /// <summary>
         /// Adds a comment to the specified product ID
         /// </summary>
-        /// <param name="productId">ID of specific product</param>
-        /// <param name="comment">Comment to be added</param>
+        /// <param name = "productId">ID of specific product</param>
+        /// <param name = "comment">Comment to be added</param>
         public void AddComment(string productId, string comment)
         {
             var products = GetProducts();
@@ -127,8 +126,8 @@ namespace ContosoCrafts.WebSite.Services
         /// </summary>
         private void SaveData(IEnumerable<ProductModel> products)
         {
-
-            using var outputStream = File.Create(JsonFileName);//Use simple 'using' statement (IDE0063)
+            //Use simple 'using' statement (IDE0063)
+            using var outputStream = File.Create(JsonFileName); 
             {
                 JsonSerializer.Serialize<IEnumerable<ProductModel>>(
                     new Utf8JsonWriter(outputStream, new JsonWriterOptions
@@ -146,11 +145,12 @@ namespace ContosoCrafts.WebSite.Services
         /// Update the fields
         /// Save to the data store
         /// </summary>
-        /// <param name="data"></param>
+        /// <param name = "data"></param>
         public ProductModel UpdateData(ProductModel data)
         {
             var products = GetProducts();
             var productData = products.FirstOrDefault(x => x.Id.Equals(data.Id));
+
             if (productData == null)
             {
                 return null;
@@ -184,6 +184,7 @@ namespace ContosoCrafts.WebSite.Services
 
             // Get the current set, and append the new record to it becuase IEnumerable does not have Add
             var dataSet = GetProducts();
+
             dataSet = dataSet.Append(data);
 
             SaveData(dataSet);
@@ -211,7 +212,7 @@ namespace ContosoCrafts.WebSite.Services
         /// <summary>
         /// Finds the average rating of a product
         /// </summary>
-        /// <param name="product">ProductModel of the product to find the average ratings for</param>
+        /// <param name = "product">ProductModel of the product to find the average ratings for</param>
         /// <returns></returns>
         public int GetAverageRating(ProductModel product)
         {
@@ -224,8 +225,11 @@ namespace ContosoCrafts.WebSite.Services
             }
             else // product with ratings
             {
-                voteCount = product.Ratings.Count(); //retrieves number of votes
-                currentRating = product.Ratings.Sum() / voteCount; //calculates average of all votes
+                //retrieves number of votes
+                voteCount = product.Ratings.Count(); 
+                
+                //calculates average of all votes
+                currentRating = product.Ratings.Sum() / voteCount; 
             }
 
             return currentRating;
@@ -267,8 +271,6 @@ namespace ContosoCrafts.WebSite.Services
                     }
                 }
             }
-
-
 
             //return first 5 entries of list (top 3 highest rated products)
             return topThree;
