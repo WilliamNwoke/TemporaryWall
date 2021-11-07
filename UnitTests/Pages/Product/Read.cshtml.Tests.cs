@@ -20,11 +20,8 @@ namespace UnitTests.Pages.Product.Read
         [SetUp]
         public void TestInitialize()
         {
-            pageModel = new ReadModel(TestHelper.ProductService)
-            {
-            };
+            pageModel = new ReadModel(TestHelper.ProductService);
         }
-
         #endregion TestSetup
 
         // onGet test method to read and return the product argument passed.
@@ -36,6 +33,7 @@ namespace UnitTests.Pages.Product.Read
 
             // Act
             pageModel.OnGet("the-starry-night");
+            pageModel.Product.ToString();
 
             // Assert
             Assert.AreEqual(true, pageModel.ModelState.IsValid);
@@ -57,19 +55,6 @@ namespace UnitTests.Pages.Product.Read
         }
         #endregion GetComment
 
-        // Set comment function Test
-        #region SetComment
-        [Test]
-        public void SetComment_Valid_Should_Add()
-        {
-        // Arrange
-
-        // Act
-
-        // Assert
-            
-        }
-        #endregion GetComment
 
         // Test OnPost method to pass, when comments is NULL
         #region OnPost
@@ -117,27 +102,6 @@ namespace UnitTests.Pages.Product.Read
         }
 
         // OnPost  
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
         [Test]
         public void OnPost_Comment_Too_Long_Should_Pass()
         {
