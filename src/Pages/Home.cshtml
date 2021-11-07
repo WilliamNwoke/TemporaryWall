@@ -1,6 +1,6 @@
 ﻿@page
 @using ContosoCrafts.WebSite.Components
-@model IndexModel
+@model HomeModel
 @{ ViewData["Title"] = "Home page"; }
 
 @(await Html.RenderComponentAsync<ProductList>(RenderMode.ServerPrerendered))
