@@ -6,7 +6,7 @@ namespace UnitTests.Services.JsonFileProductService.GetHighestRatedArtwork
     /// <summary>
     /// Json Product services test
     /// </summary>
-    public class JsonFileProductServiceGetHighestRatedArtworkTest
+    public class JsonFileProductServiceGetHighestRatedArtwork
     {
         #region TestSetup
 
