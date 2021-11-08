@@ -69,5 +69,21 @@ namespace UnitTests.Pages.Landing
 
         }
         #endregion GetTopThreeArtworks
+
+
+        #region OnGet
+        [Test]
+        public void OnGet_Should_Return_TopThreeArtworks_Valid_Pass()
+        {
+            // Arrange
+
+
+            // Act
+            pageModel.OnGet();
+
+            // Assert
+
+        }
+        #endregion OnGet
     }
 }
