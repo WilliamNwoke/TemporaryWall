@@ -53,5 +53,21 @@ namespace UnitTests.Pages.Landing
             // Assert
         }
         #endregion GetProducts
+
+
+        #region GetTopThreeArtworks
+        [Test]
+        public void TopThreeArtwork_Should_Get_TopThreeArtworks_Valid_Pass()
+        {
+            // Arrange
+
+
+            // Act
+            var data = pageModel.TopThreeArtwork;
+
+            // Assert
+
+        }
+        #endregion GetTopThreeArtworks
     }
 }
