@@ -20,15 +20,24 @@ namespace ContosoCrafts.WebSite.Pages
             ProductService = productService;
         }
 
-        // Data Service
+        /// <summary>
+        /// Gets ProductService
+        /// </summary>
         public JsonFileProductService ProductService { get; }
 
-        // Collection of the Data
+        /// <summary>
+        /// Iterable IEnumerable of Products
+        /// </summary>
         public IEnumerable<ProductModel> Products { get; private set; }
 
-
+        /// <summary>
+        /// Gets, sets List of TopThreeArtworks
+        /// </summary>
         public List<ProductModel> TopThreeArtwork { get; private set; }
 
+        /// <summary>
+        /// OnGet gets top 3 highest rated artworks from ProductService
+        /// </summary>
         public void OnGet()
         {
             TopThreeArtwork = ProductService.GetHighestRatedArtwork();
