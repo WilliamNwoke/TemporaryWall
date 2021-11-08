@@ -40,5 +40,18 @@ namespace UnitTests.Pages.Landing
         #endregion GetProductService
 
 
+        #region GetProducts
+        [Test]
+        public void Products_Should_Get_Products_Valid_Pass()
+        {
+            // Arrange
+
+
+            // Act
+            var data = pageModel.Products;
+
+            // Assert
+        }
+        #endregion GetProducts
     }
 }
