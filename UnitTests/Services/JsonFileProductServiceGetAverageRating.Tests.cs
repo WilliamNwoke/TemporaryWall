@@ -10,7 +10,9 @@ namespace UnitTests.Services.JsonFileProductService.GetAverageRating
     {
         #region TestSetup
 
-        // test initialize
+        /// <summary>
+        /// Initializes Test
+        /// </summary>
         [SetUp]
         public void TestInitialize()
         {
@@ -19,6 +21,10 @@ namespace UnitTests.Services.JsonFileProductService.GetAverageRating
 
 
         #region GetAverageRating
+        /// <summary>
+        /// Tests GetAverageRating to return average rating
+        /// uses "american-gothic" product with known average rating of 2
+        /// </summary>
         [Test]
         public void GetAverageRating_Valid_Rating_Valid_Should_Return_True_Pass()
         {
@@ -33,6 +39,10 @@ namespace UnitTests.Services.JsonFileProductService.GetAverageRating
         }
 
 
+        /// <summary>
+        /// Tests GetAverageRating to return average rating if rating is null
+        /// uses "619737e3-5880-4c1e-95d6-c079346568aa" with known rating of null
+        /// </summary>
         [Test]
         public void GetAverageRating_Null_Rating_Valid_Should_Return_True_Pass()
         {
