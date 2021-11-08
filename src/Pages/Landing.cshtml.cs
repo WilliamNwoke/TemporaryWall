@@ -28,7 +28,7 @@ namespace ContosoCrafts.WebSite.Pages
         /// <summary>
         /// Iterable IEnumerable of Products
         /// </summary>
-        public IEnumerable<ProductModel> Products { get; private set; }
+        public IEnumerable<ProductModel> Products { get;}
 
         /// <summary>
         /// Gets, sets List of TopThreeArtworks
