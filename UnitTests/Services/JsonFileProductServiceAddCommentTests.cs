@@ -1,7 +1,7 @@
 using NUnit.Framework;
 using System.Linq;
 
-namespace UnitTests.Pages.Product.AddComment
+namespace UnitTests.Services.JsonFileProductService.AddComment
 {
     /// <summary>
     /// Json Product services test
