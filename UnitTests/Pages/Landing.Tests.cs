@@ -15,7 +15,9 @@ namespace UnitTests.Pages.Landing
         #region TestSetup
         public static LandingModel pageModel;
 
-        // test initialize
+        /// <summary>
+        /// initializes Tests annd pagemodel
+        /// </summary>
         [SetUp]
         public void TestInitialize()
         {
@@ -25,6 +27,9 @@ namespace UnitTests.Pages.Landing
 
 
         #region GetProductService
+        /// <summary>
+        /// Tests "public JsonFileProductService ProductService"
+        /// </summary>
         [Test]
         public void Get_Should_Return_ProductService_Pass()
         {
@@ -41,6 +46,9 @@ namespace UnitTests.Pages.Landing
 
 
         #region GetProducts
+        /// <summary>
+        /// Tests "public IEnumerable<ProductModel> Products"
+        /// </summary>
         [Test]
         public void Products_Should_Get_Products_Valid_Pass()
         {
@@ -56,6 +64,9 @@ namespace UnitTests.Pages.Landing
 
 
         #region GetTopThreeArtworks
+        /// <summary>
+        /// Tests "public List<ProductModel> TopThreeArtwork"
+        /// </summary>
         [Test]
         public void TopThreeArtwork_Should_Get_TopThreeArtworks_Valid_Pass()
         {
@@ -72,6 +83,9 @@ namespace UnitTests.Pages.Landing
 
 
         #region OnGet
+        /// <summary>
+        /// Tests "public void OnGet()"
+        /// </summary>
         [Test]
         public void OnGet_Should_Return_TopThreeArtworks_Valid_Pass()
         {
