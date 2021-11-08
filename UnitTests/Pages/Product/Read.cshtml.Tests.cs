@@ -71,9 +71,11 @@ namespace UnitTests.Pages.Product.Read
                 Image = "image"
             };
             // Act
-            var result = pageModel.OnPost() as RedirectToPageResult;
-            // Assert
-            Assert.AreEqual(null, pageModel.Product.Comments); // nothing should be inserted
+            var result = pageModel.OnPost() as RedirectToPageResult; 
+
+            // Assert 
+            // nothing should be inserted
+            Assert.AreEqual(null, pageModel.Product.Comments);
             Assert.AreEqual(true, pageModel.ModelState.IsValid);
             Assert.AreEqual(true, result.PageName.Contains("Read"));
         }
