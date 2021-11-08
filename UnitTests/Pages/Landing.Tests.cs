@@ -24,6 +24,19 @@ namespace UnitTests.Pages.Landing
         #endregion TestSetup
 
 
-        
+        #region Get
+        [Test]
+        public void Get_Should_Return_ProductService_Pass()
+        {
+            // Arrange
+
+
+            // Act
+            var data = pageModel.ProductService;
+
+            // Assert
+
+        }
+        #endregion Get
     }
 }
