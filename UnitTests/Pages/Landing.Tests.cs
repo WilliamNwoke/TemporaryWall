@@ -24,7 +24,7 @@ namespace UnitTests.Pages.Landing
         #endregion TestSetup
 
 
-        #region Get
+        #region GetProductService
         [Test]
         public void Get_Should_Return_ProductService_Pass()
         {
@@ -37,6 +37,8 @@ namespace UnitTests.Pages.Landing
             // Assert
 
         }
-        #endregion Get
+        #endregion GetProductService
+
+
     }
 }
