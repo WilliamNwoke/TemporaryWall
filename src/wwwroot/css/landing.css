@@ -11,8 +11,8 @@
 
 .header-container {
     position: absolute;
-    top: 43%;
-    left: 28%;
+    top: 30%;
+    left: 26%;
     text-align: center;    
 }
 
@@ -48,7 +48,7 @@
 @media screen and (max-width: 1200px) {
     .header-container {
         left: 23%;
-        top: 25%;
+        top: 20%;
     }
 
     .landing-header {
