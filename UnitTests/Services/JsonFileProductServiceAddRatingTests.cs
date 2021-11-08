@@ -1,7 +1,7 @@
 using NUnit.Framework;
 using System.Linq;
 
-namespace UnitTests.Pages.Product.AddRating
+namespace UnitTests.Services.JsonFileProductService.AddRating
 {
     /// <summary>
     /// Json File Product service test
