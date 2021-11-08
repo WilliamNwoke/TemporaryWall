@@ -19,6 +19,7 @@ namespace UnitTests.Pages.Product.Index
         public static IndexModel pageModel;
 
         [SetUp]
+
         // Test Initialize method
         public void TestInitialize()
         {
