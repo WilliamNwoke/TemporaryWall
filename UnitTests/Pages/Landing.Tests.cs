@@ -8,7 +8,7 @@ using System.Linq;
 namespace UnitTests.Pages.Landing
 {
     /// <summary>
-    /// Json Product services test
+    /// Tests Landing.cshtml.cs functionality
     /// </summary>
     public class LandingTests
     {
