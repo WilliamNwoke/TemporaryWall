@@ -17,10 +17,10 @@ namespace UnitTests.Pages.Product.Create
         #region TestSetup
         public static CreateModel pageModel;
 
-        [SetUp]
         /// <summary>
         /// method to initialite the test
         /// </summary>
+        [SetUp]
         public void TestInitialize()
         {
             pageModel = new CreateModel(TestHelper.ProductService)
