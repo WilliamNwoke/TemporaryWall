@@ -18,7 +18,9 @@ namespace UnitTests.Pages.Product.Create
         public static CreateModel pageModel;
 
         [SetUp]
-        // method to initialite the test
+        /// <summary>
+        /// method to initialite the test
+        /// </summary>
         public void TestInitialize()
         {
             pageModel = new CreateModel(TestHelper.ProductService)
@@ -28,8 +30,9 @@ namespace UnitTests.Pages.Product.Create
 
         #endregion TestSetup
 
-
-        // method to check that the onGet method returns Products from the Products.json
+        /// <summary>
+        /// method to check that the onGet method returns Products from the Products.json
+        /// </summary>
         #region OnGet
         [Test]
         public void OnGet_Valid_Should_Return_Products()
