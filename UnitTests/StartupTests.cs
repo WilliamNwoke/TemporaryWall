@@ -14,19 +14,26 @@ namespace UnitTests.Startup
     public class StartupTests
     {
         #region TestSetup
-        // Test initialize
+        /// <summary>
+        /// Initialize setup
+        /// </summary>
         [SetUp]
         public void TestInitialize()
         {
         }
-        // Test for entry point of the application
+
+        /// <summary>
+        /// Test for entry point of the application
+        /// </summary>
         public class Startup : ContosoCrafts.WebSite.Startup
         {
             public Startup(IConfiguration config) : base(config) { }
         }
         #endregion TestSetup
 
-        // test function for application configure services
+        /// <summary>
+        /// test function for application configure services
+        /// </summary>
         #region ConfigureServices
         [Test]
         public void Startup_ConfigureServices_Valid_Defaut_Should_Pass()
@@ -36,7 +43,9 @@ namespace UnitTests.Startup
         }
         #endregion ConfigureServices
 
-        // test function for application entry point configuration
+        /// <summary>
+        /// test function for application entry point configuration
+        /// </summary>
         #region GetConfiguration
         [Test]
         public void Startup_Get_Configuration_Should_Pass()
@@ -46,15 +55,5 @@ namespace UnitTests.Startup
         }
 
         #endregion GetConfiguration
-
-        // test function for application entry point
-        #region Configure
-        [Test]
-        public void Startup_Configure_Should_Pass()
-        {
-            Startup startup = new Startup(new ConfigurationBuilder().Build());
-            //startup.Configure(new ApplicationBuilder(IServiceProvider.GetService(typeof(IService))), TestHelper.WebHostEnvironment);
-        }
-        #endregion Configure
     }
 }
