@@ -29,7 +29,9 @@ namespace ContosoCrafts.WebSite.Pages
         // Retreive Products and privately sets 
         public IEnumerable<ProductModel> Products { get; private set; }
 
-        // Retrieves Products using razor component
+        /// <summary>
+        /// Retrieves Products using razor component
+        /// </summary>
         public void OnGet()
         {
             Products = ProductService.GetProducts();
