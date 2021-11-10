@@ -18,9 +18,10 @@ namespace UnitTests.Pages.Product.Index
         public static PageContext pageContext;
         public static IndexModel pageModel;
 
+        /// <summary>
+        /// Test Initialize method
+        /// </summary>
         [SetUp]
-
-        // Test Initialize method
         public void TestInitialize()
         {
             pageModel = new IndexModel(TestHelper.ProductService)
@@ -29,8 +30,10 @@ namespace UnitTests.Pages.Product.Index
         }
         #endregion TestSetup
 
-        // onGet test to return a list of products
         #region OnGet
+        /// <summary>
+        /// onGet test to return a list of products
+        /// </summary>
         [Test]
         public void OnGet_Valid_Should_Pass()
         {
