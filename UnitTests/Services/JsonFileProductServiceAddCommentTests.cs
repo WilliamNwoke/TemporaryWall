@@ -10,14 +10,18 @@ namespace UnitTests.Services.JsonFileProductService.AddComment
     {
         #region TestSetup
 
-        // test initialize
+        /// <summary>
+        /// Initialize test setup
+        /// </summary>
         [SetUp]
         public void TestInitialize()
         {
         }
         #endregion TestSetup
 
-        // function to test the add comment or pass
+        /// <summary>
+        /// function to test the add comment or pass
+        /// </summary>
         #region AddComment
         [Test]
         public void AddComment_Valid_Data_Valid_Comment_Valid_AddComment_Should_Pass()
@@ -30,7 +34,10 @@ namespace UnitTests.Services.JsonFileProductService.AddComment
 
         }
         #endregion AddComment
-        // Function to test the add comment
+
+        /// <summary>
+        /// Function to test the add comment
+        /// </summary>
         #region AddComment
         [Test]
         public void AddComment_Valid__Data_Valid_Comment_Invalid_AddComment_Should_Pass()
@@ -46,7 +53,9 @@ namespace UnitTests.Services.JsonFileProductService.AddComment
         }
         #endregion AddComment
 
-        // function to return product model as string
+        /// <summary>
+        /// function to return product model as string
+        /// </summary>
         #region ProductModeltoString
         [Test]
         public void ProductModeltoString_Valid_Should_Pass()
