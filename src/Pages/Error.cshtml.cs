@@ -29,7 +29,9 @@ namespace ContosoCrafts.WebSite.Pages
             _logger = logger;
         }
 
-        // Onget method for the Request ID
+        /// <summary>
+        /// Onget method for the Request ID
+        /// </summary>
         public void OnGet()
         {
             RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier;
