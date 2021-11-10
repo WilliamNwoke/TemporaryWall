@@ -19,10 +19,11 @@ namespace UnitTests.Program
         public void TestInitialize()
         {
         }
-        #endregion TestSetup
-        
-        //  Program. cs test function
+        #endregion TestSetup        
 
+        /// <summary>
+        /// Program. cs test function
+        /// </summary>
         #region CreateHostBuilder
         [Test,Timeout(1000)]
         public void Program_CreateHostBuilder_Valid_Defaut_Should_Pass()
