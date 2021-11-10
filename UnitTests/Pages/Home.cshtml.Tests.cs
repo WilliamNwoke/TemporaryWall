@@ -35,19 +35,39 @@ namespace UnitTests.Pages.Home
         #endregion TestSetup
 
         /// <summary>
-        /// onGet method to return products
+        /// Check onGet method works
         /// </summary>
         #region OnGet
         [Test]
-        public void OnGet_Valid_Should_Return_Products()
+        public void OnGet_Valid_Should_Pass()
         {
             // Arrange
 
             // Act
             pageModel.OnGet();
 
+            
             // Assert
         }
         #endregion OnGet
+
+        /// <summary>
+        /// Check Products get method 
+        /// </summary>
+        #region ProductGet
+        [Test]
+        public void Get_Products_Valid_Should_Return_Null()
+        {
+            // Arrange
+
+            // Act
+            var data = pageModel.Products;
+
+            // Assert
+            Assert.IsNull(data);
+            //This function doesn't return data
+
+        }
+        #endregion ProductGet
     }
 }
