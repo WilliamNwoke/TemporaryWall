@@ -1,4 +1,3 @@
-
 using Microsoft.AspNetCore.Mvc;
 
 using NUnit.Framework;
@@ -13,11 +12,15 @@ namespace UnitTests.Pages.Product.Update
     /// </summary>
     public class UpdateTests
     {
-        // Test setup method
         #region TestSetup
+        /// <summary>
+        /// Test setup method
+        /// </summary>
         public static UpdateModel pageModel;
 
-        // Test initializer
+        /// <summary>
+        /// Test initializer
+        /// </summary>
         [SetUp]
         public void TestInitialize()
         {
@@ -28,8 +31,10 @@ namespace UnitTests.Pages.Product.Update
 
         #endregion TestSetup
 
-        // Test OnGet method to retrun product
         #region OnGet
+        /// <summary>
+        /// Test OnGet method to retrun product
+        /// </summary>
         [Test]
         public void OnGet_Valid_Should_Return_Products()
         {
@@ -44,9 +49,10 @@ namespace UnitTests.Pages.Product.Update
         }
         #endregion OnGet
 
-
-        // test onPost method to return new product
         #region OnPost
+        /// <summary>
+        /// test onPost method to return new product
+        /// </summary>
         [Test]
         public void OnPost_Valid_Should_Return_Products()
         {
@@ -66,7 +72,10 @@ namespace UnitTests.Pages.Product.Update
             Assert.AreEqual(true, pageModel.ModelState.IsValid);
             Assert.AreEqual(true, result.PageName.Contains("Index"));
         }
-        // onPst methhod to handle errors
+
+        /// <summary>
+        /// onPost methhod to handle errors
+        /// </summary>
         [Test]
         public void OnPost_InValid_Model_NotValid_Return_Page()
         {
