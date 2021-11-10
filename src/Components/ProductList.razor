@@ -107,7 +107,9 @@
 
         string SearchTerm { get; set; }
 
-        // Retrieves specific product information
+        /// <summary>
+        /// Retrieves specific product information
+        /// </summary>        
         void SelectProduct(string productId)
         {
             selectedProductId = productId;
@@ -119,7 +121,9 @@
         int voteCount = 0;
         string voteLabel;
 
-        // Retrieves Current ratings
+        /// <summary>
+        /// Retrieves current ratings   
+        /// </summary>
         void GetCurrentRating()
         {
             //Checks if there are ratings
@@ -138,10 +142,12 @@
             System.Console.WriteLine($"Current rating for {selectedProduct.Id}: {currentRating}");
         }
 
-        // Function to submit ratings
+        /// <summary>
+        /// Function to submit ratings
+        /// </summary>
+        /// <param name="rating"></param>
         void SubmitRating(int rating)
         {
-            System.Console.WriteLine($"Rating received for {selectedProduct.Id}: {rating}");
             ProductService.AddRating(selectedProductId, rating); // Adds rating to JSON database
             SelectProduct(selectedProductId);
         }
@@ -172,6 +178,11 @@
             return Results;
         }
 
+        /// <summary>
+        /// Gets all products in DB when there is no search term.  When a search term
+        /// is set this will return all matching products
+        /// </summary>
+        /// <returns></returns>
         IEnumerable<ProductModel> GetProducts()
         {
             if (string.IsNullOrEmpty(SearchTerm))
