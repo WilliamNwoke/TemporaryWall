@@ -12,11 +12,16 @@ namespace UnitTests.Pages.Product.Read
     /// </summary>
     public class ReadTests
     {
-        // Read Model Page Model function
+
         #region TestSetup
+        /// <summary>
+        /// Read Model Page Model function
+        /// </summary>
         public static ReadModel pageModel;
 
-        // Test Initializer function
+        /// <summary>
+        /// Test Initializer function
+        /// </summary>
         [SetUp]
         public void TestInitialize()
         {
@@ -24,8 +29,10 @@ namespace UnitTests.Pages.Product.Read
         }
         #endregion TestSetup
 
-        // onGet test method to read and return the product argument passed.
         #region OnGet
+        /// <summary>
+        /// onGet test method to read and return the product argument passed.
+        /// </summary>
         [Test]
         public void OnGet_Valid_Should_Return_Products()
         {
@@ -41,8 +48,10 @@ namespace UnitTests.Pages.Product.Read
         }
         #endregion OnGet
 
-        // get method which returns the comments
         #region GetComment
+        /// <summary>
+        /// get method which returns the comments
+        /// </summary>
         [Test]
         public void GetComment_Valid_Should_Pass()
         {
@@ -55,9 +64,10 @@ namespace UnitTests.Pages.Product.Read
         }
         #endregion GetComment
 
-
-        // Test OnPost method to pass, when comments is NULL
         #region OnPost
+        /// <summary>
+        /// Test OnPost method to pass, when comments is NULL
+        /// </summary>
         [Test]
         public void OnPost_Comment_Null_Should_Pass()
         {
@@ -79,8 +89,10 @@ namespace UnitTests.Pages.Product.Read
             Assert.AreEqual(true, pageModel.ModelState.IsValid);
             Assert.AreEqual(true, result.PageName.Contains("Read"));
         }
-        
-        // onPost Method to Pass when comment is blank
+
+        /// <summary>
+        /// onPost Method to Pass when comment is blank
+        /// </summary>
         [Test]
         public void OnPost_Comment_Blank_Should_Pass()
         {
@@ -103,7 +115,10 @@ namespace UnitTests.Pages.Product.Read
             Assert.AreEqual(true, result.PageName.Contains("Read"));
         }
 
-        // OnPost  
+        /// <summary>
+        /// Test that a comment over the length limit does not get inserted
+        /// but also does not block execution
+        /// </summary>
         [Test]
         public void OnPost_Comment_Too_Long_Should_Pass()
         {
@@ -132,6 +147,9 @@ namespace UnitTests.Pages.Product.Read
             Assert.AreEqual(true, result.PageName.Contains("Read"));
         }
 
+        /// <summary>
+        /// Test that a valid comment OnPost submits a comment
+        /// </summary>
         [Test]
         public void OnPost_Comment_Valid_Should_Pass()
         {
@@ -150,19 +168,6 @@ namespace UnitTests.Pages.Product.Read
             Assert.AreEqual(true, pageModel.ModelState.IsValid);
             Assert.AreEqual(true, result.PageName.Contains("Read"));
         }
-        #endregion OnPost*/
-
-        #region ReadModelSetComment
-        [Test]
-        public void ReadModel_Set_Comment_Should_Pass()
-        {
-            // Arrange
-            var comment = new ReadModel(TestHelper.ProductService){ Comment = ""};
-
-            // Act
-
-            // Assert
-        }
-        #endregion ReadModelSetComment
+        #endregion OnPost
     }
 }
