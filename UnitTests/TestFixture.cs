@@ -16,6 +16,9 @@ namespace UnitTests
         // Path to the data folder for the content
         public static string DataContentRootPath = "./data/";
 
+        /// <summary>
+        /// Method that will run before any tests happen
+        /// </summary>
         [OneTimeSetUp]
         public void RunBeforeAnyTests()
         {
