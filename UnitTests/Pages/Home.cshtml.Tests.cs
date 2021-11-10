@@ -19,7 +19,9 @@ namespace UnitTests.Pages.Home
         // Page model declaration
         public static HomeModel pageModel;
 
-        // test initialize
+        /// <summary>
+        /// Initialize mocks and models
+        /// </summary>
         [SetUp]
         public void TestInitialize()
         {
@@ -31,8 +33,10 @@ namespace UnitTests.Pages.Home
         }
 
         #endregion TestSetup
-        
-        // onGet method to return products
+
+        /// <summary>
+        /// onGet method to return products
+        /// </summary>
         #region OnGet
         [Test]
         public void OnGet_Valid_Should_Return_Products()
@@ -44,20 +48,6 @@ namespace UnitTests.Pages.Home
 
             // Assert
         }
-
-        [Test]
-        public void GetProduct_Valid_Should_Pass()
-        {
-            // Arrange
-
-            // Act
-            var data = pageModel.Products;
-
-            // Assert
-            Assert.IsNull(data);
-        }
         #endregion OnGet
-
-
     }
 }
