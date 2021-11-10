@@ -9,13 +9,18 @@ namespace UnitTests.Services.JsonFileProductService.AddRating
     public class JsonFileProductServiceAddRatingTests
     {
         #region TestSetup
-        // test initialize
+        /// <summary>
+        /// Initialize setup
+        /// </summary>
         [SetUp]
         public void TestInitialize()
         {
         }
         #endregion TestSetup
-        // Test funciton for rating null items
+
+        /// <summary>
+        /// Test funciton for rating null items
+        /// </summary>
         #region AddRating
         [Test]
         public void AddRating_InValid_Product_Null_Should_Return_False()
@@ -29,7 +34,9 @@ namespace UnitTests.Services.JsonFileProductService.AddRating
             Assert.AreEqual(false, data);
         }
 
-        // Test function to checking rating of invalid item
+        /// <summary>
+        /// Test function to checking rating of invalid item
+        /// </summary>
         [Test]
         public void AddRating_Valid_Product_InValid_Should_Return_False()
         {
@@ -42,7 +49,9 @@ namespace UnitTests.Services.JsonFileProductService.AddRating
             Assert.AreEqual(false, data);
         }
 
-        // zTest function to test when rating is less than 0 and return false
+        /// <summary>
+        /// Test function to test when rating is less than 0 and return false
+        /// </summary>
         [Test]
         public void AddRating_Valid_Product_Valid_AddRating_SmallThanZero_Should_Return_False_()
         {
@@ -55,7 +64,10 @@ namespace UnitTests.Services.JsonFileProductService.AddRating
             // Assert
             Assert.AreEqual(false, result);
         }
-        // Test function for add rating to return false when rating is bigger than 5 and return false
+
+        /// <summary>
+        /// Test function for add rating to return false when rating is bigger than 5 and return false
+        /// </summary>
         [Test]
         public void AddRating_Valid_Product_Valid_AddRating_BiggerThanFive_Should_Return_False()
         {
@@ -69,7 +81,9 @@ namespace UnitTests.Services.JsonFileProductService.AddRating
             Assert.AreEqual(false, result);
         }
 
-        // function to test the rating when it is null
+        /// <summary>
+        /// function to test the rating when it is null
+        /// </summary>
         [Test]
         public void AddRating_Valid_Product_Valid_AddRating_Valid_Result_IsNull_Should_Return_True()
         {
@@ -83,7 +97,9 @@ namespace UnitTests.Services.JsonFileProductService.AddRating
             Assert.AreEqual(true , result);
         }
 
-        // Function to test the add rating functionality
+        /// <summary>
+        /// Function to test the add rating functionality
+        /// </summary>
         [Test]
         public void AddRating_Valid_Product_Valid_Rating_Valid_Should_Return_True()
         {
