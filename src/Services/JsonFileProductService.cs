@@ -282,10 +282,35 @@ namespace ContosoCrafts.WebSite.Services
         /// <returns>IEnumerable<ProductModel> sorted by rating</returns>
         public IEnumerable<ProductModel> GetProductSortedByRating()
         {
-            //var products = GetProducts();
-            //var ordered = products.OrderByDescending(product => product.Ratings);
-            //System.Console.WriteLine(ordered);
-            return GetProducts().OrderByDescending(product => product.Ratings);
+            //Initiate List
+            var listOfID = new List<(string, int)>();
+
+            //Gets Product List
+            var dataset = GetProducts();
+
+            //finds the average rating of each artwork and adds it and product ID to list
+            foreach (var product in dataset)
+            {
+                listOfID.Add((product.Id, GetAverageRating(product)));
+            }
+
+            //sort list in decending order by item2 of tuple (the rating)
+            //so that the highest rated will be at beginnning of list
+            listOfID = listOfID.OrderByDescending(x => x.Item2).ToList();
+
+            List<ProductModel> result = new List<ProductModel>();
+            foreach (var item in listOfID)
+            {
+                foreach (var art in dataset)
+                {
+                    if (item.Item1 == art.Id)
+                    {
+                        result.Add(art);
+                    }
+                }
+            }
+            //return GetProducts().OrderByDescending(product => product.Ratings);
+            return result.AsEnumerable();
         }
     }
 }
