@@ -237,7 +237,7 @@ namespace ContosoCrafts.WebSite.Services
 
 
         /// <summary>
-        /// Finds the 5 highest rated artworks of all the artworks
+        /// Finds the 3 highest rated artworks of all the artworks
         /// </summary>
         /// <returns>Tuple of (productID, rating) top 3 highest rated artworks</returns>
         public List<ProductModel> GetHighestRatedArtwork()
@@ -272,7 +272,7 @@ namespace ContosoCrafts.WebSite.Services
                 }
             }
 
-            //return first 5 entries of list (top 3 highest rated products)
+            //return first 3 entries of list (top 3 highest rated products)
             return topThree;
         }
     }
