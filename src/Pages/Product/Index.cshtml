@@ -11,6 +11,15 @@
     <!--Create new product button-->
     <a asp-page="Create" class="btn btn-link">+ Create</a>
 
+    <select class="form-control" id="SortBy" name="SortBy">
+        <option>Sort By:</option>
+        <option>Title Ascending (A-Z)</option>
+        <option>Artist Name Ascending (A-Z)</option>
+        <option>Ratings Descending (Highest to Lowest)</option>
+    </select>
+
+    <br />
+
     <!--Table of Products-->
     <table class="table table-bordered table-striped">
         <thead>
