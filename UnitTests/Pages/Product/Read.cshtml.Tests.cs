@@ -53,14 +53,15 @@ namespace UnitTests.Pages.Product.Read
         /// get method which returns the comments
         /// </summary>
         [Test]
-        public void GetComment_Valid_Should_Pass()
+        public void pageModel_GetComment_Valid_Should_Return_Data()
         {
             // Arrange
+            var data = pageModel.Product.Comments;
 
             // Act
 
             // Assert
-            Assert.AreEqual(null, pageModel.Comment);
+            Assert.IsNotNull(data);
         }
         #endregion GetComment
 
@@ -69,7 +70,7 @@ namespace UnitTests.Pages.Product.Read
         /// Test OnPost method to pass, when comments is NULL
         /// </summary>
         [Test]
-        public void OnPost_Comment_Null_Should_Pass()
+        public void PageModel_Set_OnPost_Comment_Valid_Should_Return_Comments_Null()
         {
             // Arrange
             pageModel.Comment = null;
@@ -94,7 +95,7 @@ namespace UnitTests.Pages.Product.Read
         /// onPost Method to Pass when comment is blank
         /// </summary>
         [Test]
-        public void OnPost_Comment_Blank_Should_Pass()
+        public void PageModel_Set_OnPost_Comment_Blank_Should_Return_Comments_Null()
         {
             // Arrange
             pageModel.Comment = ""; // empty comment
@@ -120,7 +121,7 @@ namespace UnitTests.Pages.Product.Read
         /// but also does not block execution
         /// </summary>
         [Test]
-        public void OnPost_Comment_Too_Long_Should_Pass()
+        public void PageModel_Set_OnPost_Comment_Too_Long_Should_Return_Comments_Null()
         {
             // Arrange
             // 251 character length comment
@@ -151,7 +152,7 @@ namespace UnitTests.Pages.Product.Read
         /// Test that a valid comment OnPost submits a comment
         /// </summary>
         [Test]
-        public void OnPost_Comment_Valid_Should_Pass()
+        public void PageModel_Set_OnPost_Comment_Valid_Should_Return_Comments_Valid()
         {
             // Arrange
             // 251 character length comment
