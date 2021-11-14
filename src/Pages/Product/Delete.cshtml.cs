@@ -38,6 +38,12 @@ namespace ContosoCrafts.WebSite.Pages.Product
         public IActionResult OnGet(string id)
         {
             Product  = ProductService.GetProducts().FirstOrDefault(m => m.Id.Equals(id));
+            if (Product == null)
+            {
+                return RedirectToPage("./Index");
+            }
+
+            return Page();
 
         }
 
