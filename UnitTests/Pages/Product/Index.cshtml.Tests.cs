@@ -35,7 +35,7 @@ namespace UnitTests.Pages.Product.Index
         /// onGet test to return a list of products
         /// </summary>
         [Test]
-        public void OnGet_Valid_Should_Pass()
+        public void OnGet_Valid_Should_Return_Data()
         {
             // Arrange
             pageModel.OnGet();
