@@ -275,5 +275,17 @@ namespace ContosoCrafts.WebSite.Services
             //return first 3 entries of list (top 3 highest rated products)
             return topThree;
         }
+
+        /// <summary>
+        /// Method to sort ProductModel IEnumerable from highest rated to lowest rated.
+        /// </summary>
+        /// <returns>IEnumerable<ProductModel> sorted by rating</returns>
+        public IEnumerable<ProductModel> GetProductSortedByRating()
+        {
+            //var products = GetProducts();
+            //var ordered = products.OrderByDescending(product => product.Ratings);
+            //System.Console.WriteLine(ordered);
+            return GetProducts().OrderByDescending(product => product.Ratings);
+        }
     }
 }
