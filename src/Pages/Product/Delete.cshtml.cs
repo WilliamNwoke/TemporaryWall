@@ -35,9 +35,10 @@ namespace ContosoCrafts.WebSite.Pages.Product
         /// Loads the Data
         /// </summary>
         /// <param name="id"></param>
-        public void OnGet(string id)
+        public IActionResult OnGet(string id)
         {
             Product  = ProductService.GetProducts().FirstOrDefault(m => m.Id.Equals(id));
+
         }
 
         /// <summary>
