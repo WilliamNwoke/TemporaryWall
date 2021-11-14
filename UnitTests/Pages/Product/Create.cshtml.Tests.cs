@@ -35,18 +35,33 @@ namespace UnitTests.Pages.Product.Create
         /// </summary>
         #region OnGet
         [Test]
-        public void OnGet_Valid_Should_Return_Products()
+        public void ProductService_OnGet_Valid_Should_Return_Products()
         {
             // Arrange
-            var oldCount = TestHelper.ProductService.GetProducts().Count();
 
             // Act
             pageModel.OnGet();
 
             // Assert
             Assert.AreEqual(true, pageModel.ModelState.IsValid);
-            Assert.AreEqual(oldCount+1, TestHelper.ProductService.GetProducts().Count());
         }
         #endregion OnGet
+
+        /// <summary>
+        /// method to check that the GetProducts() method returns data from the Products.json
+        /// </summary>
+        #region GetProducts
+        [Test]
+        public void ProductService_GetProducts_Valid_Should_Return_Data()
+        {
+            // Arrange
+            var Data = TestHelper.ProductService.GetProducts().Count();
+
+            // Act
+
+            // Assert
+            Assert.AreEqual(Data, TestHelper.ProductService.GetProducts().Count());
+        }
+        #endregion GetProducts
     }
 }
