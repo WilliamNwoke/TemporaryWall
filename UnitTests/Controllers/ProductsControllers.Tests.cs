@@ -46,19 +46,34 @@ namespace UnitTests.Controllers
         /// in ProductsController.cs
         /// </summary>
         [Test]
-        public void Patch_RatingRequest_Valid_Should_Return_Ok()
+        public void Patch_RatingRequest_Valid_Should_Return_Data()
         {
             // Arrange
 
             // Act
-            var ok = new ProductsController.RatingRequest();
+            var data = new ProductsController.RatingRequest();
+
+            // Assert
+            Assert.IsNotNull(data);
+        }
+
+        /// <summary>
+        /// Tests "public ActionResult Patch([FromBody] RatingRequest request)"
+        /// in ProductsController.cs
+        /// </summary>
+        [Test]
+        public void Patch_RatingRequest_Valid_ProductId_Valid_ProductRating_Should_Equal_0()
+        {
+            // Arrange
             var product = TestHelper.RatingRequest;
+
+            // Act
             product.ProductId = "the-last-supper";
             product.Rating = 0;
             TestHelper.ProductController.Patch(product);
 
             // Assert
-            //Assert.AreEqual(null, results);
+            Assert.AreEqual(product.Rating, 0);
         }
 
         /// <summary>
@@ -66,19 +81,19 @@ namespace UnitTests.Controllers
         /// in ProductsController.cs
         /// </summary>
         [Test]
-        public void Patch_CommentRequest_Valid_Should_Return_Ok()
+        public void Patch_CommentRequest_Valid_Comment_Valid_Should_Comment_Equal()
         {
             // Arrange
+            var request = TestHelper.CommentRequest;
 
             // Act
-            var request = TestHelper.CommentRequest;
             request.ProductId = "the-starry-night";
             request.Comment = "O hi there";
-            //ActionResult ok = TestHelper.ProductController.Patch(request);
+
             TestHelper.ProductController.Patch(request);
 
             // Assert
-            //Assert.AreEqual(ok, ok);
+            Assert.AreEqual(request.Comment, "O hi there");
         }
         #endregion ProductController
         
@@ -86,63 +101,62 @@ namespace UnitTests.Controllers
 
         //--------------------------------------------------------------------------------
         #region RatingRequest
-
         /// <summary>
         /// Tests RatingRequest "public string ProductId { get; set; }" in ProductsController.cs
         /// </summary>
         [Test]
-        public void Get_Rating_ProductID_Valid_Should_Return_True()
+        public void Get_ProductId_ProductID_Valid_Should_Return_Null()
         {
             // Arrange
 
             // Act
             var results = TestHelper.RatingRequest.ProductId;
 
-            // Assert
-            Assert.AreEqual(null, results);
+            // Assert(Null for No data initial in Get() RatingRequest method)
+            Assert.IsNull(results);
         }
 
         /// <summary>
         /// Tests RatingRequest "public string Rating { get; set; }" in ProductsController.cs
         /// </summary>
         [Test]
-        public void Get_Rating_Valid_Should_Return_True()
+        public void Get_Rating_Valid_Should_Return_Null()
         {
             // Arrange
 
             // Act
             var results = TestHelper.RatingRequest.Rating;
 
-            // Assert
-            Assert.AreEqual(0, results);
+            // Assert(Null for No data initial in Get() RatingRequest method)
+            Assert.AreEqual(0,results);
         }
 
         /// <summary>
         /// Tests RatingRequest "public string ProductId { get; set; }" in ProductsController.cs
         /// </summary>
         [Test]
-        public void Set_Rating_ProductID_Valid_Should_Return_True()
+        public void Set_RatingRequest_ProductId_Valid_Should_Equal()
         {
             // Arrange
+            var results = TestHelper.RatingRequest;
 
             // Act
-            var results = TestHelper.RatingRequest;
-            results.ProductId = null;
+            results.ProductId = "111222";
 
             // Assert
-            Assert.AreEqual(null, results.ProductId);
+            Assert.AreEqual("111222", results.ProductId);
         }
 
         /// <summary>
         /// Tests RatingRequest "public string Ratings { get; set; }" in ProductsController.cs
         /// </summary>
         [Test]
-        public void Set_Rating_Valid_Should_Return_True()
+        public void Set_RatingRequest_Rating_Valid_Should_Return_Equal()
         {
             // Arrange
+            var results = TestHelper.RatingRequest;
 
             // Act
-            var results = TestHelper.RatingRequest;
             results.Rating = 5;
 
             // Assert
@@ -159,14 +173,14 @@ namespace UnitTests.Controllers
         /// Test CommentRequest "public string ProductId { get; set; }" in ProductsController.cs
         /// </summary>
         [Test]
-        public void Get_Comment_ProductID_Valid_Should_Return_True()
+        public void Get_CommentRequest_ProductId_Valid_Should_Return_Null()
         {
             // Arrange
-
-            // Act
             var results = TestHelper.CommentRequest.ProductId;
 
-            // Assert
+            // Act
+
+            // Assert(Null for No data initial in Get()RatingRequest method)
             Assert.AreEqual(null, results);
         }
 
@@ -174,14 +188,14 @@ namespace UnitTests.Controllers
         /// Test CommentRequest "public string Comment { get; set; }" in ProductsController.cs
         /// </summary>
         [Test]
-        public void Get_Comment_Valid_Should_Return_True()
+        public void Get_CommentRequest_Comment_Valid_Should_Return_Null()
         {
             // Arrange
-
-            // Act
             var results = TestHelper.CommentRequest.Comment;
 
-            // Assert
+            // Act
+
+            // Assert(Null for No data initial in Get() RatingRequest method)
             Assert.AreEqual(null, results);
         }
 
@@ -194,7 +208,7 @@ namespace UnitTests.Controllers
         /// No Assert Because this Unit test is to test the menthod set function work
         /// </summary>
         [Test]
-        public void Set_Comment_Set_ProductId_Should_Pass()
+        public void Set_CommentRequest_Set_Comment_Valid_Set_ProductId_Return_NotNull()
         {
             // Arrange
 
@@ -202,7 +216,6 @@ namespace UnitTests.Controllers
             var comment = new ProductsController.CommentRequest { Comment = "fgdf", ProductId = "sdfs" };
 
             // Assert
-            //Assert.AreEqual(comment, "fgdf");
             Assert.IsNotNull(comment);
         }
         #endregion CommentRequest
