@@ -41,41 +41,15 @@ namespace UnitTests.Pages.Error
         /// onget method to return request id
         /// </summary>
         [Test]
-        public void OnGet_Valid_Activity_Set_Should_Return_RequestId()
-        {
-            // Arrange
-
-            Activity activity = new Activity("activity");
-            activity.Start();
-
-            // Act
-            pageModel.OnGet();
-
-            // Reset
-            activity.Stop();
-
-            // Assert
-            Assert.AreEqual(true, pageModel.ModelState.IsValid);
-            Assert.AreEqual(activity.Id, pageModel.RequestId);
-        }
-
-        /// <summary>
-        /// Onget test function for null values
-        /// </summary>
-        [Test]
-        public void OnGet_InValid_Activity_Null_Should_Return_TraceIdentifier()
+        public void PageModel_OnGet_Valid_Assert_Should_Return_True()
         {
             // Arrange
 
             // Act
             pageModel.OnGet();
 
-            // Reset
-
             // Assert
             Assert.AreEqual(true, pageModel.ModelState.IsValid);
-            Assert.AreEqual("trace", pageModel.RequestId);
-            Assert.AreEqual(true, pageModel.ShowRequestId);
         }
         #endregion OnGet
     }
