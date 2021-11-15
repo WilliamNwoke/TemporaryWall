@@ -23,9 +23,7 @@ namespace UnitTests.Pages.Product.Create
         [SetUp]
         public void TestInitialize()
         {
-            pageModel = new CreateModel(TestHelper.ProductService)
-            {
-            };
+            pageModel = new CreateModel(TestHelper.ProductService);
         }
 
         #endregion TestSetup
@@ -35,7 +33,7 @@ namespace UnitTests.Pages.Product.Create
         /// </summary>
         #region OnGet
         [Test]
-        public void ProductService_OnGet_Valid_Should_Return_Products()
+        public void ProductService_OnGet_Valid_Assert_ModelState_Should_True()
         {
             // Arrange
 
@@ -52,12 +50,12 @@ namespace UnitTests.Pages.Product.Create
         /// </summary>
         #region GetProducts
         [Test]
-        public void ProductService_GetProducts_Valid_Should_Return_Data()
+        public void ProductService_GetProducts_Valid_Assert_Should_Equal_Data()
         {
             // Arrange
-            var Data = TestHelper.ProductService.GetProducts().Count();
 
             // Act
+            var Data = TestHelper.ProductService.GetProducts().Count();
 
             // Assert
             Assert.AreEqual(Data, TestHelper.ProductService.GetProducts().Count());
