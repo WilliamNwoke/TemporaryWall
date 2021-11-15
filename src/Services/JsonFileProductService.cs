@@ -312,5 +312,14 @@ namespace ContosoCrafts.WebSite.Services
             //return GetProducts().OrderByDescending(product => product.Ratings);
             return result.AsEnumerable();
         }
+
+        /// <summary>
+        /// Method to sort ProductModel IEnumerable by artist name.
+        /// </summary>
+        /// <returns>IEnumerable<ProductModel> sorted by artist name</returns>
+        public IEnumerable<ProductModel> GetProductSortedByArtist()
+        {
+            return GetProducts().OrderBy(x => x.Artist).ToList();
+        }
     }
 }
