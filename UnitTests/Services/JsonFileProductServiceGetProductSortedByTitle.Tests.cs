@@ -21,5 +21,29 @@ namespace UnitTests.Services.JsonFileProductService.GetProductSortedByTitle
         }
         #endregion TestSetup
 
+        #region GetProductSortedByTitle
+        /// <summary>
+        /// Test that method returns a sorted list when called
+        /// </summary>
+        [Test]
+        public void GetProductSortedByTitle_Valid_Should_Return_Sorted_Products()
+        {
+            // Arrange
+            var productsNotSorted = TestHelper.ProductService.GetProducts();
+
+            //// Act
+            var productsSorted = TestHelper.ProductService.GetProductSortedByTitle();
+
+            // Assert
+            for (int i = 1; i < productsSorted.Count(); i++)
+            {
+                string previous = productsSorted.ElementAt(i - 1).Title;
+                string current = productsSorted.ElementAt(i).Title;
+
+                // check that the previous item is less than or equal to the current
+                Assert.True(String.Compare(previous, current) <= 0);
+            }
+        }
+        #endregion GetProductSortedByTitle
     }
 }
