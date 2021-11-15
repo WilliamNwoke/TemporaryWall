@@ -22,15 +22,27 @@ namespace UnitTests.Pages.Product.Delete
         [SetUp]        
         public void TestInitialize()
         {
-            pageModel = new DeleteModel(TestHelper.ProductService)
-            {
-            };
+            pageModel = new DeleteModel(TestHelper.ProductService);
         }
 
         #endregion TestSetup
-
-
+        /// <summary>
+        /// onGet test method to read and return the data.
+        /// </summary>
         #region OnGet
+        [Test]
+        public void PageModel_OnGet_NotValid_Should_Return_Data()
+        {
+            // Arrange
+
+            // Act
+            var data = pageModel.OnGet(null);
+
+            // Assert 
+            // Return <Microsoft.AspNetCore.Mvc.RedirectToPageResult>
+            Assert.IsNotNull(data);
+        }
+
         /// <summary>
         /// Test to check that onGet method is valid and returns the product 
         /// </summary>
@@ -77,7 +89,7 @@ namespace UnitTests.Pages.Product.Delete
         /// Test that invalid OnPost call returns false
         /// </summary>
         [Test]
-        public void OnPost_InValid_Model_NotValid_Return_False()
+        public void PageModel_OnPost_InValid_Model_NotValid_Return_False()
         {
             // Arrange
 
@@ -85,9 +97,11 @@ namespace UnitTests.Pages.Product.Delete
             pageModel.ModelState.AddModelError("bogus", "bogus error");
 
             // Act
+            var result = pageModel.OnPost() as ActionResult;
 
             // Assert
             Assert.AreEqual(false, pageModel.ModelState.IsValid);
+            Assert.AreEqual(result, result);
         }
         #endregion OnPost
     }
