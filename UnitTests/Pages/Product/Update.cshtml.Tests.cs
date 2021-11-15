@@ -24,9 +24,7 @@ namespace UnitTests.Pages.Product.Update
         [SetUp]
         public void TestInitialize()
         {
-            pageModel = new UpdateModel(TestHelper.ProductService)
-            {
-            };
+            pageModel = new UpdateModel(TestHelper.ProductService);
         }
 
         #endregion TestSetup
@@ -77,7 +75,7 @@ namespace UnitTests.Pages.Product.Update
         /// onPost methhod to handle errors
         /// </summary>
         [Test]
-        public void OnPost_InValid_Model_NotValid_Return_Page()
+        public void OnPost_InValid_Model_NotValid_Return_False()
         {
             // Arrange
 
@@ -89,6 +87,7 @@ namespace UnitTests.Pages.Product.Update
 
             // Assert
             Assert.AreEqual(false, pageModel.ModelState.IsValid);
+            Assert.AreEqual(result, result);
         }
         #endregion OnPost
     }
