@@ -90,7 +90,7 @@ namespace UnitTests.Components
 
             // Find the one that matches the ID looking for and click it
             var button = buttonList.First(m => m.OuterHtml.Contains(id));
-            /*
+            
             button.Click();
 
             // Get the markup of the page post the Click action
@@ -137,7 +137,7 @@ namespace UnitTests.Components
             Assert.AreEqual(false, preVoteCountString.Contains("Be the first to vote!"));
             Assert.AreEqual(false, postVoteCountString.Contains("1 Vote"));
             Assert.AreEqual(false, preVoteCountString.Equals(postVoteCountString));
-            */
+            
         }
 
 
@@ -169,7 +169,7 @@ namespace UnitTests.Components
 
             // Find the one that matches the ID looking for and click it
             var button = buttonList.First(m => m.OuterHtml.Contains(id));
-            /*
+            
             button.Click();
 
             // Get the markup of the page post the Click action
@@ -216,7 +216,7 @@ namespace UnitTests.Components
             Assert.AreEqual(false, preVoteCountString.Contains("6 Votes"));
             Assert.AreEqual(false, postVoteCountString.Contains("7 Votes"));
             Assert.AreEqual(false, preVoteCountString.Equals(postVoteCountString));
-            */
+            
         }
         #endregion SubmitRating
     }
