@@ -1,4 +1,5 @@
 ﻿using NUnit.Framework;
+using System;
 using System.Linq;
 
 namespace UnitTests.Services.JsonFileProductService.GetHighestRatedArtwork
@@ -36,8 +37,7 @@ namespace UnitTests.Services.JsonFileProductService.GetHighestRatedArtwork
 
             // Assert
             Assert.AreEqual(3, result);
-        }
-
+        }        
         #endregion GetHighestRatedArtork
     }
 }
