@@ -23,7 +23,7 @@ namespace UnitTests.Services.JsonFileProductService.AddRating
         /// </summary>
         #region AddRating
         [Test]
-        public void AddRating_InValid_Product_Null_Should_Return_False()
+        public void ProductService_AddRating_Valid_ProductId_Null_Rating_Valid_Assert_Should_False()
         {
             // Arrange
             var data = TestHelper.ProductService.AddRating(null, 1);
@@ -38,7 +38,7 @@ namespace UnitTests.Services.JsonFileProductService.AddRating
         /// Test function to checking rating of invalid item
         /// </summary>
         [Test]
-        public void AddRating_Valid_Product_InValid_Should_Return_False()
+        public void ProductService_AddRating_Valid_ProducId_InValid_Rating_Valid_Assert_Should_False()
         {
             // Arrange
             var data = TestHelper.ProductService.AddRating("fdg", 5);
@@ -53,7 +53,7 @@ namespace UnitTests.Services.JsonFileProductService.AddRating
         /// Test function to test when rating is less than 0 and return false
         /// </summary>
         [Test]
-        public void AddRating_Valid_Product_Valid_AddRating_SmallThanZero_Should_Return_False_()
+        public void ProductService_AddRating_Valid_Product_Valid_Rating_SmallThanZero_Assert_Should_Return_False()
         {
             // Arrange
             var data = TestHelper.ProductService.GetProducts().First();
@@ -69,7 +69,7 @@ namespace UnitTests.Services.JsonFileProductService.AddRating
         /// Test function for add rating to return false when rating is bigger than 5 and return false
         /// </summary>
         [Test]
-        public void AddRating_Valid_Product_Valid_AddRating_BiggerThanFive_Should_Return_False()
+        public void ProductService_AddRating_Valid_Product_Valid_AddRating_BiggerThanFive_Assert_Should_Return_False()
         {
             // Arrange
             var data = TestHelper.ProductService.GetProducts().First();
@@ -85,7 +85,7 @@ namespace UnitTests.Services.JsonFileProductService.AddRating
         /// function to test the rating when it is null
         /// </summary>
         [Test]
-        public void AddRating_Valid_Product_Valid_AddRating_Valid_Result_IsNull_Should_Return_True()
+        public void ProductService_AddRating_Valid_Product_Valid_AddRating_Valid_Assert_Return_True()
         {
             // Arrange
             var data = TestHelper.ProductService.GetProducts().Last();
@@ -101,7 +101,7 @@ namespace UnitTests.Services.JsonFileProductService.AddRating
         /// Function to test the add rating functionality
         /// </summary>
         [Test]
-        public void AddRating_Valid_Product_Valid_Rating_Valid_Should_Return_True()
+        public void ProductService_AddRating_Valid_Product_Valid_Rating_Valid_Should_Return_True()
         {
             // Arrange
 
