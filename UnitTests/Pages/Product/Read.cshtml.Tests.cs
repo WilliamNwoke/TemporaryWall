@@ -68,16 +68,16 @@ namespace UnitTests.Pages.Product.Read
         /// get method which returns the comments
         /// </summary>
         [Test]
-        public void PageModel_GetComment_Valid_Should_Return_Data()
+        public void PageModel_GetComment_Valid_Assert_Should_Return_Data()
         {
             // Arrange
             pageModel.OnGet("the-starry-night");
-            var data = pageModel.Comment;
 
             // Act
+            var data = pageModel.Product.Comments;
 
             // Assert
-            Assert.IsNull(data);
+            Assert.IsNotNull(data);
         }
         #endregion GetComment
 
@@ -86,7 +86,7 @@ namespace UnitTests.Pages.Product.Read
         /// Test OnPost method, when comments is Valid
         /// </summary>
         [Test]
-        public void PageModel_Set_OnPost_Comment_Valid_Should_Return_Comments_Null()
+        public void PageModel_Set_OnPost_Comment_Valid_Assert_Should_Return_Comments_Null()
         {
             // Arrange
             pageModel.Comment = null;
@@ -111,7 +111,7 @@ namespace UnitTests.Pages.Product.Read
         /// onPost Method when comment is blank
         /// </summary>
         [Test]
-        public void PageModel_Set_OnPost_Comment_Blank_Should_Return_Comments_Null()
+        public void PageModel_Set_OnPost_Comment_Blank_Assert_Should_Return_Comments_Null()
         {
             // Arrange
             pageModel.Comment = ""; // empty comment
@@ -137,7 +137,7 @@ namespace UnitTests.Pages.Product.Read
         /// but also does not block execution
         /// </summary>
         [Test]
-        public void PageModel_Set_OnPost_Comment_Too_Long_Should_Return_Comments_Null()
+        public void PageModel_Set_OnPost_Comment_Too_Long_Assert_Should_Return_Comments_Null()
         {
             // Arrange
             // 251 character length comment
@@ -168,7 +168,7 @@ namespace UnitTests.Pages.Product.Read
         /// Test that a valid comment OnPost submits a comment
         /// </summary>
         [Test]
-        public void PageModel_Set_OnPost_Comment_Valid_Should_Return_Comments_Valid()
+        public void PageModel_Set_OnPost_Comment_Valid_Assert_Should_Return_Comments_Valid()
         {
             // Arrange
             // 251 character length comment
@@ -190,7 +190,7 @@ namespace UnitTests.Pages.Product.Read
         /// onPost methhod to handle errors
         /// </summary>
         [Test]
-        public void PageModel_OnPost_InValid_Model_NotValid_Return_False()
+        public void PageModel_OnPost_InValid_Model_NotValid_Assert_Return_False()
         {
             // Arrange
 
