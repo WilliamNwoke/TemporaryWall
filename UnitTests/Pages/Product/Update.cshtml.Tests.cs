@@ -34,7 +34,7 @@ namespace UnitTests.Pages.Product.Update
         /// Test OnGet method to retrun product
         /// </summary>
         [Test]
-        public void OnGet_Valid_Should_Return_Products()
+        public void PageModel_OnGet_Valid_Assert_Should_Return_Products()
         {
             // Arrange
 
@@ -52,7 +52,7 @@ namespace UnitTests.Pages.Product.Update
         /// test onPost method to return new product
         /// </summary>
         [Test]
-        public void OnPost_Valid_Should_Return_Products()
+        public void PageModel_OnPost_Valid_Assert_Should_Return_Products()
         {
             // Arrange
             pageModel.Product = new ProductModel
@@ -75,7 +75,7 @@ namespace UnitTests.Pages.Product.Update
         /// onPost methhod to handle errors
         /// </summary>
         [Test]
-        public void OnPost_InValid_Model_NotValid_Return_False()
+        public void PageModel_OnPost_InValid_Model_NotValid_Assert_Return_False()
         {
             // Arrange
 
