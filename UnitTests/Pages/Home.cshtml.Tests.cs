@@ -31,6 +31,25 @@ namespace UnitTests.Pages.Home
             {
             };
         }
+
         #endregion TestSetup
+
+        /// <summary>
+        /// Check Products get method 
+        /// </summary>
+        #region ProductGet
+        [Test]
+        public void PageModel_Get_Products_Valid_Should_Return_Data()
+        {
+            // Arrange
+
+            // Act
+            pageModel.OnGet();
+            var data = pageModel.Products;
+
+            // Assert
+            Assert.IsNotNull(data);
+        }
+        #endregion ProductGet
     }
 }
