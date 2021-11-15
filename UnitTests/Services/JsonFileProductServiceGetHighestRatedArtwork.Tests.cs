@@ -20,14 +20,13 @@ namespace UnitTests.Services.JsonFileProductService.GetHighestRatedArtwork
         }
         #endregion TestSetup
 
-
         #region GetHighestRatedArtwork
         /// <summary>
         /// Checks if GetHighestRatedArtwork returns list of three entries.
         /// Impossible to verify list's accuracy as ratings will change.
         /// </summary>
         [Test]
-        public void GetHighestRatedArtwork_Valid_Should_Return_List_of_3_True_Pass()
+        public void ProductService_GetHighestRatedArtwork_Valid_Assert_Should_Valid()
         {
             // Arrange
             var data = TestHelper.ProductService.GetHighestRatedArtwork();
