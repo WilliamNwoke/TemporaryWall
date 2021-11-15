@@ -34,7 +34,22 @@ namespace UnitTests.Pages.Product.Read
         /// onGet test method to read and return the product argument passed.
         /// </summary>
         [Test]
-        public void OnGet_Valid_Should_Return_Products()
+        public void PageModel_OnGet_NotValid_Should_Return_Data()
+        {
+            // Arrange
+
+            // Act
+            var data = pageModel.OnGet(null);
+
+            // Assert 
+            // Return <Microsoft.AspNetCore.Mvc.RedirectToPageResult>
+            Assert.IsNotNull(data);
+        }
+        /// <summary>
+        /// onGet test method to read and return the product argument passed.
+        /// </summary>
+        [Test]
+        public void PageModel_OnGet_Valid_Should_Return_Products()
         {
             // Arrange
 
@@ -53,15 +68,16 @@ namespace UnitTests.Pages.Product.Read
         /// get method which returns the comments
         /// </summary>
         [Test]
-        public void pageModel_GetComment_Valid_Should_Return_Data()
+        public void PageModel_GetComment_Valid_Should_Return_Data()
         {
             // Arrange
-            var data = pageModel.Product.Comments;
+            pageModel.OnGet("the-starry-night");
+            var data = pageModel.Comment;
 
             // Act
 
             // Assert
-            Assert.IsNotNull(data);
+            Assert.IsNull(data);
         }
         #endregion GetComment
 
@@ -168,6 +184,25 @@ namespace UnitTests.Pages.Product.Read
             Assert.AreEqual(1, data.Comments.Length); // 1 comment should be added
             Assert.AreEqual(true, pageModel.ModelState.IsValid);
             Assert.AreEqual(true, result.PageName.Contains("Read"));
+        }
+
+        /// <summary>
+        /// onPost methhod to handle errors
+        /// </summary>
+        [Test]
+        public void PageModel_OnPost_InValid_Model_NotValid_Return_False()
+        {
+            // Arrange
+
+            // Force an invalid error state
+            pageModel.ModelState.AddModelError("bogus", "bogus error");
+
+            // Act
+            var result = pageModel.OnPost() as ActionResult;
+
+            // Assert
+            Assert.AreEqual(false, pageModel.ModelState.IsValid);
+            Assert.AreEqual(result, result);
         }
         #endregion OnPost
     }
