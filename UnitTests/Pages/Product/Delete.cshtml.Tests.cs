@@ -15,7 +15,6 @@ namespace UnitTests.Pages.Product.Delete
         // Manages tthe delete of a single record
         #region TestSetup
         public static DeleteModel pageModel;
-
         /// <summary>
         /// delete method test initializaton
         /// </summary>
@@ -24,14 +23,14 @@ namespace UnitTests.Pages.Product.Delete
         {
             pageModel = new DeleteModel(TestHelper.ProductService);
         }
-
         #endregion TestSetup
+
         /// <summary>
         /// onGet test method to read and return the data.
         /// </summary>
         #region OnGet
         [Test]
-        public void PageModel_OnGet_NotValid_Should_Return_Data()
+        public void PageModel_OnGet_NotValid_Assert_Should_Return_Data()
         {
             // Arrange
 
@@ -47,7 +46,7 @@ namespace UnitTests.Pages.Product.Delete
         /// Test to check that onGet method is valid and returns the product 
         /// </summary>
         [Test]
-        public void OnGet_Valid_Should_Return_Products()
+        public void PageModel_OnGet_Valid_Assert_Should_Return_Products_Valid()
         {
             // Arrange
 
@@ -65,7 +64,7 @@ namespace UnitTests.Pages.Product.Delete
         /// Test that valid OnPost call deletes product
         /// </summary>
         [Test]
-        public void OnPost_Valid_Should_Return_Products()
+        public void PageModel_OnPost_UpdateData_Valid_Assert_Should_Return_Null()
         {
             // Arrange
 
@@ -89,7 +88,7 @@ namespace UnitTests.Pages.Product.Delete
         /// Test that invalid OnPost call returns false
         /// </summary>
         [Test]
-        public void PageModel_OnPost_InValid_Model_NotValid_Return_False()
+        public void PageModel_OnPost_InValid_Model_NotValid_Assert_Return_False()
         {
             // Arrange
 
