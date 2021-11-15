@@ -25,22 +25,21 @@ namespace UnitTests.Pages.Landing
         }
         #endregion TestSetup
 
-
         #region GetProductService
         /// <summary>
         /// Tests "public JsonFileProductService ProductService"
         /// </summary>
         [Test]
-        public void Get_Should_Return_ProductService_Pass()
+        public void ProductService_Get_Valid_Should_Return_Data()
         {
             // Arrange
 
-
             // Act
+            pageModel.OnGet();
             var data = pageModel.ProductService;
 
-            // Assert
-
+            // Assert 
+            Assert.IsNotNull(data);
         }
         #endregion GetProductService
 
@@ -50,54 +49,51 @@ namespace UnitTests.Pages.Landing
         /// Tests "public IEnumerable<ProductModel> Products"
         /// </summary>
         [Test]
-        public void Products_Should_Get_Products_Valid_Pass()
+        public void Products_Get_Valid_Should_Return_Null()
         {
             // Arrange
 
-
             // Act
+            pageModel.OnGet();
             var data = pageModel.Products;
 
-            // Assert
+            // Assert()(Null for No data in Get() Products method)
+            Assert.IsNull(data);
         }
         #endregion GetProducts
-
 
         #region GetTopThreeArtworks
         /// <summary>
         /// Tests "public List<ProductModel> TopThreeArtwork"
         /// </summary>
         [Test]
-        public void TopThreeArtwork_Should_Get_TopThreeArtworks_Valid_Pass()
+        public void TopThreeArtwork_Get_Valid_Should_Return_Data()
         {
             // Arrange
-
-
-            // Act
-            var data = pageModel.TopThreeArtwork;
-
-            // Assert
-
-        }
-        #endregion GetTopThreeArtworks
-
-
-        #region OnGet
-        /// <summary>
-        /// Tests "public void OnGet()"
-        /// </summary>
-        [Test]
-        public void OnGet_Should_Return_TopThreeArtworks_Valid_Pass()
-        {
-            // Arrange
-
 
             // Act
             pageModel.OnGet();
+            var data = pageModel.TopThreeArtwork;
 
             // Assert
-
+            Assert.IsNotNull(data);
         }
-        #endregion OnGet
+
+        /// <summary>
+        /// Tests "public List<ProductModel> TopThreeArtwork"
+        /// </summary>
+        [Test]
+        public void TopThreeArtwork_Set_Valid_Should_Return_Data()
+        {
+            // Arrange
+
+            // Act
+            pageModel.OnGet();
+            var data = pageModel.TopThreeArtwork;
+
+            // Assert
+            Assert.IsNotNull(data);
+        }
+        #endregion GetTopThreeArtworks
     }
 }
