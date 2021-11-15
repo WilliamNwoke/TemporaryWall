@@ -19,14 +19,13 @@ namespace UnitTests.Services.JsonFileProductService.GetAverageRating
         }
         #endregion TestSetup
 
-
         #region GetAverageRating
         /// <summary>
         /// Tests GetAverageRating to return average rating
         /// uses "american-gothic" product with known average rating of 2
         /// </summary>
         [Test]
-        public void GetAverageRating_Valid_Rating_Valid_Should_Return_True_Pass()
+        public void ProductService_GetAverageRating_Valid_Assert_Should_Equal()
         {
             // Arrange
             var data = TestHelper.ProductService.GetProducts().FirstOrDefault(m => m.Id.Equals("american-gothic"));
@@ -38,13 +37,12 @@ namespace UnitTests.Services.JsonFileProductService.GetAverageRating
             Assert.AreEqual(2, result);
         }
 
-
         /// <summary>
         /// Tests GetAverageRating to return average rating if rating is null
         /// uses "619737e3-5880-4c1e-95d6-c079346568aa" with known rating of null
         /// </summary>
         [Test]
-        public void GetAverageRating_Null_Rating_Valid_Should_Return_True_Pass()
+        public void ProductService_GetAverageRating_Valid_Rating_Null_Assert_Should_Equal()
         {
             // Arrange
             //619737e3-5880-4c1e-95d6-c079346568aa productID has null ratings
