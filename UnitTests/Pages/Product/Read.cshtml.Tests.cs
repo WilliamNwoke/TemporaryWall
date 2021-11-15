@@ -31,7 +31,7 @@ namespace UnitTests.Pages.Product.Read
 
         #region OnGet
         /// <summary>
-        /// onGet test method to read and return the product argument passed.
+        /// onGet test method to read and return the data.
         /// </summary>
         [Test]
         public void PageModel_OnGet_NotValid_Should_Return_Data()
@@ -46,7 +46,7 @@ namespace UnitTests.Pages.Product.Read
             Assert.IsNotNull(data);
         }
         /// <summary>
-        /// onGet test method to read and return the product argument passed.
+        /// onGet test method to read and return the data.
         /// </summary>
         [Test]
         public void PageModel_OnGet_Valid_Should_Return_Products()
@@ -83,7 +83,7 @@ namespace UnitTests.Pages.Product.Read
 
         #region OnPost
         /// <summary>
-        /// Test OnPost method to pass, when comments is NULL
+        /// Test OnPost method, when comments is Valid
         /// </summary>
         [Test]
         public void PageModel_Set_OnPost_Comment_Valid_Should_Return_Comments_Null()
@@ -108,7 +108,7 @@ namespace UnitTests.Pages.Product.Read
         }
 
         /// <summary>
-        /// onPost Method to Pass when comment is blank
+        /// onPost Method when comment is blank
         /// </summary>
         [Test]
         public void PageModel_Set_OnPost_Comment_Blank_Should_Return_Comments_Null()
