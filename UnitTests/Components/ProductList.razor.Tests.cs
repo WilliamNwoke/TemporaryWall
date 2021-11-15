@@ -40,25 +40,25 @@ namespace UnitTests.Components
         {
             // Arrange
             Services.AddSingleton<JsonFileProductService>(TestHelper.ProductService);
-            var id = "The Starry Night";
+            var id = "MoreInfoButton_the-starry-night";
 
             var page = RenderComponent<ProductList>();
 
             // Find the Buttons (more info)
-            var buttonList = page.FindAll("button");
+            var buttonList = page.FindAll("Button");
 
             // Find the one that matches the ID looking for and click it
-            //var button = buttonList.First(m => m.OuterHtml.Contains(id));
+            var button = buttonList.First(m => m.OuterHtml.Contains(id));
 
             // Act
-            //button.Click();
+            button.Click();
 
             // Get the markup to use for the assert
             var pageMarkup = page.Markup;
 
             // Assert
-            Assert.AreEqual(true, pageMarkup.Contains("This project is a good learning project to get comfortable with soldering and programming an Arduino."));
-            Assert.IsNotNull(buttonList);
+            Assert.AreEqual(true, pageMarkup.Contains("The painting was made in 1889 and depicts the city of Saint-Remy under the swirling sun."));
+            //Assert.IsNotNull(buttonList);
         }
         #endregion SelectProduct
 
