@@ -24,50 +24,14 @@ namespace UnitTests.Services.JsonFileProductService.AddComment
         /// </summary>
         #region AddComment
         [Test]
-        public void AddComment_Valid_Data_Valid_Comment_Valid_AddComment_Should_Pass()
+        public void ProductService_AddComment_Data_Valid_Comment_Valid_No_Assert()
         {
             // Arrange
             var data = TestHelper.ProductService.GetProducts().First();
-            // Act
-            TestHelper.ProductService.AddComment(data.Id, data.Title);
-            // Assert
 
-        }
-        #endregion AddComment
-
-        /// <summary>
-        /// Function to test the add comment
-        /// </summary>
-        #region AddComment
-        [Test]
-        public void AddComment_Valid__Data_Valid_Comment_Invalid_AddComment_Should_Pass()
-        {
-            // Arrange
-            var data = TestHelper.ProductService.GetProducts().Last();
-
-            // Act
+            // Act this won't add into database cause no execution.
             TestHelper.ProductService.AddComment(data.Id, null);
-
-            // Assert
-
         }
         #endregion AddComment
-
-        /// <summary>
-        /// function to return product model as string
-        /// </summary>
-        #region ProductModeltoString
-        [Test]
-        public void ProductModeltoString_Valid_Should_Pass()
-        {
-            // Arrange
-
-            // Act
-            var data = TestHelper.ProductService.GetProducts().First();
-
-            // Assert
-            Assert.IsNotNull(data);
-        }
-        #endregion ProductModeltoString
     }
 }
