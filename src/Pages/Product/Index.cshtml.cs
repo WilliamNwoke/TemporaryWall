@@ -30,7 +30,12 @@ namespace ContosoCrafts.WebSite.Pages.Product
         /// </summary>
         public void OnGet()
         {
-            Products = ProductService.GetProducts();
+            var productList = ProductService.GetProducts();
+            if (productList == null)
+            {
+                Products = new List<ProductModel>();
+            }
+            Products = productList;
         }
     }
 }
