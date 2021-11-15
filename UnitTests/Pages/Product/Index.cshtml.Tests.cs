@@ -24,9 +24,7 @@ namespace UnitTests.Pages.Product.Index
         [SetUp]
         public void TestInitialize()
         {
-            pageModel = new IndexModel(TestHelper.ProductService)
-            {
-            };
+            pageModel = new IndexModel(TestHelper.ProductService);
         }
         #endregion TestSetup
 
@@ -35,7 +33,7 @@ namespace UnitTests.Pages.Product.Index
         /// onGet test to return a list of products
         /// </summary>
         [Test]
-        public void OnGet_Valid_Should_Return_Data()
+        public void PageMode_OnGet_Valid_Assert_Should_Return_Data()
         {
             // Arrange
             pageModel.OnGet();
