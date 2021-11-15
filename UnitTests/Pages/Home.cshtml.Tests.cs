@@ -26,10 +26,7 @@ namespace UnitTests.Pages.Home
         public void TestInitialize()
         {
             var MockLoggerDirect = Mock.Of<ILogger<HomeModel>>();
-
-            pageModel = new HomeModel(MockLoggerDirect, TestHelper.ProductService)
-            {
-            };
+            pageModel = new HomeModel(MockLoggerDirect, TestHelper.ProductService);
         }
 
         #endregion TestSetup
@@ -39,7 +36,7 @@ namespace UnitTests.Pages.Home
         /// </summary>
         #region ProductGet
         [Test]
-        public void PageModel_Get_Products_Valid_Should_Return_Data()
+        public void PageModel_Get_Products_Valid_Assert_Should_Return_Data()
         {
             // Arrange
 
