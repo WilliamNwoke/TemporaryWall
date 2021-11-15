@@ -21,7 +21,6 @@ namespace UnitTests.Services.JsonFileProductService.GetProductSortedByRating
         }
         #endregion TestSetup
 
-
         #region  GetProductSortedByRating
         /// <summary>
         /// Test that method returns a sorted list when called
