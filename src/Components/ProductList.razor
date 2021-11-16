@@ -9,11 +9,11 @@
         <div class="input-group">
             <div class="col-10 pr-0">
                 <div class="form-outline">
-                    <input type="search" id="form1" class="form-control input-large" @bind="@SearchTerm" placeholder="Search"/>
+                    <input type="search" id="searchinput" class="form-control input-large" @bind="@SearchTerm" placeholder="Search"/>
                 </div>
             </div>
             <div class="col-2 pr-0 pl-1">
-                <button type="button" class="btn btn-primary mb-3" @onclick="StateHasChanged">Search</button>
+                <button type="button" id="searchbutton" class="btn btn-primary mb-3" @onclick="StateHasChanged">Search</button>
             </div>
         </div>
 
