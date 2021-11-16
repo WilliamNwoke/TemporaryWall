@@ -1,5 +1,6 @@
 using Bunit;
 using NUnit.Framework;
+using Moq;
 
 using ContosoCrafts.WebSite.Components;
 using Microsoft.Extensions.DependencyInjection;
@@ -16,13 +17,17 @@ namespace UnitTests.Components
         public void TestInitialize()
         {
         }
-
         #endregion TestSetup
 
+        #region SelectProduct
+        /// <summary>
+        /// The basic UT to get Content of Page
+        /// </summary>
         [Test]
         public void ProductList_Default_Should_Return_Content()
         {
             // Arrange
+            TestHelper.ProductService.GetProducts();
             Services.AddSingleton<JsonFileProductService>(TestHelper.ProductService);
 
             // Act
@@ -34,14 +39,20 @@ namespace UnitTests.Components
             // Assert
             Assert.AreEqual(true, result.Contains("The Starry Night"));
         }
-        #region SelectProduct
+
+        /// <summary>
+        /// The UT to check SelectProduct
+        /// The test needs to open the page
+        /// Then open the popup on the card
+        /// Then find the card with id
+        /// Then check again the state of the card
+        /// </summary>
         [Test]
         public void SelectProduct_Valid_ID_Exist_Should_Return_Content()
         {
             // Arrange
             Services.AddSingleton<JsonFileProductService>(TestHelper.ProductService);
             var id = "MoreInfoButton_the-starry-night";
-
             var page = RenderComponent<ProductList>();
 
             // Find the Buttons (more info)
@@ -58,27 +69,56 @@ namespace UnitTests.Components
 
             // Assert
             Assert.AreEqual(true, pageMarkup.Contains("The painting was made in 1889 and depicts the city of Saint-Remy under the swirling sun."));
-            //Assert.IsNotNull(buttonList);
+            Assert.IsNotNull(button);
+        }
+
+        /// <summary>
+        /// The UT to check SelectProduct with Not Rating
+        /// The test needs to open the page
+        /// Then open the popup on the card
+        /// Then find the card with id
+        /// Then check again the state of the card
+        /// </summary>
+        [Test]
+        public void SelectProduct_Valid_ID_Exist_Rating_Null_Should_Return_Content()
+        {
+            TestHelper.ProductService.GetProducts().First().Ratings = null;
+            // Arrange
+            Services.AddSingleton<JsonFileProductService>(TestHelper.ProductService);
+            var id = "MoreInfoButton_the-starry-night";
+            var page = RenderComponent<ProductList>();
+
+            // Find the Buttons (more info)
+            var buttonList = page.FindAll("button");
+            
+            // Find the one that matches the ID looking for and click it
+            var button = buttonList.First(m => m.OuterHtml.Contains(id));
+            
+            // Act
+            button.Click();
+
+            // Get the markup to use for the assert
+            var pageMarkup = page.Markup;
+
+            // Assert
+            Assert.AreEqual(true, pageMarkup.Contains("Vincent Van Gogh"));
+            Assert.IsNotNull(button);
         }
         #endregion SelectProduct
 
         #region SubmitRating
-
+        /// <summary>
+        /// This test tests that the SubmitRating will change the vote as well as the Star checked
+        /// Because the star check is a calculation of the ratings, using a record that has no stars and checking one makes it clear what was changed
+        /// The test needs to open the page
+        /// Then open the popup on the card
+        /// Then record the state of the count and star check status
+        /// Then check a star
+        /// Then check again the state of the cound and star check status
+        /// </summary>
         [Test]
         public void SubmitRating_Valid_ID_Click_Unstared_Should_Increment_Count_And_Check_Star()
         {
-            /*
-             This test tests that the SubmitRating will change the vote as well as the Star checked
-             Because the star check is a calculation of the ratings, using a record that has no stars and checking one makes it clear what was changed
-
-            The test needs to open the page
-            Then open the popup on the card
-            Then record the state of the count and star check status
-            Then check a star
-            Then check again the state of the cound and star check status
-
-            */
-
             // Arrange
             Services.AddSingleton<JsonFileProductService>(TestHelper.ProductService);
             var id = "More Info";
@@ -91,6 +131,7 @@ namespace UnitTests.Components
             // Find the one that matches the ID looking for and click it
             var button = buttonList.First(m => m.OuterHtml.Contains(id));
             
+            // Act
             button.Click();
 
             // Get the markup of the page post the Click action
@@ -109,8 +150,6 @@ namespace UnitTests.Components
 
             // Save the html for it to compare after the click
             var preStarChange = starButton.OuterHtml;
-
-            // Act
 
             // Click the star button
             starButton.Click();
@@ -137,27 +176,20 @@ namespace UnitTests.Components
             Assert.AreEqual(false, preVoteCountString.Contains("Be the first to vote!"));
             Assert.AreEqual(false, postVoteCountString.Contains("1 Vote"));
             Assert.AreEqual(false, preVoteCountString.Equals(postVoteCountString));
-            
         }
 
-
-
-
+        /// <summary>
+        /// This test tests that the SubmitRating will change the vote as well as the Star checked
+        /// Because the star check is a calculation of the ratings, using a record that has no stars and checking one makes it clear what was changed
+        /// The test needs to open the page
+        /// Then open the popup on the card
+        /// Then record the state of the count and star check status
+        /// Then check a star
+        /// Then check again the state of the cound and star check status
+        /// </summary>
         [Test]
         public void SubmitRating_Valid_ID_Click_Stared_Should_Increment_Count_And_Leave_Star_Check_Remaining()
         {
-            /*
-             This test tests that the SubmitRating will change the vote as well as the Star checked
-             Because the star check is a calculation of the ratings, using a record that has no stars and checking one makes it clear what was changed
-
-            The test needs to open the page
-            Then open the popup on the card
-            Then record the state of the count and star check status
-            Then check a star
-            Then check again the state of the cound and star check status
-
-            */
-
             // Arrange
             Services.AddSingleton<JsonFileProductService>(TestHelper.ProductService);
             var id = "More Info";
@@ -216,8 +248,47 @@ namespace UnitTests.Components
             Assert.AreEqual(false, preVoteCountString.Contains("6 Votes"));
             Assert.AreEqual(false, postVoteCountString.Contains("7 Votes"));
             Assert.AreEqual(false, preVoteCountString.Equals(postVoteCountString));
-            
         }
         #endregion SubmitRating
+
+        #region Search
+        /// <summary>
+        /// This test tests that the Search will return the page
+        /// The test needs to open the page
+        /// Then add a text in search input
+        /// Then click the search button
+        /// Then check the data returned
+        /// </summary>
+        [Test]
+        public void Search_Valid_ID_Exist_Should_Return_Content()
+        {
+            // Arrange
+            Services.AddSingleton<JsonFileProductService>(TestHelper.ProductService);
+
+            var inputid = "searchinput";
+            var buttonid = "searchbutton";
+
+            var page = RenderComponent<ProductList>();
+
+            // Find the one that matches the ID looking for and click it
+            var inputList = page.FindAll("input");
+            var input = inputList.First(m => m.OuterHtml.Contains(inputid));
+            //button.Value = "star";
+            input.Change("star");
+
+            var buttonList = page.FindAll("button");
+            var button = buttonList.First(m => m.OuterHtml.Contains(buttonid));
+            // Act
+            button.Click();
+
+            // Get the markup to use for the assert
+            var pageMarkup = page.Markup;
+
+            // Assert
+            Assert.IsNotNull(pageMarkup);
+            Assert.AreEqual(true, pageMarkup.Contains("Vincent van Gogh"));
+            
+        }
+        #endregion Search
     }
 }
