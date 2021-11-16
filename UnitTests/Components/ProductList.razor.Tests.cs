@@ -74,6 +74,7 @@ namespace UnitTests.Components
 
         /// <summary>
         /// The UT to check SelectProduct with Not Rating
+        /// First is to set the data null
         /// The test needs to open the page
         /// Then open the popup on the card
         /// Then find the card with id
@@ -82,7 +83,9 @@ namespace UnitTests.Components
         [Test]
         public void SelectProduct_Valid_ID_Exist_Rating_Null_Should_Return_Content()
         {
-            TestHelper.ProductService.GetProducts().First().Ratings = null;
+            var target = TestHelper.ProductService.GetProducts().First();
+            var actual = target.Ratings = null;
+
             // Arrange
             Services.AddSingleton<JsonFileProductService>(TestHelper.ProductService);
             var id = "MoreInfoButton_the-starry-night";
@@ -171,10 +174,9 @@ namespace UnitTests.Components
             var postStarChange = starButton.OuterHtml;
 
             // Assert
-
             // Confirm that the record had no votes to start, and 1 vote after
-            Assert.AreEqual(false, preVoteCountString.Contains("Be the first to vote!"));
-            Assert.AreEqual(false, postVoteCountString.Contains("1 Vote"));
+            Assert.AreEqual(true, preVoteCountString.Contains("8 Votes"));
+            Assert.AreEqual(true, postVoteCountString.Contains("9 Votes"));
             Assert.AreEqual(false, preVoteCountString.Equals(postVoteCountString));
         }
 
@@ -245,8 +247,8 @@ namespace UnitTests.Components
             // Assert
 
             // Confirm that the record had no votes to start, and 1 vote after
-            Assert.AreEqual(false, preVoteCountString.Contains("6 Votes"));
-            Assert.AreEqual(false, postVoteCountString.Contains("7 Votes"));
+            Assert.AreEqual(true, preVoteCountString.Contains("7 Votes"));
+            Assert.AreEqual(true, postVoteCountString.Contains("8 Votes"));
             Assert.AreEqual(false, preVoteCountString.Equals(postVoteCountString));
         }
         #endregion SubmitRating
