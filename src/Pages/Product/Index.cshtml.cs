@@ -26,11 +26,20 @@ namespace ContosoCrafts.WebSite.Pages.Product
         public IEnumerable<ProductModel> Products { get; private set; }
 
         /// <summary>
-        /// REST OnGet, return all data
+        /// REST OnGet, return all data or sorted data if parameter is supplied
         /// </summary>
-        public void OnGet()
+        /// <param name="sortOrder"
+        public void OnGet(string sortOrder)
         {
-            Products = ProductService.GetProducts();
+            // if a sortOrder parameter is supplied, sort the product list.
+            // otherwise, return unsorted products
+            Products = sortOrder switch
+            {
+                "title_asc" => ProductService.GetProductSortedByTitle(),
+                "artist_asc" => ProductService.GetProductSortedByArtist(),
+                "rating_desc" => ProductService.GetProductSortedByRating(),
+                _ => ProductService.GetProducts(),
+            };
         }
     }
 }
