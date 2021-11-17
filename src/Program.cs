@@ -8,7 +8,6 @@ namespace ContosoCrafts.WebSite
     /// </summary>
     public class Program
     {
-
         /// <summary>
         /// main function of the class creates a host using the instance of the IHostBuilder
         /// </summary>
