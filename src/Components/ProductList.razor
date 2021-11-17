@@ -202,47 +202,10 @@
         Boolean ProductIsBlankOrNull(ProductModel product)
         {
             // null checks
-            if (product.Artist == null)
+            if (product.Artist == null || product.Title == null || product.Id == null || product.Description == null || product.Artist == "" || product.Title == "" || product.Id == "" || product.Description == "")
             {
                 return true;
             }
-
-            if (product.Title == null)
-            {
-                return true;
-            }
-
-            if (product.Id == null)
-            {
-                return true;
-            }
-
-            if (product.Description == null)
-            {
-                return true;
-            }
-
-            // blank checks
-            if (product.Artist == "")
-            {
-                return true;
-            }
-
-            if (product.Title == "")
-            {
-                return true;
-            }
-
-            if (product.Id == "")
-            {
-                return true;
-            }
-
-            if (product.Description == "")
-            {
-                return true;
-            }
-
             // all checks passed, return false
             return false;
         }
