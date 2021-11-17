@@ -110,9 +110,7 @@
     "img": "https://www.worldatlas.com/r/w960-q80/upload/af/d1/ed/persistenceofmemory.jpg",
     "Title": "The Persistence Of Memory",
     "Description": "The Persistence of Memory depicts melting clock faces and is thought to have been inspired by the Theory of Relativity. The painting is displayed at the MoMA.",
-    "Ratings": [
-      2
-    ],
+    "Ratings": null,
     "Comments": null
   },
   {
@@ -164,7 +162,9 @@
     "Ratings": [
       2
     ],
-    "Comments": null
+      "Comments"
+      :
+      null
   },
   {
     "Id": "the-great-wave-off-kanagawa",
