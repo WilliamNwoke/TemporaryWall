@@ -1,6 +1,7 @@
 ﻿using ContosoCrafts.WebSite.Models;
 using NUnit.Framework;
 using System;
+using System.Collections.Generic;
 using System.Linq;
 
 namespace UnitTests.Services.JsonFileProductService.GetProductSortedByRating
@@ -57,22 +58,24 @@ namespace UnitTests.Services.JsonFileProductService.GetProductSortedByRating
         public void GetProductSortedByAscRating_Valid_Should_Return_Sorted_Products()
         {
             // Arrange
+            var products = TestHelper.ProductService.GetProducts();
+            var productsSorted = TestHelper.ProductService.GetProductSortedByAscRating();
+            var listOfRatings = new List<int>();
 
             // Act
-            var productsSorted = TestHelper.ProductService.GetProductSortedByAscRating();
+            foreach (var item in products)
+            {
+                listOfRatings.Add(TestHelper.ProductService.GetAverageRating(item));
+            }
+            listOfRatings = listOfRatings.OrderBy(x => x).ToList();
 
             // Assert
-            for (int i = 1; i < productsSorted.Count(); i++)
+            for (int i = 0; i < productsSorted.Count(); i++)
             {
-                if (productsSorted.ElementAt(i).Ratings == null || productsSorted.ElementAt(i).Ratings == null)
+                if (productsSorted.ElementAt(i).Ratings != null)
                 {
-                    break;
+                    Assert.AreEqual((int)productsSorted.ElementAt(i).Ratings.Average(), listOfRatings[i]);
                 }
-                double previous = productsSorted.ElementAt(i - 1).Ratings.Average();
-                double current = productsSorted.ElementAt(i).Ratings.Average();
-
-                // check that the previous item is not the same as the current
-                Assert.IsTrue((((int)previous) - ((int)current)) >= 0);
             }
         }
         #endregion  GetProductSortedByAscRating
