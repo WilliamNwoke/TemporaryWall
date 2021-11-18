@@ -280,7 +280,7 @@ namespace ContosoCrafts.WebSite.Services
         /// Method to sort ProductModel IEnumerable from highest rated to lowest rated.
         /// </summary>
         /// <returns>IEnumerable<ProductModel> sorted by rating</returns>
-        public IEnumerable<ProductModel> GetProductSortedByRating()
+        public IEnumerable<ProductModel> GetProductSortedByDescRating()
         {
             //Initiate List
             var listOfID = new List<(string, int)>();
@@ -309,7 +309,7 @@ namespace ContosoCrafts.WebSite.Services
                     }
                 }
             }
-            //return GetProducts().OrderByDescending(product => product.Ratings);
+
             return result.AsEnumerable();
         }
 
