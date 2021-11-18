@@ -26,7 +26,7 @@ namespace UnitTests.Services.JsonFileProductService.GetProductSortedByRating
         /// Test that method returns a sorted list when called
         /// </summary>
         [Test]
-        public void GetProductSortedByRating_Valid_Should_Return_Sorted_Products()
+        public void GetProductSortedByDescRating_Valid_Should_Return_Sorted_Products()
         {
             // Arrange
 
