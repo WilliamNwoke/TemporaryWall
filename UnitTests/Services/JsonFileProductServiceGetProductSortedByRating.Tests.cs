@@ -48,5 +48,33 @@ namespace UnitTests.Services.JsonFileProductService.GetProductSortedByRating
             }
         }
         #endregion  GetProductSortedByDescRating
+
+        #region  GetProductSortedByAscRating
+        /// <summary>
+        /// Test that method returns a sorted list when called
+        /// </summary>
+        [Test]
+        public void GetProductSortedByAscRating_Valid_Should_Return_Sorted_Products()
+        {
+            // Arrange
+
+            // Act
+            var productsSorted = TestHelper.ProductService.GetProductSortedByAscRating();
+
+            // Assert
+            for (int i = 1; i < productsSorted.Count(); i++)
+            {
+                if (productsSorted.ElementAt(i).Ratings == null || productsSorted.ElementAt(i).Ratings == null)
+                {
+                    break;
+                }
+                double previous = productsSorted.ElementAt(i - 1).Ratings.Average();
+                double current = productsSorted.ElementAt(i).Ratings.Average();
+
+                // check that the previous item is not the same as the current
+                Assert.IsTrue((((int)previous) - ((int)current)) >= 0);
+            }
+        }
+        #endregion  GetProductSortedByAscRating
     }
 }
