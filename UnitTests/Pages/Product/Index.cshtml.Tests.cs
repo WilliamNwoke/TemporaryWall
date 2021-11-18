@@ -101,8 +101,8 @@ namespace UnitTests.Pages.Product.Index
             var data = pageModel.Products.FirstOrDefault();
 
             // Assert
-            Assert.IsNotNull(data);
-            #endregion OnGet
+            Assert.IsNotNull(data);          
         }
+        #endregion OnGet
     }
 }
