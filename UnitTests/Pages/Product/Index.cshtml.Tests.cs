@@ -103,6 +103,23 @@ namespace UnitTests.Pages.Product.Index
             // Assert
             Assert.IsNotNull(data);          
         }
+
+        /// <summary>
+        /// onGet test to return a list of products sorted by rating
+        /// </summary>
+        [Test]
+        public void PageMode_OnGet_Valid_Sort_By_Rating_Asc_Assert_Should_Return_Sorted_Data()
+        {
+            // Arrange
+            pageModel.OnGet("rating_asc");
+            var products = TestHelper.ProductService.GetProducts();
+
+            // Act
+            var data = pageModel.Products.FirstOrDefault();
+
+            // Assert
+            Assert.IsNotNull(data);
+        }
         #endregion OnGet
     }
 }
