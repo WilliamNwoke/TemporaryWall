@@ -21,7 +21,7 @@ namespace UnitTests.Services.JsonFileProductService.GetProductSortedByRating
         }
         #endregion TestSetup
 
-        #region  GetProductSortedByRating
+        #region  GetProductSortedByDescRating
         /// <summary>
         /// Test that method returns a sorted list when called
         /// </summary>
@@ -47,6 +47,6 @@ namespace UnitTests.Services.JsonFileProductService.GetProductSortedByRating
                 Assert.IsTrue((((int)previous) - ((int)current)) >= 0);
             }
         }
-        #endregion  GetProductSortedByRating
+        #endregion  GetProductSortedByDescRating
     }
 }
