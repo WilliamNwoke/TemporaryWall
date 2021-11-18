@@ -63,10 +63,12 @@ namespace UnitTests.Services.JsonFileProductService.GetProductSortedByRating
             var listOfRatings = new List<int>();
 
             // Act
+            //adds rating for each product into list
             foreach (var item in products)
             {
                 listOfRatings.Add(TestHelper.ProductService.GetAverageRating(item));
             }
+            //order list by ascending order
             listOfRatings = listOfRatings.OrderBy(x => x).ToList();
 
             // Assert
