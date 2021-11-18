@@ -31,7 +31,7 @@ namespace UnitTests.Services.JsonFileProductService.GetProductSortedByRating
             // Arrange
 
             // Act
-            var productsSorted = TestHelper.ProductService.GetProductSortedByRating();
+            var productsSorted = TestHelper.ProductService.GetProductSortedByDescRating();
 
             // Assert
             for (int i = 1; i < productsSorted.Count(); i++)
