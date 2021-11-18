@@ -279,7 +279,7 @@ namespace ContosoCrafts.WebSite.Services
         /// <summary>
         /// Method to sort ProductModel IEnumerable from highest rated to lowest rated.
         /// </summary>
-        /// <returns>IEnumerable<ProductModel> sorted by rating</returns>
+        /// <returns>IEnumerable<ProductModel> sorted by descending rating</returns>
         public IEnumerable<ProductModel> GetProductSortedByDescRating()
         {
             //Initiate List
