@@ -32,7 +32,7 @@ namespace UnitTests.Services.JsonFileProductService.GetProductSortedByArtist
             var productsNotSorted = TestHelper.ProductService.GetProducts();            
 
             //// Act
-            var productsSorted = TestHelper.ProductService.GetProductSortedByArtist();
+            var productsSorted = TestHelper.ProductService.GetProductSortedByAscArtist();
 
             // Assert
             for (int i = 1; i < productsSorted.Count(); i++)
