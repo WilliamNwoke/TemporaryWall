@@ -353,8 +353,8 @@ namespace ContosoCrafts.WebSite.Services
         /// <summary>
         /// Method to sort ProductModel IEnumerable by artist name.
         /// </summary>
-        /// <returns>IEnumerable<ProductModel> sorted by artist name</returns>
-        public IEnumerable<ProductModel> GetProductSortedByArtist()
+        /// <returns>IEnumerable<ProductModel> sorted by artist name from A-Z</returns>
+        public IEnumerable<ProductModel> GetProductSortedByAscArtist()
         {
             return GetProducts().OrderBy(x => x.Artist).ToList();
         }
