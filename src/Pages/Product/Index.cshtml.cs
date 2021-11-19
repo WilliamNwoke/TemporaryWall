@@ -36,6 +36,7 @@ namespace ContosoCrafts.WebSite.Pages.Product
             Products = sortOrder switch
             {
                 "title_asc" => ProductService.GetProductSortedByAscTitle(),
+                "title_desc" => ProductService.GetProductSortedByDescTitle(),
                 "artist_asc" => ProductService.GetProductSortedByAscArtist(),
                 "rating_desc" => ProductService.GetProductSortedByDescRating(),
                 "rating_asc" => ProductService.GetProductSortedByAscRating(),
