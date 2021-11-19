@@ -360,6 +360,15 @@ namespace ContosoCrafts.WebSite.Services
         }
 
         /// <summary>
+        /// Method to sort ProductModel IEnumerable by artist name.
+        /// </summary>
+        /// <returns>IEnumerable<ProductModel> sorted by artist name from Z-A</returns>
+        public IEnumerable<ProductModel> GetProductSortedByDescArtist()
+        {
+            return GetProducts().OrderByDescending(x => x.Artist).ToList();
+        }
+
+        /// <summary>
         /// Method to sort ProductModel IEnumerate by Title.
         /// </summary>
         /// <returns>IEnumerable<ProductModel> sorted by Title</returns>
