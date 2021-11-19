@@ -35,7 +35,7 @@ namespace ContosoCrafts.WebSite.Pages.Product
             // otherwise, return unsorted products
             Products = sortOrder switch
             {
-                "title_asc" => ProductService.GetProductSortedByTitle(),
+                "title_asc" => ProductService.GetProductSortedByAscTitle(),
                 "artist_asc" => ProductService.GetProductSortedByAscArtist(),
                 "rating_desc" => ProductService.GetProductSortedByDescRating(),
                 "rating_asc" => ProductService.GetProductSortedByAscRating(),
