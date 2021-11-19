@@ -376,5 +376,14 @@ namespace ContosoCrafts.WebSite.Services
         {
             return GetProducts().OrderBy( x => x.Title).ToList();
         }
+
+        /// <summary>
+        /// Method to sort ProductModel IEnumerate by Title.
+        /// </summary>
+        /// <returns>IEnumerable<ProductModel> sorted by Title Z-A</returns>
+        public IEnumerable<ProductModel> GetProductSortedByDescTitle()
+        {
+            return GetProducts().OrderByDescending(x => x.Title).ToList();
+        }
     }
 }
