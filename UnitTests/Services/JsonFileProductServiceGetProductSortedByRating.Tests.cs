@@ -1,6 +1,7 @@
 ﻿using ContosoCrafts.WebSite.Models;
 using NUnit.Framework;
 using System;
+using System.Collections.Generic;
 using System.Linq;
 
 namespace UnitTests.Services.JsonFileProductService.GetProductSortedByRating
@@ -21,17 +22,17 @@ namespace UnitTests.Services.JsonFileProductService.GetProductSortedByRating
         }
         #endregion TestSetup
 
-        #region  GetProductSortedByRating
+        #region  GetProductSortedByDescRating
         /// <summary>
         /// Test that method returns a sorted list when called
         /// </summary>
         [Test]
-        public void GetProductSortedByRating_Valid_Should_Return_Sorted_Products()
+        public void GetProductSortedByDescRating_Valid_Should_Return_Sorted_Products()
         {
             // Arrange
 
             // Act
-            var productsSorted = TestHelper.ProductService.GetProductSortedByRating();
+            var productsSorted = TestHelper.ProductService.GetProductSortedByDescRating();
 
             // Assert
             for (int i = 1; i < productsSorted.Count(); i++)
@@ -47,6 +48,38 @@ namespace UnitTests.Services.JsonFileProductService.GetProductSortedByRating
                 Assert.IsTrue((((int)previous) - ((int)current)) >= 0);
             }
         }
-        #endregion  GetProductSortedByRating
+        #endregion  GetProductSortedByDescRating
+
+        #region  GetProductSortedByAscRating
+        /// <summary>
+        /// Test that method returns a sorted list when called
+        /// </summary>
+        [Test]
+        public void GetProductSortedByAscRating_Valid_Should_Return_Sorted_Products()
+        {
+            // Arrange
+            var products = TestHelper.ProductService.GetProducts();
+            var productsSorted = TestHelper.ProductService.GetProductSortedByAscRating();
+            var listOfRatings = new List<int>();
+
+            // Act
+            //adds rating for each product into list
+            foreach (var item in products)
+            {
+                listOfRatings.Add(TestHelper.ProductService.GetAverageRating(item));
+            }
+            //order list by ascending order
+            listOfRatings = listOfRatings.OrderBy(x => x).ToList();
+
+            // Assert
+            for (int i = 0; i < productsSorted.Count(); i++)
+            {
+                if (productsSorted.ElementAt(i).Ratings != null)
+                {
+                    Assert.AreEqual((int)productsSorted.ElementAt(i).Ratings.Average(), listOfRatings[i]);
+                }
+            }
+        }
+        #endregion  GetProductSortedByAscRating
     }
 }

@@ -37,7 +37,8 @@ namespace ContosoCrafts.WebSite.Pages.Product
             {
                 "title_asc" => ProductService.GetProductSortedByTitle(),
                 "artist_asc" => ProductService.GetProductSortedByArtist(),
-                "rating_desc" => ProductService.GetProductSortedByRating(),
+                "rating_desc" => ProductService.GetProductSortedByDescRating(),
+                "rating_asc" => ProductService.GetProductSortedByAscRating(),
                 _ => ProductService.GetProducts(),
             };
         }
