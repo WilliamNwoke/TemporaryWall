@@ -110,7 +110,7 @@ namespace ContosoCrafts.WebSite.Services
                 //creates new list of comments
                 products.First(x => x.Id == productId).Comments = new string[] { comment };
             }
-            else
+            if (products.First(x => x.Id == productId).Comments != null)
             {
                 //adds comment to existing comments list
                 var comments = products.First(x => x.Id == productId).Comments.ToList();
@@ -223,7 +223,7 @@ namespace ContosoCrafts.WebSite.Services
             {
                 currentRating = 0;
             }
-            else // product with ratings
+            if (product.Ratings != null) // product with ratings
             {
                 //retrieves number of votes
                 voteCount = product.Ratings.Count(); 
