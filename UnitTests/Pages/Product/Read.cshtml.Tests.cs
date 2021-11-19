@@ -181,7 +181,7 @@ namespace UnitTests.Pages.Product.Read
             var data = TestHelper.ProductService.GetProducts().First(x => x.Id == pageModel.Product.Id);
 
             // Assert
-            Assert.AreEqual(1, data.Comments.Length); // 1 comment should be added
+            Assert.AreEqual(2, data.Comments.Length); // 1 comment should be added
             Assert.AreEqual(true, pageModel.ModelState.IsValid);
             Assert.AreEqual(true, result.PageName.Contains("Read"));
         }
