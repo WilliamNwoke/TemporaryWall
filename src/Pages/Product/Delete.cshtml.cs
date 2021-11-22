@@ -37,14 +37,16 @@ namespace ContosoCrafts.WebSite.Pages.Product
         /// <param name="id"></param>
         public IActionResult OnGet(string id)
         {
+            //Get the id data and check it whether null
             Product  = ProductService.GetProducts().FirstOrDefault(m => m.Id.Equals(id));
+
+            //if data is null ,return to index.page
             if (Product == null)
             {
                 return RedirectToPage("./Index");
             }
 
             return Page();
-
         }
 
         /// <summary>
@@ -56,13 +58,17 @@ namespace ContosoCrafts.WebSite.Pages.Product
         /// <returns></returns>
         public IActionResult OnPost()
         {
+
+            //Call the data layer to Delete that data
             if (!ModelState.IsValid)
             {
                 return Page();
             }
 
+            //Delete that data
             ProductService.DeleteData(Product.Id);
 
+            //return to index.page
             return RedirectToPage("./Index");
         }
     }
