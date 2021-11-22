@@ -7,7 +7,5 @@ namespace ContosoCrafts.WebSite.Pages.Aboutus
     /// </summary>
     public class IndexModel : PageModel
     {
-
-
     }
 }
