@@ -39,7 +39,10 @@ namespace ContosoCrafts.WebSite.Pages.Product
         /// <param name = "id"></param>
         public IActionResult OnGet(string id)
         {
+            //Get the data with id
             Product = ProductService.GetProducts().FirstOrDefault(m => m.Id.Equals(id));
+
+            //if the data is null, return to index.page
             if (Product == null)
             {
                 return RedirectToPage("./Index");
@@ -55,27 +58,28 @@ namespace ContosoCrafts.WebSite.Pages.Product
         public IActionResult OnPost()
         {
             //var comment = Request.Form["comment"];
-
             if (Comment == null)
             {
                 return RedirectToPage("./Read");
             }
 
+            //check the comment's length, if less than 0, return to read.page
             if (Comment.Length <= 0)
             {
                 return RedirectToPage("./Read");
             }
 
+            //check the comment's length, if more than 250, return to read.page
             if (Comment.Length > 250)
             {
                 return RedirectToPage("./Read");
             }
 
+            //Add the comment into storage
             ProductService.AddComment(Product.Id, Comment);
 
+            //Return to Read.page
             return RedirectToPage("./Read");
         }
-
     }
-
 }
