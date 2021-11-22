@@ -18,7 +18,10 @@ namespace ContosoCrafts.WebSite.Services
             WebHostEnvironment = webHostEnvironment;
         }
 
-        // Retrieves web host environment
+        /// <summary>
+        /// Retrieves web host environment
+        /// </summary>
+        /// <returns>IWebHostEnvironment</returns>
         public IWebHostEnvironment WebHostEnvironment { get; }
 
         /// <summary>
@@ -52,12 +55,13 @@ namespace ContosoCrafts.WebSite.Services
         /// <param name = "rating">Rating to be added</param>
         public bool AddRating(string productId, int rating)
         {
-            // If the ProductID is invalid, return
+            // If the ProductID is invalid, return false
             if (string.IsNullOrEmpty(productId))
             {
                 return false;
             }
 
+            //Get products method and return the producus lists
             var products = GetProducts();
 
             // Look up the product, if it does not exist, return
@@ -103,8 +107,10 @@ namespace ContosoCrafts.WebSite.Services
         /// <param name = "comment">Comment to be added</param>
         public void AddComment(string productId, string comment)
         {
+            //Get products method and return the products lists
             var products = GetProducts();
 
+            //Chech the id product whether null, if null, create a new list of comments , if not null, adds comments to existing comments lists
             if (products.First(x => x.Id == productId).Comments == null)
             {
                 //creates new list of comments
@@ -118,6 +124,7 @@ namespace ContosoCrafts.WebSite.Services
                 products.First(x => x.Id == productId).Comments = comments.ToArray();
             }
 
+            //Update to storage
             SaveData(products);
         }
 
@@ -148,21 +155,28 @@ namespace ContosoCrafts.WebSite.Services
         /// <param name = "data"></param>
         public ProductModel UpdateData(ProductModel data)
         {
+            //Get products lists
             var products = GetProducts();
+
+            //find the id data 
             var productData = products.FirstOrDefault(x => x.Id.Equals(data.Id));
 
+            // data is null , return null
             if (productData == null)
             {
                 return null;
             }
 
+            // Update the data information
             productData.Artist = data.Artist;
             productData.Title = data.Title;            
             productData.Description = data.Description;
             productData.Image = data.Image;
 
+            //Update to storage
             SaveData(products);
 
+            //return updated data
             return productData;
         }
 
@@ -173,6 +187,7 @@ namespace ContosoCrafts.WebSite.Services
         /// <returns></returns>
         public ProductModel CreateData()
         {
+            //create a data model and fill with information
             var data = new ProductModel()
             {
                 Id = System.Guid.NewGuid().ToString(),
@@ -185,10 +200,13 @@ namespace ContosoCrafts.WebSite.Services
             // Get the current set, and append the new record to it becuase IEnumerable does not have Add
             var dataSet = GetProducts();
 
+            //append the data into dataset
             dataSet = dataSet.Append(data);
 
+            //Update to storage
             SaveData(dataSet);
 
+            //return updated data
             return data;
         }
 
@@ -200,12 +218,17 @@ namespace ContosoCrafts.WebSite.Services
         {
             // Get the current set, and append the new record to it
             var dataSet = GetProducts();
+
+            //find the id data 
             var data = dataSet.FirstOrDefault(m => m.Id.Equals(id));
 
+            //create a new data set and delete the id data
             var newDataSet = GetProducts().Where(m => m.Id.Equals(id) == false);
 
+            //Update to storage
             SaveData(newDataSet);
 
+            //return updated data
             return data;
         }
 
@@ -216,8 +239,10 @@ namespace ContosoCrafts.WebSite.Services
         /// <returns></returns>
         public int GetAverageRating(ProductModel product)
         {
+            //initial the parameters
             int currentRating = 0;
             int voteCount = 0;
+
             //Checks if there are ratings
             if (product.Ratings == null) // product with no ratings
             {
@@ -232,6 +257,7 @@ namespace ContosoCrafts.WebSite.Services
                 currentRating = product.Ratings.Sum() / voteCount; 
             }
 
+            //return the result
             return currentRating;
         }
 
@@ -295,10 +321,13 @@ namespace ContosoCrafts.WebSite.Services
             }
 
             //sort list in decending order by item2 of tuple (the rating)
-            //so that the highest rated will be at beginnning of list
+            // the highest rated will be at beginnning of list
             listOfID = listOfID.OrderByDescending(x => x.Item2).ToList();
 
+            //get the product lists first
             List<ProductModel> result = new List<ProductModel>();
+
+            //sort list in decending order by item2 of tuple (the rating)
             foreach (var item in listOfID)
             {
                 foreach (var art in dataset)
@@ -310,6 +339,7 @@ namespace ContosoCrafts.WebSite.Services
                 }
             }
 
+            //return the result 
             return result.AsEnumerable();
         }
 
@@ -335,7 +365,10 @@ namespace ContosoCrafts.WebSite.Services
             //so that the highest rated will be at beginnning of list
             listOfID = listOfID.OrderBy(x => x.Item2).ToList();
 
+            //get the product lists first
             List<ProductModel> result = new List<ProductModel>();
+
+            //sort list in ascending order by item2 of tuple (the rating)
             foreach (var item in listOfID)
             {
                 foreach (var art in dataset)
@@ -347,6 +380,7 @@ namespace ContosoCrafts.WebSite.Services
                 }
             }
 
+            //return GetProducts().OrderByDescending(product => product.Ratings);
             return result.AsEnumerable();
         }
 
