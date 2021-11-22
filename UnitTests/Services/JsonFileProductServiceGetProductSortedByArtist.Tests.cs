@@ -31,7 +31,7 @@ namespace UnitTests.Services.JsonFileProductService.GetProductSortedByArtist
             // Arrange
             var productsNotSorted = TestHelper.ProductService.GetProducts();            
 
-            //// Act
+            // Act
             var productsSorted = TestHelper.ProductService.GetProductSortedByAscArtist();
 
             // Assert
@@ -45,5 +45,30 @@ namespace UnitTests.Services.JsonFileProductService.GetProductSortedByArtist
            }
         }
         #endregion GetProductSortedByArtist
+
+        #region GetProductSortedByDescArtist
+        /// <summary>
+        /// Test that method returns a sorted list by Desc when called
+        /// </summary>
+        [Test]
+        public void GetProductSortedByDescArtist_Valid_Should_Return_Sorted_Products()
+        {
+            // Arrange
+            var productsNotSorted = TestHelper.ProductService.GetProducts();
+
+            // Act
+            var productsSorted = TestHelper.ProductService.GetProductSortedByDescArtist();
+
+            // Assert
+            for (int i = 1; i < productsSorted.Count(); i++)
+            {
+                string previous = productsSorted.ElementAt(i - 1).Artist;
+                string current = productsSorted.ElementAt(i).Artist;
+
+                // check that the previous item is less than or equal to the current
+                Assert.True(String.Compare(previous, current) >= 0);
+            }
+        }
+        #endregion GetProductSortedByDescArtist
     }
 }
