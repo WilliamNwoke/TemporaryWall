@@ -30,6 +30,7 @@ namespace ContosoCrafts.WebSite.Pages.Product
         /// REST Get request
         /// </summary>
         /// <param name = "id"></param>
+        /// <returns>Result of the get action</returns>
         public IActionResult OnGet()
         {
             Product = ProductService.CreateData();
