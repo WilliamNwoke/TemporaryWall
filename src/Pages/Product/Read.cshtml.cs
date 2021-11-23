@@ -37,6 +37,7 @@ namespace ContosoCrafts.WebSite.Pages.Product
         /// REST Get request
         /// </summary>
         /// <param name = "id"></param>
+        /// <returns>Result of the get action</returns>
         public IActionResult OnGet(string id)
         {
             //Get the data with id
@@ -55,6 +56,7 @@ namespace ContosoCrafts.WebSite.Pages.Product
         /// REST Post request to add a comment
         /// </summary>
         /// <returns></returns>
+        /// <returns>Result of the post action</returns>
         public IActionResult OnPost()
         {
             //var comment = Request.Form["comment"];
