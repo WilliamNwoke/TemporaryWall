@@ -1,5 +1,4 @@
-﻿using ContosoCrafts.WebSite.Models;
-using NUnit.Framework;
+﻿using NUnit.Framework;
 using System;
 using System.Linq;
 
@@ -29,7 +28,6 @@ namespace UnitTests.Services.JsonFileProductService.GetProductSortedByTitle
         public void GetProductSortedByTitle_Valid_Should_Return_Sorted_Products()
         {
             // Arrange
-            var productsNotSorted = TestHelper.ProductService.GetProducts();
 
             //// Act
             var productsSorted = TestHelper.ProductService.GetProductSortedByAscTitle();
