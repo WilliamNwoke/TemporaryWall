@@ -1,9 +1,6 @@
 using System.Linq;
-
 using Microsoft.AspNetCore.Mvc.RazorPages;
-
 using NUnit.Framework;
-
 using ContosoCrafts.WebSite.Pages.Product;
 
 namespace UnitTests.Pages.Product.Index
@@ -95,7 +92,6 @@ namespace UnitTests.Pages.Product.Index
         {
             // Arrange
             pageModel.OnGet("rating_desc");
-            var products = TestHelper.ProductService.GetProducts();
 
             // Act
             var data = pageModel.Products.FirstOrDefault();
@@ -146,7 +142,6 @@ namespace UnitTests.Pages.Product.Index
         {
             // Arrange
             pageModel.OnGet("artist_desc");
-            var products = TestHelper.ProductService.GetProducts();
 
             // Act
             var data = pageModel.Products.FirstOrDefault();
