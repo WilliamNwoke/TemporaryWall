@@ -26,6 +26,7 @@ namespace ContosoCrafts.WebSite.Pages
 
         // Retrieves Product Service
         public JsonFileProductService ProductService { get; }
+
         // Retreive Products and privately sets 
         public IEnumerable<ProductModel> Products { get; private set; }
 
