@@ -32,7 +32,7 @@ namespace UnitTests.Controllers
         public void GetProducts_Default_Should_Return_Data()
         {
             // Arrange
-            //var data = TestHelper.ProductService.GetProducts();
+            
             // Act
 
             var results = TestHelper.ProductController.Get().FirstOrDefault();
