@@ -27,6 +27,7 @@ namespace ContosoCrafts.WebSite.Services
         /// <summary>
         /// Returns file path of product json database
         /// </summary>
+        /// <returns>the name of the json product file</returns>
         private string JsonFileName
         {
             get { return Path.Combine(WebHostEnvironment.WebRootPath, "data", "products.json"); }
@@ -53,6 +54,7 @@ namespace ContosoCrafts.WebSite.Services
         /// </summary>
         /// <param name = "productId">ID of specific product</param>
         /// <param name = "rating">Rating to be added</param>
+        /// <returns>true if the addition of a rating is successful, false otherwise</returns>
         public bool AddRating(string productId, int rating)
         {
             // If the ProductID is invalid, return false
@@ -153,6 +155,7 @@ namespace ContosoCrafts.WebSite.Services
         /// Save to the data store
         /// </summary>
         /// <param name = "data"></param>
+        /// <returns>The updated product data</returns>
         public ProductModel UpdateData(ProductModel data)
         {
             //Get products lists
@@ -184,7 +187,7 @@ namespace ContosoCrafts.WebSite.Services
         /// Create a new product using default values
         /// After create the user can update to set values
         /// </summary>
-        /// <returns></returns>
+        /// <returns>An empty product</returns>
         public ProductModel CreateData()
         {
             //create a data model and fill with information
@@ -213,7 +216,7 @@ namespace ContosoCrafts.WebSite.Services
         /// <summary>
         /// Remove the item from the system
         /// </summary>
-        /// <returns></returns>
+        /// <returns>The data that was deleted</returns>
         public ProductModel DeleteData(string id)
         {
             // Get the current set, and append the new record to it
@@ -236,7 +239,7 @@ namespace ContosoCrafts.WebSite.Services
         /// Finds the average rating of a product
         /// </summary>
         /// <param name = "product">ProductModel of the product to find the average ratings for</param>
-        /// <returns></returns>
+        /// <returns>The average rating for the passed in product</returns>
         public int GetAverageRating(ProductModel product)
         {
             //initial the parameters

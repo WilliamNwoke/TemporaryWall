@@ -3,7 +3,6 @@ using Microsoft.AspNetCore.Mvc;
 using NUnit.Framework;
 using ContosoCrafts.WebSite.Pages.Product;
 
-
 namespace UnitTests.Pages.Product.Delete
 {   
     /// <summary>
@@ -15,6 +14,7 @@ namespace UnitTests.Pages.Product.Delete
         // Manages tthe delete of a single record
         #region TestSetup
         public static DeleteModel pageModel;
+
         /// <summary>
         /// delete method test initializaton
         /// </summary>

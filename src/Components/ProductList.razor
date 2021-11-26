@@ -156,6 +156,7 @@
         /// <summary>
         /// Search all the products to find matches from a given string
         /// </summary>
+        /// <returns>Enumerable collection of Products that contain a search term</returns>
         IEnumerable<ProductModel> GetSearchProducts()
         {
             // create enumerable of products to search through
@@ -183,7 +184,7 @@
         /// Gets all products in DB when there is no search term.  When a search term
         /// is set this will return all matching products
         /// </summary>
-        /// <returns></returns>
+        /// <returns>Enumerable collection of products</returns>
         IEnumerable<ProductModel> GetProducts()
         {
             if (string.IsNullOrEmpty(SearchTerm))
@@ -191,14 +192,13 @@
                 return ProductService.GetProducts();
             }
             return GetSearchProducts();
-
         }
 
         /// <summary>
         /// Utility method to check if a product contains blank or null values
         /// </summary>
         /// <param name="product"></param>
-        /// <returns></returns>
+        /// <returns>true if the passed in product is empty or null</returns>
         Boolean ProductIsBlankOrNull(ProductModel product)
         {
             // null checks

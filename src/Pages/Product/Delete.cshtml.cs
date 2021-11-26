@@ -35,6 +35,7 @@ namespace ContosoCrafts.WebSite.Pages.Product
         /// Loads the Data
         /// </summary>
         /// <param name="id"></param>
+        /// <returns>Result of the get action</returns>
         public IActionResult OnGet(string id)
         {
             //Get the id data and check it whether null
@@ -55,7 +56,7 @@ namespace ContosoCrafts.WebSite.Pages.Product
         /// Call the data layer to Delete that data
         /// Then return to the index page
         /// </summary>
-        /// <returns></returns>
+        /// <returns>Result of the post action</returns>
         public IActionResult OnPost()
         {
 

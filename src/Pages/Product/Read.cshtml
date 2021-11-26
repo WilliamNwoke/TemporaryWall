@@ -1,6 +1,7 @@
 ﻿@page "{id}"
 @using ContosoCrafts.WebSite.Services
 @using ContosoCrafts.WebSite.Components
+@using System.ComponentModel.DataAnnotations;
 @inject JsonFileProductService ProductService
 @model ContosoCrafts.WebSite.Pages.Product.ReadModel
 
@@ -28,9 +29,10 @@
     <!--Comment Posting Form-->
     <h4 class="title">Add a Comment</h4>
     <form method="post">
+       
             <textarea id="comment" name="comment" class="form-control"></textarea>
             <br />
-            <input type="submit" value="Submit" class="btn btn-primary" />
+            <input type="submit" value="Post Comment" class="btn btn-primary" />
         </form>
     <br />
 

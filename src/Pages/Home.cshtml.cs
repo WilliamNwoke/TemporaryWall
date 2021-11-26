@@ -11,8 +11,8 @@ namespace ContosoCrafts.WebSite.Pages
     /// </summary>
     public class HomeModel : PageModel
     {
+        // Creates a private readonly Ilogger for HomeModel
         private readonly ILogger<HomeModel> _logger;
-
 
         /// <summary>
         /// Default Constructor
@@ -26,6 +26,7 @@ namespace ContosoCrafts.WebSite.Pages
 
         // Retrieves Product Service
         public JsonFileProductService ProductService { get; }
+
         // Retreive Products and privately sets 
         public IEnumerable<ProductModel> Products { get; private set; }
 

@@ -14,7 +14,7 @@ namespace ContosoCrafts.WebSite.Models
         public string Id { get; set; }
 
         [Required]
-        [StringLength(maximumLength: 15, MinimumLength = 1, ErrorMessage = "Artist name should have a length of more than {2} and less than {1}")]
+        [StringLength(maximumLength: 50, MinimumLength = 1, ErrorMessage = "Artist name should have a length of more than {2} and less than {1}")]
 
         // get set method for JSON attribute Artist
         public string Artist { get; set; }
@@ -27,7 +27,7 @@ namespace ContosoCrafts.WebSite.Models
         public string Image { get; set; }
 
         [Required]
-        [StringLength(maximumLength: 33, MinimumLength = 1, ErrorMessage = "The Title should have a length of more than {2} and less than {1}")]
+        [StringLength(maximumLength: 50, MinimumLength = 1, ErrorMessage = "The Title should have a length of more than {2} and less than {1}")]
 
         // get set method for JSON attribute Title
         public string Title { get; set; }

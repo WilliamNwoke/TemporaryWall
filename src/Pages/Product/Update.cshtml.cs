@@ -44,7 +44,7 @@ namespace ContosoCrafts.WebSite.Pages.Product
         /// Call the data layer to Update that data
         /// Then return to the index page
         /// </summary>
-        /// <returns></returns>
+        /// <returns>Result of the post action</returns>
         public IActionResult OnPost()
         {
             if (!ModelState.IsValid)

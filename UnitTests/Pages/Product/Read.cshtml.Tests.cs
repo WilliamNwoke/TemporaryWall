@@ -1,5 +1,4 @@
 using NUnit.Framework;
-
 using ContosoCrafts.WebSite.Pages.Product;
 using Microsoft.AspNetCore.Mvc;
 using ContosoCrafts.WebSite.Models;
@@ -45,6 +44,7 @@ namespace UnitTests.Pages.Product.Read
             // Return <Microsoft.AspNetCore.Mvc.RedirectToPageResult>
             Assert.IsNotNull(data);
         }
+
         /// <summary>
         /// onGet test method to read and return the data.
         /// </summary>

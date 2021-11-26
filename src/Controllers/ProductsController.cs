@@ -33,6 +33,7 @@ namespace ContosoCrafts.WebSite.Controllers
         /// <summary>
         ///Product service http get function
         /// </summary>
+        /// <returns>Enumerable collection of products</returns>
         public IEnumerable<ProductModel> Get()
         {
             return ProductService.GetProducts();
@@ -42,7 +43,8 @@ namespace ContosoCrafts.WebSite.Controllers
         
         /// <summary>
         /// product service rating method
-        /// </summary>        
+        /// </summary>
+        /// <returns>result of the patching action</returns>
         public ActionResult Patch([FromBody] RatingRequest request)
         {
             ProductService.AddRating(request.ProductId, request.Rating);
@@ -60,10 +62,11 @@ namespace ContosoCrafts.WebSite.Controllers
         }
 
         [HttpPatch]
-        
+
         ///<summary>
         /// Product Add comment method
         /// </summary>
+        /// <returns>result of the patching action</returns>
         public ActionResult Patch([FromBody] CommentRequest request)
         {
             ProductService.AddComment(request.ProductId, request.Comment);
