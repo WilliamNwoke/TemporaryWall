@@ -1,7 +1,5 @@
 ﻿using NUnit.Framework;
-
 using ContosoCrafts.WebSite.Pages;
-
 
 namespace UnitTests.Pages.Landing
 {
