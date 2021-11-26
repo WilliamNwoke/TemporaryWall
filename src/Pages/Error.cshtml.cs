@@ -12,7 +12,6 @@ namespace ContosoCrafts.WebSite.Pages
     /// </summary>
     public class ErrorModel : PageModel
     {
-
         // Get and set method for the request ID
         public string RequestId { get; set; }
 
