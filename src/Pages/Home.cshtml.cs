@@ -11,8 +11,8 @@ namespace ContosoCrafts.WebSite.Pages
     /// </summary>
     public class HomeModel : PageModel
     {
+        // Creates a private readonly Ilogger for HomeModel
         private readonly ILogger<HomeModel> _logger;
-
 
         /// <summary>
         /// Default Constructor
