@@ -1,11 +1,7 @@
 using System.Diagnostics;
-
 using Microsoft.Extensions.Logging;
-
 using NUnit.Framework;
-
 using Moq;
-
 using ContosoCrafts.WebSite.Pages;
 
 namespace UnitTests.Pages.Error
@@ -33,8 +29,8 @@ namespace UnitTests.Pages.Error
                 TempData = TestHelper.TempData,
             };
         }
-
         #endregion TestSetup
+
         #region OnGet
         /// <summary>
         /// onget method to return request id
