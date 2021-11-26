@@ -19,6 +19,7 @@ namespace ContosoCrafts.WebSite.Pages
         // Checks if the Request ID is NULL or empty
         public bool ShowRequestId => !string.IsNullOrEmpty(RequestId);
 
+        // Creates a private readonly ILogger for the ErrorModel
         private readonly ILogger<ErrorModel> _logger;
 
         /// <summary>
