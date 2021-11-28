@@ -1,5 +1,4 @@
 using System.IO;
-
 using NUnit.Framework;
 
 namespace UnitTests
@@ -30,8 +29,6 @@ namespace UnitTests
             // C:\repos\5110\ClassBaseline\src\wwwroot\data
             // C:\repos\5110\ClassBaseline\src\bin\Debug\net5.0\wwwroot\data
 
-
-
             // var DataWebPath = "../../../../src/bin/Debug/net5.0/wwwroot/data";
             var DataWebPath = "../../../../src/wwwroot/data";
             var DataUTDirectory = "wwwroot";
@@ -57,7 +54,9 @@ namespace UnitTests
             }
         }
 
-        // function
+        /// <summary>
+        /// Method that will run after any tests
+        /// </summary>
         [OneTimeTearDown]
         public void RunAfterAnyTests()
         {
