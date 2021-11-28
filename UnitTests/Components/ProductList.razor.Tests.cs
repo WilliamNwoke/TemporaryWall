@@ -292,6 +292,14 @@ namespace UnitTests.Components
         #endregion Search
 
         #region GetCurrentRating
+        /// <summary>
+        /// This test tests that the Search will chech the voting before and after
+        /// The test needs to open the page
+        /// Then get the Vote Count
+        /// Then click the star button
+        /// Then save the html for it to compare after the click
+        /// Then confirm that the record had no votes to start, and 1 vote after
+        /// </summary>
         [Test]
         public void GetCurrentRating_Valid_Product_Rating_Null_Should_Return_True()
         {
