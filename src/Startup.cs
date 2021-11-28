@@ -27,12 +27,12 @@ namespace ContosoCrafts.WebSite
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            //Adds services for pages to the specified IServiceCollection.
             services.AddRazorPages();
             services.AddServerSideBlazor();
             services.AddHttpClient();
             services.AddControllers();
             services.AddTransient<JsonFileProductService>();
-
             services.AddMvc().AddRazorPagesOptions(options =>
             {
                 options.Conventions.AddPageRoute("/Landing", "");
@@ -42,11 +42,13 @@ namespace ContosoCrafts.WebSite
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
+            //Checks if the current hosting environment name is Development.
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
             }
 
+            //Checks if the current hosting environment name is Development. If no, return to Error Page
             if (env.IsDevelopment() == false)
             {
                 app.UseExceptionHandler("/Error");
@@ -55,19 +57,25 @@ namespace ContosoCrafts.WebSite
                 app.UseHsts();
             }
 
-
-
+            //Adds middleware for redirecting HTTP Requests to HTTPS.
             app.UseHttpsRedirection();
+
+            //Enables static file serving for the current request path
             app.UseStaticFiles();
 
+            //Adds a Microsoft.AspNetCore.Routing.EndpointRoutingMiddleware middleware to the specified IApplicationBuilder.
             app.UseRouting();
 
+            //Adds the AuthorizationMiddleware to the specified IApplicationBuilder, which enables authorization capabilities.
             app.UseAuthorization();
 
+            //Adds the AuthorizationMiddleware to the specified IApplicationBuilder, which enables authorization capabilities.
             app.UseAuthentication();
 
+            //Adds the AuthorizationMiddleware to the specified IApplicationBuilder, which enables authorization capabilities.
             app.UseAuthentication();
 
+            //Adds a Microsoft.AspNetCore.Routing.EndpointMiddleware middleware to the specified IApplicationBuilder 
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapRazorPages();
