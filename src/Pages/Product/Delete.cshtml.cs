@@ -59,7 +59,6 @@ namespace ContosoCrafts.WebSite.Pages.Product
         /// <returns>Result of the post action</returns>
         public IActionResult OnPost()
         {
-
             //Call the data layer to Delete that data
             if (!ModelState.IsValid)
             {
