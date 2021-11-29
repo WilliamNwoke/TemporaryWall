@@ -11,6 +11,9 @@ namespace UnitTests.Components
     {
         #region TestSetup
 
+        /// <summary>
+        /// Initializes Unit Tests for ProductList.razor
+        /// </summary>
         [SetUp]
         public void TestInitialize()
         {
