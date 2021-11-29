@@ -17,7 +17,11 @@ namespace ContosoCrafts.WebSite
             CreateHostBuilder(args).Build().Run();
         }
 
-        // Iwebhosting method
+        /// <summary>
+        /// initializes IHostBuilder using CreateDefaultBuilder
+        /// </summary>
+        /// <param name="args">parameters to define HostBuilder</param>
+        /// <returns></returns>
         public static IHostBuilder CreateHostBuilder(string[] args) =>
             Host.CreateDefaultBuilder(args)
                 .ConfigureWebHostDefaults(webBuilder =>
