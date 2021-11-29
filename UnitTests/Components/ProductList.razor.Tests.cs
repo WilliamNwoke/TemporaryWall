@@ -7,6 +7,10 @@ using System.Linq;
 
 namespace UnitTests.Components
 {
+    /// <summary>
+    /// Creates class to test specific features in ProductList.razor
+    /// Uses BUnitTests to test .razor pages
+    /// </summary>
     public class ProductListTests : BunitTestContext
     {
         #region TestSetup
