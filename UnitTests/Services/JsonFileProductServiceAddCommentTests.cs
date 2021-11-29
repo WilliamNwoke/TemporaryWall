@@ -9,7 +9,6 @@ namespace UnitTests.Services.JsonFileProductService.AddComment
     public class JsonFileProductServiceAddCommentTests
     {
         #region TestSetup
-
         /// <summary>
         /// Initialize test setup
         /// </summary>
