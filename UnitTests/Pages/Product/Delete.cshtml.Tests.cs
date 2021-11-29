@@ -10,7 +10,6 @@ namespace UnitTests.Pages.Product.Delete
     /// </summary>
     public class DeleteTests
     {
-
         // Manages tthe delete of a single record
         #region TestSetup
         public static DeleteModel pageModel;
