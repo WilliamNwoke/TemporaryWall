@@ -14,7 +14,6 @@ namespace UnitTests.Components
     public class ProductListTests : BunitTestContext
     {
         #region TestSetup
-
         /// <summary>
         /// Initializes Unit Tests for ProductList.razor
         /// </summary>
