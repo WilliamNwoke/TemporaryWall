@@ -11,7 +11,6 @@ namespace UnitTests.Controllers
     {
         //--------------------------------------------------------------------------------
         #region TestSetup
-
         /// <summary>
         /// Initialize Test
         /// </summary>
@@ -219,8 +218,6 @@ namespace UnitTests.Controllers
             Assert.IsNotNull(comment);
         }
         #endregion CommentRequest
-        
         //--------------------------------------------------------------------------------
-
     }
 }
