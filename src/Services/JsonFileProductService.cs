@@ -7,6 +7,9 @@ using Microsoft.AspNetCore.Hosting;
 
 namespace ContosoCrafts.WebSite.Services
 {
+    /// <summary>
+    /// Handles all Json database inquiries and operations
+    /// </summary>
     public class JsonFileProductService
     {
         /// <summary>
@@ -264,7 +267,6 @@ namespace ContosoCrafts.WebSite.Services
             return currentRating;
         }
 
-
         /// <summary>
         /// Finds the 3 highest rated artworks of all the artworks
         /// </summary>
@@ -383,7 +385,6 @@ namespace ContosoCrafts.WebSite.Services
                 }
             }
 
-            //return GetProducts().OrderByDescending(product => product.Ratings);
             return result.AsEnumerable();
         }
 
