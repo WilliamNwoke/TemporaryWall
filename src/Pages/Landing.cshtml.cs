@@ -5,6 +5,9 @@ using ContosoCrafts.WebSite.Services;
 
 namespace ContosoCrafts.WebSite.Pages
 {
+    /// <summary>
+    /// Backend class for Landing.cshtml
+    /// </summary>
     public class LandingModel : PageModel
     {
         /// <summary>
