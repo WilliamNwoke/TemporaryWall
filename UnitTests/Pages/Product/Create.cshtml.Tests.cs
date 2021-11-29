@@ -9,7 +9,6 @@ namespace UnitTests.Pages.Product.Create
     /// </summary>
     public class CreateTests
     {
-
         // Test method for the pageModel
         #region TestSetup
         public static CreateModel pageModel;
@@ -22,7 +21,6 @@ namespace UnitTests.Pages.Product.Create
         {
             pageModel = new CreateModel(TestHelper.ProductService);
         }
-
         #endregion TestSetup
 
         /// <summary>
