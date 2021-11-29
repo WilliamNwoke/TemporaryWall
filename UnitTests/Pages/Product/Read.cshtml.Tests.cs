@@ -11,7 +11,6 @@ namespace UnitTests.Pages.Product.Read
     /// </summary>
     public class ReadTests
     {
-
         #region TestSetup
         /// <summary>
         /// Read Model Page Model function
