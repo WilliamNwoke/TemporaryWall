@@ -10,7 +10,6 @@ namespace UnitTests.Services.JsonFileProductService.GetProductSortedByTitle
 	public class JsonFileProductServiceGetProductSortedByTitle
 	{
         #region TestSetup
-
         /// <summary>
         /// Initializes Tests
         /// </summary>
