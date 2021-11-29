@@ -9,7 +9,6 @@ namespace UnitTests.Services.JsonFileProductService.GetHighestRatedArtwork
     public class JsonFileProductServiceGetHighestRatedArtwork
     {
         #region TestSetup
-
         /// <summary>
         /// Initializes Tests
         /// </summary>
