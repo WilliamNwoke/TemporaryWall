@@ -9,7 +9,6 @@ namespace UnitTests.Services.JsonFileProductService.GetAverageRating
     public class JsonFileProductServiceGetAverageRating
     {
         #region TestSetup
-
         /// <summary>
         /// Initializes Test
         /// </summary>
