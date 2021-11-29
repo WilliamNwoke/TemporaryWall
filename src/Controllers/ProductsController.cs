@@ -29,7 +29,6 @@ namespace ContosoCrafts.WebSite.Controllers
         public JsonFileProductService ProductService { get; }
 
         [HttpGet]
-
         /// <summary>
         ///Product service http get function
         /// </summary>
@@ -40,7 +39,6 @@ namespace ContosoCrafts.WebSite.Controllers
         }
 
         [HttpPatch]
-        
         /// <summary>
         /// product service rating method
         /// </summary>
@@ -62,7 +60,6 @@ namespace ContosoCrafts.WebSite.Controllers
         }
 
         [HttpPatch]
-
         ///<summary>
         /// Product Add comment method
         /// </summary>
