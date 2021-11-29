@@ -4,7 +4,6 @@ using System.ComponentModel.DataAnnotations;
 
 namespace ContosoCrafts.WebSite.Models
 {
-
     /// <summary>
     /// Products model will perform get, set on the products from /data/products.json and serialize the results
     /// </summary>
