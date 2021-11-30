@@ -83,6 +83,11 @@
                             }
                         }
 
+                        @if (product.Ratings == null)
+                        {
+                            <td>No one Rate</td>
+                        }
+
                         <td>
                             <a class="btn btn-primary" asp-page="Read" asp-route-id="@product.Id">View</a>
                         </td>
