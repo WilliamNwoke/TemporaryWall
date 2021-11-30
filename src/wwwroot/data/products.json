@@ -110,9 +110,7 @@
     "img": "https://www.worldatlas.com/r/w960-q80/upload/af/d1/ed/persistenceofmemory.jpg",
     "Title": "The Persistence Of Memory",
     "Description": "The Persistence of Memory depicts melting clock faces and is thought to have been inspired by the Theory of Relativity. The painting is displayed at the MoMA.",
-    "Ratings": [
-      1
-    ],
+    "Ratings": null,
     "Comments": null
   },
   {
@@ -249,6 +247,15 @@
     "Artist": "Vincent Van Gogh",
     "img": "",
     "Title": "TestTitle",
+    "Description": "",
+    "Ratings": null,
+    "Comments": null
+  },
+  {
+    "Id": "581057b7-0177-4fba-8b63-6469219ef43d",
+    "Artist": "",
+    "img": "",
+    "Title": "",
     "Description": "",
     "Ratings": null,
     "Comments": null
